@@ -1952,6 +1952,43 @@ button.active,.tab-btn.active{border-color:var(--accent)!important;box-shadow:0 
   white-space:nowrap!important;
 }
 
+
+/* V77 — force all 5 bottom tabs into one single row */
+.bottom-tabs{
+  padding-left:6px!important;
+  padding-right:6px!important;
+}
+.bottom-tabs-inner{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  display:grid!important;
+  grid-template-columns:repeat(5,1fr)!important;
+  grid-auto-flow:column!important;
+  grid-auto-columns:1fr!important;
+  gap:2px!important;
+}
+.tab-btn{
+  min-width:0!important;
+  width:auto!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:3px 1px!important;
+  height:52px!important;
+  font-size:8px!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+}
+.tab-btn span:last-child{
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  white-space:nowrap!important;
+}
+
 </style>
 <style id="hamstring-final-image-fix">
 /* Hamstring glossary image: full bodies, no crop, no oversized white frame. */
@@ -2374,7 +2411,7 @@ calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try
 (function(){
  const splash=document.getElementById('powerSplash'),bar=document.getElementById('splashBar');
  if(!splash)return;
- const ver='v76'; let first=true;
+ const ver='v77'; let first=true;
  try{first=localStorage.getItem('levelUpSplashVersion')!==ver}catch(e){}
  const duration=8500;
  if(bar){bar.style.transition='width '+(duration-300)+'ms cubic-bezier(.22,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>bar.style.width='100%'))}
