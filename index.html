@@ -2165,7 +2165,7 @@ html{background:#050b12}.wrap{padding-bottom:96px!important}.card{border:1px sol
     <div class="splash-track"><div class="splash-bar" id="splashBar"></div></div>
   </div>
 </div>
-<header class="levelup-header"><div class="levelup-brand"><img src="assets/level_up_logo_gold_edge_FINAL_v49.png" alt="" class="levelup-mark"><div class="levelup-wordmark"><span>LEVEL</span><strong>UP</strong></div></div></header>
+<header class="levelup-header"><div class="levelup-brand"><img src="assets/level_up_logo_final_v78.png" alt="" class="levelup-mark"><div class="levelup-wordmark"><span>LEVEL</span><strong>UP</strong></div></div></header>
 <div class="wrap">
 <div id="progressView" class="tab-view active">
   <div class="card hero"><div class="eyebrow">Current fitness level</div><div id="currentChar" class="big">Hawkeye</div><div id="heroMedia"><img src="assets/01_hawkeye_v73.jpeg" alt="Hawkeye" class="demo-image-clean char-image show"></div><div id="currentMeta" class="meta">Level 1 • Foundation</div><div class="progress"><div id="bar" class="bar"></div></div><div id="nextBox" class="next-level-card"><h3>Next Level</h3><div>Enter your current bests, assessments and tap Calculate Rankings.</div></div></div>
@@ -2411,7 +2411,7 @@ calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try
 (function(){
  const splash=document.getElementById('powerSplash'),bar=document.getElementById('splashBar');
  if(!splash)return;
- const ver='v77'; let first=true;
+ const ver='v78'; let first=true;
  try{first=localStorage.getItem('levelUpSplashVersion')!==ver}catch(e){}
  const duration=8500;
  if(bar){bar.style.transition='width '+(duration-300)+'ms cubic-bezier(.22,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>bar.style.width='100%'))}
