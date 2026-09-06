@@ -1,4 +1,4 @@
-const CACHE='level-up-fitness-v74-faster-start-20260906';
+const CACHE='level-up-fitness-v75-stats-20260906';
 const PREFIX='level-up-fitness-';
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./assets/level_up_logo_gold_edge_FINAL_v49.png'])))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith(PREFIX)&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
