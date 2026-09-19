@@ -12,7 +12,8 @@
 :root{--bg:#090e15;--card:#182231;--card2:#101824;--line:#344258;--text:#f7f9fc;--muted:#9ca9b9;--accent:#78a9ff;--good:#62d8a5;--warn:#ffc861}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Arial,sans-serif}body{padding-bottom:calc(28px + env(safe-area-inset-bottom))}
 header{padding:calc(11px + env(safe-area-inset-top)) 15px 11px;border-bottom:1px solid var(--line)}header b{font-size:19px}header small{display:block;color:var(--muted)}.wrap{max-width:430px;margin:auto;padding:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px;margin-bottom:22px;box-shadow:0 8px 24px rgba(0,0,0,.18)}.hero{background:linear-gradient(180deg,#182338,#151c26)}.eyebrow{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.big{font-size:21px;font-weight:900;margin-top:5px;color:var(--good);text-transform:uppercase;letter-spacing:.055em}.meta{color:var(--accent);font-size:13px;margin-top:5px}.char-image{display:none;width:100%;height:245px;object-fit:cover;object-position:center;border-radius:14px;margin-top:11px;border:1px solid var(--line);background:#090d13}.char-image.show{display:block}.char-image.portrait{object-position:center 18%}\n.progress{height:9px;background:#252e3a;border-radius:999px;overflow:hidden;margin-top:11px}.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--good));width:4%}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px;margin-bottom:22px;box-shadow:0 8px 24px rgba(0,0,0,.18)}.hero{background:linear-gradient(180deg,#182338,#151c26)}.eyebrow{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.big{font-size:21px;font-weight:900;margin-top:5px;color:var(--good);text-transform:uppercase;letter-spacing:.055em}.meta{color:var(--accent);font-size:13px;margin-top:5px}.char-image{display:none;width:100%;height:245px;object-fit:cover;object-position:center;border-radius:14px;margin-top:11px;border:1px solid var(--line);background:#090d13}.char-image.show{display:block}.char-image.portrait{object-position:center 18%}
+.progress{height:9px;background:#252e3a;border-radius:999px;overflow:hidden;margin-top:11px}.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--good));width:4%}
 h2{font-size:17px;margin:0 0 10px}h3{font-size:15px;color:var(--warn);margin:26px 2px 12px;font-weight:900;text-transform:uppercase;letter-spacing:.09em;display:flex;align-items:center;gap:10px}h3:after{content:'';height:1px;background:var(--warn);opacity:.75;flex:1}.weights-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.weights-grid .exercise{margin-bottom:0;min-width:0}.weights-grid .exercise>label{font-size:12px;min-height:31px}.weights-grid input{padding:10px 8px}.weights-grid .status{font-size:9px}.weights-grid{margin-bottom:12px}
 .exercise{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:11px;margin-bottom:12px}.exercise>label{display:block;font-size:15px;font-weight:850;color:var(--text);margin-bottom:8px;line-height:1.25}.exercise .two label,.exercise #bwBox label,.exercise #weightedBox label,.exercise #inclineBox label,.exercise #runBox label,.exercise #fiveKBox label{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-bottom:5px}label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}
 input{width:100%;font-size:16px;padding:12px 10px;border-radius:11px;border:1px solid #34445a;background:#0b121b;color:#fff}.status{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4}.status.good{color:var(--good)}.status.warn{color:var(--warn)}
@@ -2108,6 +2109,42 @@ html{background:#050b12}.wrap{padding-bottom:96px!important}.card{border:1px sol
   }
 }
 </style>
+
+<style id="v83-compact-progress-hero">
+/* V83 — My Progress is a PB dashboard: compact current-rank identity, not a full character showcase. */
+#progressView .hero{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 112px!important;
+  grid-template-areas:
+    "eyebrow media"
+    "name media"
+    "meta media"
+    "progress media"
+    "next next"!important;
+  column-gap:14px!important;
+  row-gap:3px!important;
+  padding:14px!important;
+}
+#progressView .hero>.eyebrow{grid-area:eyebrow;align-self:end}
+#progressView .hero>.big{grid-area:name;margin-top:1px!important;font-size:24px!important;line-height:1.05!important}
+#progressView .hero>#heroMedia{grid-area:media;align-self:center;width:112px;height:112px}
+#progressView .hero>#heroMedia .char-image{
+  display:block!important;width:112px!important;height:112px!important;max-height:112px!important;
+  margin:0!important;border-radius:15px!important;object-fit:cover!important;object-position:center 24%!important;
+}
+#progressView .hero>.meta{grid-area:meta;margin:3px 0 0!important}
+#progressView .hero>.progress{grid-area:progress;margin:7px 0 0!important;height:7px!important}
+#progressView .hero>.next-level-card{grid-area:next;margin-top:10px!important;padding:11px 12px!important}
+#progressView .hero>.next-level-card h3{font-size:13px!important;margin:0 0 6px!important}
+#progressView .hero>.next-level-card>div:first-of-type{font-size:14px!important}
+#progressView .hero .req-chip-row{margin-top:8px!important;gap:6px!important}
+#progressView .hero .req-chip{font-size:11px!important;padding:5px 8px!important}
+@media(max-width:430px){
+ #progressView .hero{grid-template-columns:minmax(0,1fr) 104px!important;column-gap:12px!important;padding:12px!important}
+ #progressView .hero>#heroMedia,#progressView .hero>#heroMedia .char-image{width:104px!important;height:104px!important;max-height:104px!important}
+ #progressView .hero>.big{font-size:22px!important}
+}
+</style>
 </head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -2417,7 +2454,7 @@ calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try
 (function(){
  const splash=document.getElementById('powerSplash'),bar=document.getElementById('splashBar');
  if(!splash)return;
- const ver='v82'; let first=true;
+ const ver='v83'; let first=true;
  try{first=localStorage.getItem('levelUpSplashVersion')!==ver}catch(e){}
  const duration=4000;
  if(bar){bar.style.transition='width '+(duration-300)+'ms cubic-bezier(.22,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>bar.style.width='100%'))}
