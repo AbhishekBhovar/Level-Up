@@ -2160,24 +2160,38 @@ input,.nextbox,.cardio-panel{background:#07131f!important;border-color:rgba(96,1
 .stat-card.mastered{border-color:rgba(79,232,166,.62)!important}
 #statsFilter{background:#0b1c2c!important;border-color:rgba(34,184,255,.58)!important}
 .stat-progress,.stats-progress{background:#0a2940!important}
-/* Celebration overlay */
-.levelup-celebration{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(2,7,13,.86);backdrop-filter:blur(5px);opacity:0;transition:opacity .18s ease;overflow:hidden}
-.levelup-celebration.show{opacity:1}.levelup-celebration.out{opacity:0}
-.celebration-energy{position:absolute;width:90vw;height:90vw;max-width:520px;max-height:520px;border-radius:50%;background:radial-gradient(circle,rgba(53,200,255,.28) 0,rgba(34,184,255,.11) 30%,transparent 68%);animation:v87pulse .75s ease-in-out infinite alternate;filter:blur(2px)}
-.celebration-card{position:relative;width:min(92vw,390px);padding:34px 22px 24px;text-align:center;border:1px solid #35C8FF;border-radius:24px;background:linear-gradient(160deg,rgba(15,45,68,.98),rgba(5,16,27,.99));box-shadow:0 0 28px rgba(34,184,255,.38),0 0 90px rgba(34,184,255,.16);transform:scale(.72);animation:v87impact .48s cubic-bezier(.16,1.25,.3,1) forwards}
-.celebration-kicker{font-size:14px;font-weight:950;letter-spacing:.14em;color:#35C8FF;text-shadow:0 0 15px rgba(53,200,255,.75)}
-.celebration-exercise{font-size:24px;font-weight:950;color:#fff;margin:12px 0 16px;text-transform:uppercase}
-.celebration-levels{font-size:20px;font-weight:900;color:#fff}.celebration-levels span,.celebration-characters span{color:#35C8FF;margin:0 5px}
-.celebration-jump{font-size:34px;font-weight:1000;color:#35C8FF;margin:9px 0;text-shadow:0 0 20px rgba(53,200,255,.65);animation:v87jump .55s ease both}
-.celebration-characters{font-size:12px;color:#aeeaff;margin-top:12px;font-weight:750}.celebration-tap{font-size:8px;letter-spacing:.16em;color:#7894aa;margin-top:22px}
-.levelup-celebration.surge .celebration-card{box-shadow:0 0 38px rgba(34,184,255,.58),0 0 130px rgba(34,184,255,.24)}
-.levelup-celebration.mastered .celebration-card{border-color:#e9c75f;box-shadow:0 0 35px rgba(233,199,95,.32),0 0 95px rgba(34,184,255,.18)}
-.levelup-celebration.mastered .celebration-kicker,.levelup-celebration.mastered .celebration-jump{color:#f2d477;text-shadow:0 0 18px rgba(242,212,119,.55)}
-.levelup-celebration.overall .celebration-card{border-width:2px}
-@keyframes v87impact{0%{transform:scale(.68);filter:brightness(2.2)}65%{transform:scale(1.035)}100%{transform:scale(1)}}
-@keyframes v87pulse{from{transform:scale(.88);opacity:.55}to{transform:scale(1.08);opacity:1}}
-@keyframes v87jump{0%{transform:scale(.35);opacity:0}70%{transform:scale(1.16)}100%{transform:scale(1);opacity:1}}
-@media(max-width:430px){.stats-grid{gap:13px!important}.weights-grid,.summary-grid{gap:12px!important}}
+/* V89 — full-screen cinematic level-up celebration */
+.levelup-celebration{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at 50% 50%,rgba(9,42,68,.76),rgba(1,5,10,.97) 68%);backdrop-filter:blur(7px);opacity:0;transition:opacity .22s ease;overflow:hidden;isolation:isolate}
+.levelup-celebration.show{opacity:1}.levelup-celebration.out{opacity:0;transition:opacity .32s ease}
+.celebration-energy{position:absolute;inset:-20%;background:repeating-conic-gradient(from 0deg,rgba(53,200,255,0) 0deg 9deg,rgba(53,200,255,.14) 10deg,rgba(53,200,255,0) 12deg 22deg);mask-image:radial-gradient(circle,transparent 0 22%,#000 42%,transparent 76%);animation:v89spin 7s linear infinite;opacity:.7}
+.celebration-aura{position:absolute;width:145vmax;height:145vmax;border-radius:50%;background:radial-gradient(circle,rgba(89,220,255,.24) 0 6%,rgba(34,184,255,.11) 17%,transparent 42%);animation:v89breathe .7s ease-in-out infinite alternate;filter:blur(2px)}
+.celebration-ring{position:absolute;width:32vmin;height:32vmin;border:2px solid rgba(89,220,255,.75);border-radius:50%;box-shadow:0 0 24px #35c8ff,inset 0 0 24px #35c8ff;opacity:0;animation:v89ring 1.15s ease-out infinite}
+.celebration-ring.r2{animation-delay:.38s}.celebration-ring.r3{animation-delay:.76s}
+.celebration-bolt{position:absolute;width:4px;height:46vh;background:linear-gradient(transparent,#fff 12%,#35c8ff 44%,#fff 62%,transparent);filter:drop-shadow(0 0 8px #35c8ff) drop-shadow(0 0 18px #168cff);clip-path:polygon(40% 0,100% 0,62% 39%,100% 39%,20% 100%,42% 55%,0 55%);opacity:0;animation:v89bolt 1.35s steps(2,end) infinite}
+.celebration-bolt.b1{left:10%;top:-6%;transform:rotate(-12deg)}.celebration-bolt.b2{right:11%;bottom:-8%;transform:rotate(168deg);animation-delay:.31s}.celebration-bolt.b3{left:77%;top:-9%;height:34vh;transform:rotate(13deg);animation-delay:.68s}.celebration-bolt.b4{left:21%;bottom:-8%;height:32vh;transform:rotate(194deg);animation-delay:.92s}
+.celebration-particles{position:absolute;inset:0;pointer-events:none}.celebration-particle{position:absolute;left:var(--x);bottom:-12px;width:var(--s);height:var(--s);border-radius:50%;background:#aeeaff;box-shadow:0 0 8px #35c8ff,0 0 18px #168cff;animation:v89particle var(--d) linear infinite;animation-delay:var(--delay)}
+.celebration-flash{position:absolute;inset:0;background:#dff8ff;opacity:0;mix-blend-mode:screen;pointer-events:none;animation:v89flash 4.4s ease-out both}
+.celebration-card{position:relative;z-index:3;width:min(91vw,400px);padding:36px 22px 25px;text-align:center;border:1px solid rgba(89,220,255,.92);border-radius:26px;background:linear-gradient(160deg,rgba(13,45,70,.95),rgba(3,13,24,.97));box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 0 34px rgba(53,200,255,.58),0 0 110px rgba(22,140,255,.28);transform:scale(.55);opacity:0;animation:v89impact .72s .34s cubic-bezier(.12,1.28,.24,1) forwards}
+.celebration-kicker{font-size:15px;font-weight:1000;letter-spacing:.15em;color:#6edbff;text-shadow:0 0 10px #35c8ff,0 0 26px #168cff;animation:v89flicker 1.3s infinite}
+.celebration-exercise{font-size:25px;font-weight:1000;color:#fff;margin:13px 0 17px;text-transform:uppercase;text-shadow:0 2px 12px #000}
+.celebration-levels{font-size:21px;font-weight:950;color:#fff}.celebration-levels span,.celebration-characters span{color:#5ed7ff;margin:0 5px}
+.celebration-jump{font-size:38px;font-weight:1000;color:#71ddff;margin:10px 0 4px;text-shadow:0 0 12px #35c8ff,0 0 32px #168cff;opacity:0;animation:v89slam .62s 1.28s cubic-bezier(.12,1.4,.3,1) forwards}
+.celebration-characters{font-size:12px;color:#bcecff;margin-top:13px;font-weight:800}.celebration-tap{font-size:9px;letter-spacing:.17em;color:#8aa9be;margin-top:23px}
+.levelup-celebration.surge .celebration-energy{animation-duration:3.2s;opacity:1}.levelup-celebration.surge .celebration-card{box-shadow:0 0 38px rgba(53,200,255,.85),0 0 150px rgba(22,140,255,.42)}
+.levelup-celebration.mastered{background:radial-gradient(circle at 50% 50%,rgba(86,69,17,.46),rgba(1,5,10,.97) 70%)}
+.levelup-celebration.mastered .celebration-card{border-color:#f5d96d;box-shadow:0 0 38px rgba(245,217,109,.72),0 0 130px rgba(245,217,109,.27)}
+.levelup-celebration.mastered .celebration-kicker,.levelup-celebration.mastered .celebration-jump{color:#ffe78d;text-shadow:0 0 14px #e9c75f,0 0 34px #fff1a8}.levelup-celebration.mastered .celebration-ring{border-color:#ffe78d;box-shadow:0 0 24px #e9c75f,inset 0 0 24px #e9c75f}.levelup-celebration.mastered .celebration-particle{background:#fff2ad;box-shadow:0 0 8px #e9c75f,0 0 18px #fff1a8}
+.levelup-celebration.overall .celebration-card{border-width:2px;transform:scale(.5)}
+@keyframes v89impact{0%{transform:scale(.52);opacity:0;filter:brightness(3)}58%{transform:scale(1.07);opacity:1;filter:brightness(1.35)}100%{transform:scale(1);opacity:1;filter:brightness(1)}}
+@keyframes v89slam{0%{transform:scale(2.8);opacity:0;filter:blur(7px)}65%{transform:scale(.92);opacity:1;filter:blur(0)}100%{transform:scale(1);opacity:1}}
+@keyframes v89ring{0%{transform:scale(.2);opacity:0}15%{opacity:1}100%{transform:scale(5.8);opacity:0}}
+@keyframes v89breathe{from{transform:scale(.82);opacity:.45}to{transform:scale(1.04);opacity:1}}
+@keyframes v89spin{to{transform:rotate(360deg)}}
+@keyframes v89bolt{0%,12%,26%,100%{opacity:0}14%,20%{opacity:.95}22%{opacity:.3}}
+@keyframes v89particle{0%{transform:translate3d(0,0,0) scale(.4);opacity:0}10%{opacity:1}100%{transform:translate3d(var(--drift),-112vh,0) scale(1.4);opacity:0}}
+@keyframes v89flash{0%,19%,100%{opacity:0}20%{opacity:.78}23%{opacity:0}29%{opacity:.25}31%{opacity:0}}
+@keyframes v89flicker{0%,100%{opacity:1}48%{opacity:.82}52%{opacity:1}}
+@media(max-width:430px){.celebration-card{padding:32px 18px 23px}.celebration-exercise{font-size:23px}.celebration-jump{font-size:35px}}
 /* V88 — compact Bodyweight Squat dual inputs */
 #bwSquatReps,#bwSquatRest{min-width:0!important;width:100%!important;height:58px!important;padding:10px 11px!important;font-size:20px!important;line-height:1!important;text-align:center!important}
 #bwSquatReps::placeholder,#bwSquatRest::placeholder{font-size:13px!important;letter-spacing:0!important;color:#8292a4!important;opacity:1!important}
@@ -2319,6 +2333,8 @@ function readData(){const d={mode,cardioMode};keys.forEach(k=>d[k]=n(k));d.bench
 function saveData(d){try{localStorage.setItem('fitnessRPGv11',JSON.stringify(d))}catch(e){}}
 // V87 requested one-time clean slate so the new level-up celebrations can be tested with yesterday's data.
 (function(){try{const marker='levelUpV87ResetDone';if(!localStorage.getItem(marker)){localStorage.removeItem('fitnessRPGv11');localStorage.removeItem('fitnessRPGStatsV1');localStorage.removeItem('fitnessRPGCelebrationLevelsV1');localStorage.setItem(marker,'1')}}catch(e){}})();
+// V89 requested one-time reset for a clean animation test. This runs once, then never again.
+(function(){try{const marker='levelUpV89ResetDone';if(!localStorage.getItem(marker)){localStorage.removeItem('fitnessRPGv11');localStorage.removeItem('fitnessRPGStatsV1');localStorage.removeItem('fitnessRPGCelebrationLevelsV1');localStorage.setItem(marker,'1')}}catch(e){}})();
 function loadData(){try{const d=JSON.parse(localStorage.getItem('fitnessRPGv11')||'null');if(!d)return;keys.forEach(k=>{if(d[k]!=null)document.getElementById(k).value=d[k]});if(d.benchWeight!=null)benchWeight.value=d.benchWeight;if(d.benchReps!=null)benchReps.value=d.benchReps;if(d.bwSquatReps!=null)bwSquatReps.value=d.bwSquatReps;if(d.bwSquatRest!=null)bwSquatRest.value=d.bwSquatRest;else if(d.bwSquatReps)bwSquatRest.value=60;['chinAssist','chinRepsA','chinRepsBW','chinWeight','chinRepsW','cardioInclineKm','cardioStairs','cardioRunKm'].forEach(k=>{if(d[k]!=null)document.getElementById(k).value=d[k]});if(d.cardio5Sec){cardio5Min.value=Math.floor(d.cardio5Sec/60);cardio5Sec.value=d.cardio5Sec%60}if(d.cardio10Sec){cardio10Min.value=Math.floor(d.cardio10Sec/60);cardio10Sec.value=d.cardio10Sec%60};Object.keys(assessmentDefs).forEach(k=>{if(d.assess&&d.assess[k])document.getElementById('assess_'+k).checked=true});setMode(d.mode||'assist');setCardioMode(d.cardioMode||'incline')}catch(e){}}
 function chinPass(req,d){if(req.chin_type==='assist')return d.mode==='assist'&&d.chinAssist>0&&d.chinAssist<=req.chin_value&&d.chinRepsA>=req.chin_reps;if(req.chin_type==='bw')return (d.mode==='bw'&&d.chinRepsBW>=req.chin_reps)||(d.mode==='weighted'&&d.chinRepsW>=req.chin_reps);return d.mode==='weighted'&&d.chinWeight>=req.chin_value&&d.chinRepsW>=req.chin_reps}
 function cardioPass(req,d){if(req.cardio_type==='incline')return d.cardioInclineKm>=req.cardio_a;if(req.cardio_type==='combo')return d.cardioInclineKm>=req.cardio_a&&d.cardioStairs>=req.cardio_b;if(req.cardio_type==='run')return d.cardioRunKm>=req.cardio_a;if(req.cardio_type==='5k')return d.cardio5Sec>0&&d.cardio5Sec<=req.cardio_a;if(req.cardio_type==='5k10k')return d.cardio5Sec>0&&d.cardio5Sec<=req.cardio_a&&d.cardio10Sec>0&&d.cardio10Sec<=req.cardio_b;return false}
@@ -2502,9 +2518,10 @@ function queueLevelCelebrations(prev,next){
 function playNextCelebration(){if(celebrationPlaying||!celebrationQueue.length)return;celebrationPlaying=true;const e=celebrationQueue.shift();const ov=document.createElement('div');ov.className='levelup-celebration '+e.kind;
   const title=e.kind==='mastered'?'EXERCISE MASTERED':e.kind==='surge'?'POWER SURGE!':e.kind==='multi'?'MULTI-LEVEL UP!':e.kind==='overall'?'OVERALL LEVEL UP!':'EXERCISE LEVEL UP!';
   const fromName=celebrationCharacter(e.from),toName=celebrationCharacter(e.to);
-  ov.innerHTML=`<div class="celebration-energy"></div><div class="celebration-card"><div class="celebration-kicker">${title}</div><div class="celebration-exercise">${e.label}</div><div class="celebration-levels">LEVEL ${e.from} <span>→</span> LEVEL ${e.to}</div>${e.jump>1?`<div class="celebration-jump">+${e.jump} LEVELS</div>`:''}<div class="celebration-characters">${fromName} <span>→</span> ${toName}</div><div class="celebration-tap">TAP TO CONTINUE</div></div>`;
+  const particles=Array.from({length:34},(_,i)=>`<i class="celebration-particle" style="--x:${(i*37)%100}%;--s:${2+(i%4)}px;--d:${2.4+(i%7)*.23}s;--delay:${-(i%9)*.31}s;--drift:${((i%7)-3)*13}px"></i>`).join('');
+  ov.innerHTML=`<div class="celebration-energy"></div><div class="celebration-aura"></div><div class="celebration-ring"></div><div class="celebration-ring r2"></div><div class="celebration-ring r3"></div><i class="celebration-bolt b1"></i><i class="celebration-bolt b2"></i><i class="celebration-bolt b3"></i><i class="celebration-bolt b4"></i><div class="celebration-particles">${particles}</div><div class="celebration-flash"></div><div class="celebration-card"><div class="celebration-kicker">${title}</div><div class="celebration-exercise">${e.label}</div><div class="celebration-levels">LEVEL ${e.from} <span>→</span> LEVEL ${e.to}</div>${e.jump>1?`<div class="celebration-jump">+${e.jump} LEVELS</div>`:''}<div class="celebration-characters">${fromName} <span>→</span> ${toName}</div><div class="celebration-tap">TAP ANYWHERE TO SKIP</div></div>`;
   document.body.appendChild(ov);requestAnimationFrame(()=>ov.classList.add('show'));
-  let done=false;const close=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},260)};ov.addEventListener('click',close);setTimeout(close,e.kind==='overall'||e.kind==='mastered'?2400:1900);
+  let done=false;const close=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},330)};ov.addEventListener('click',close);const hold=e.kind==='overall'||e.kind==='mastered'?5200:e.kind==='surge'?4800:4200;setTimeout(close,hold);
 }
 function calculate(){const d=readData();const prev=loadCelebrationLevels();saveData(d);recordPBHistory(d);let overall=highestOverall(d);if(overall<1)overall=1;renderHero(overall,d);renderStatuses(d);renderRankings(overall,d);renderStats(d);const next=snapshotLevels(d);if(celebrationsReady&&prev)queueLevelCelebrations(prev,next);saveCelebrationLevels(next);calcStatus.textContent='Rankings updated ✓';setTimeout(()=>calcStatus.textContent='',1400)}
 calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try{switchAppTab(({demos:'glossary'}[sessionStorage.getItem('fitnessRPGActiveTab')]||sessionStorage.getItem('fitnessRPGActiveTab'))||'progress')}catch(e){switchAppTab('progress')}calculate();celebrationsReady=true;
