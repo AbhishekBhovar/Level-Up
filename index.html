@@ -2581,9 +2581,9 @@ calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try
 (function(){
  const splash=document.getElementById('powerSplash'),bar=document.getElementById('splashBar');
  if(!splash)return;
- const ver='v83'; let first=true;
+ const ver='v92'; let first=true;
  try{first=localStorage.getItem('levelUpSplashVersion')!==ver}catch(e){}
- const duration=4000;
+ const duration=4500;
  if(bar){bar.style.transition='width '+(duration-300)+'ms cubic-bezier(.22,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>bar.style.width='100%'))}
  setTimeout(()=>{splash.classList.add('splash-hide');try{localStorage.setItem('levelUpSplashVersion',ver)}catch(e){}setTimeout(()=>splash.remove(),650)},duration);
 })();
@@ -2635,5 +2635,29 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
 .level-card[data-level] .level-summary-left{min-width:0!important;max-width:calc(100% - 16px)!important}
 .level-card[data-level] .chev{position:absolute!important;right:82px!important;top:50%!important;transform:translateY(-50%)!important;margin:0!important;width:18px!important;text-align:center!important}
 .level-card[data-level] summary::after{position:absolute!important;right:12px!important;top:50%!important;transform:translateY(-50%)!important;margin-left:0!important;text-align:right!important}
+
+/* V92 — 4.5s startup storm: denser branching lightning, irregular illumination and harder crescendo. */
+#powerSplash .thor-storm{filter:drop-shadow(0 0 8px rgba(73,214,255,.78)) drop-shadow(0 0 20px rgba(0,132,255,.42))!important}
+#powerSplash .thor-storm .mainbolt{stroke-width:3.1!important;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 11px #25cfff)!important}
+#powerSplash .thor-storm .branch{stroke-width:1.65!important;filter:drop-shadow(0 0 6px #28c8ff)!important}
+#powerSplash .strike1{animation:v92StrikeA .49s 0s infinite!important}
+#powerSplash .strike2{animation:v92StrikeB .43s .17s infinite!important}
+#powerSplash .strike3{animation:v92StrikeC .39s .34s infinite!important}
+#powerSplash .strike4{animation:v92StrikeB .35s .55s infinite reverse!important}
+#powerSplash .strike5{animation:v92StrikeA .31s .78s infinite!important}
+#powerSplash .strike6{animation:v92StrikeC .27s 1.02s infinite reverse!important}
+#powerSplash .strike7{animation:v92StrikeA .23s 1.24s infinite!important}
+@keyframes v92StrikeA{0%,32%,51%,70%,100%{opacity:0}34%{opacity:.38}37%{opacity:1}41%{opacity:.08}54%{opacity:.72}58%{opacity:0}73%{opacity:1}78%{opacity:.12}}
+@keyframes v92StrikeB{0%,19%,40%,61%,82%,100%{opacity:0}22%{opacity:1}27%{opacity:.14}43%{opacity:.68}47%{opacity:0}64%{opacity:1}69%{opacity:.06}85%{opacity:.82}89%{opacity:0}}
+@keyframes v92StrikeC{0%,14%,35%,54%,73%,91%,100%{opacity:0}17%{opacity:.86}21%{opacity:0}38%{opacity:1}43%{opacity:.1}57%{opacity:.64}61%{opacity:0}76%{opacity:1}81%{opacity:0}94%{opacity:.75}}
+#powerSplash .thunder-flash{animation:v92AmbientChaos 4.5s steps(1,end) forwards!important;background:radial-gradient(circle at 50% 45%,rgba(148,232,255,.46),rgba(17,137,255,.18) 35%,rgba(0,62,130,.04) 67%,transparent 78%)!important}
+@keyframes v92AmbientChaos{0%{opacity:.02}7%{opacity:.18}9%{opacity:.03}16%{opacity:.28}18%{opacity:.05}26%{opacity:.16}31%{opacity:.42}33%{opacity:.08}41%{opacity:.26}48%{opacity:.55}50%{opacity:.11}58%{opacity:.38}64%{opacity:.67}66%{opacity:.15}73%{opacity:.48}79%{opacity:.78}81%{opacity:.24}86%{opacity:.62}90%{opacity:.88}92%{opacity:.34}95%{opacity:1}97%{opacity:.5}100%{opacity:1}}
+#powerSplash .aura{animation:v92Aura 4.5s cubic-bezier(.18,.72,.2,1) forwards!important}
+@keyframes v92Aura{0%{opacity:.08;transform:translate(-50%,-50%) scale(.72)}18%{opacity:.18;transform:translate(-50%,-50%) scale(.86)}39%{opacity:.34;transform:translate(-50%,-50%) scale(1.02)}58%{opacity:.52;transform:translate(-50%,-50%) scale(1.18)}74%{opacity:.7;transform:translate(-50%,-50%) scale(1.35)}87%{opacity:.92;transform:translate(-50%,-50%) scale(1.58)}96%{opacity:1;transform:translate(-50%,-50%) scale(1.9)}100%{opacity:.15;transform:translate(-50%,-50%) scale(2.25)}}
+#powerSplash .flash{animation:v92Impact 4.5s steps(1,end) forwards!important}
+@keyframes v92Impact{0%,82%{opacity:0}83%{opacity:.16}84%{opacity:0}86%{opacity:.34}87%{opacity:.04}89%{opacity:.58}90%{opacity:.08}92%{opacity:.82}93%{opacity:.14}95%{opacity:1}98%{opacity:1}99%{opacity:.72}100%{opacity:0}}
+#powerSplash .shock{animation:v92Shock 4.5s cubic-bezier(.05,.86,.08,1) forwards!important}
+@keyframes v92Shock{0%,89%{opacity:0;transform:translate(-50%,-50%) scale(.12)}90%{opacity:.95;transform:translate(-50%,-50%) scale(.25)}93%{opacity:.82;transform:translate(-50%,-50%) scale(1.8)}96%{opacity:.48;transform:translate(-50%,-50%) scale(5)}99%{opacity:.14;transform:translate(-50%,-50%) scale(9)}100%{opacity:0;transform:translate(-50%,-50%) scale(11)}}
+
 </style>
 </div></body></html>
