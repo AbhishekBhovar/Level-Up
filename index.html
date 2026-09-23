@@ -2227,6 +2227,25 @@ input,.nextbox,.cardio-panel{background:#07131f!important;border-color:rgba(96,1
 @keyframes v90slam{0%{opacity:0;transform:scale(2.2)}100%{opacity:1;transform:scale(1)}}
 @keyframes v90shake{from{transform:translate3d(-4px,2px,0)}to{transform:translate3d(4px,-2px,0)}}
 </style>
+
+<style id="v91-gold-transformation">
+/* V91 — blue charge transforms into gold for multi-level power-ups. */
+.levelup-celebration.multi,.levelup-celebration.surge{background:radial-gradient(circle at 50% 58%,rgba(112,79,5,.30),rgba(8,25,40,.76) 42%,rgba(1,4,9,.99) 72%)}
+.levelup-celebration.multi::before,.levelup-celebration.surge::before{background:radial-gradient(ellipse,rgba(255,255,255,.98) 0 3%,rgba(255,244,165,.88) 8%,rgba(255,205,48,.55) 19%,rgba(255,166,0,.23) 39%,transparent 68%);filter:blur(8px);animation:v91goldAura 5.1s cubic-bezier(.2,.8,.2,1) both}
+.levelup-celebration.multi::after,.levelup-celebration.surge::after{border-color:#fff2a6;box-shadow:0 0 34px #fff,0 0 86px #ffd42a,0 0 150px #ff9f00;animation:v91goldBurst 5.1s ease-out both}
+.levelup-celebration.multi .celebration-aura,.levelup-celebration.surge .celebration-aura{background:radial-gradient(ellipse,rgba(255,255,255,.88) 0 2%,rgba(255,230,82,.62) 9%,rgba(255,184,18,.32) 28%,rgba(255,130,0,.11) 47%,transparent 68%);filter:blur(6px);animation:v91goldPulse .15s ease-in-out infinite alternate}
+.levelup-celebration.multi .celebration-energy,.levelup-celebration.surge .celebration-energy{background:repeating-conic-gradient(from 0deg,rgba(255,207,39,0) 0deg 8deg,rgba(255,225,91,.26) 9deg,rgba(255,157,0,.12) 11deg,rgba(255,207,39,0) 13deg 21deg);opacity:1}
+.levelup-celebration.multi .celebration-ring,.levelup-celebration.surge .celebration-ring{border-color:#ffe96a;box-shadow:0 0 30px #ffd42a,inset 0 0 28px #ffb300}
+.levelup-celebration.multi .celebration-bolt,.levelup-celebration.surge .celebration-bolt{background:linear-gradient(transparent,#fff 10%,#ffe55a 38%,#fff 58%,#ffb000 78%,transparent);filter:drop-shadow(0 0 10px #fff) drop-shadow(0 0 25px #ffd42a) drop-shadow(0 0 48px #ff9f00)}
+.levelup-celebration.multi .celebration-particle,.levelup-celebration.surge .celebration-particle{background:#fff0a0;box-shadow:0 0 9px #fff,0 0 20px #ffd42a,0 0 34px #ff9f00}
+.levelup-celebration.multi .celebration-flash,.levelup-celebration.surge .celebration-flash{background:#fff3a8}
+.levelup-celebration.multi .celebration-kicker,.levelup-celebration.surge .celebration-kicker{color:#ffe76a;text-shadow:0 0 12px #ffd42a,0 0 30px #ff9f00}
+.levelup-celebration.multi .celebration-final-level,.levelup-celebration.surge .celebration-final-level{color:#fffdf0;text-shadow:0 0 12px #fff,0 0 34px #ffe44d,0 0 78px #ffad00}
+.levelup-celebration.multi .celebration-jump,.levelup-celebration.surge .celebration-jump{color:#ffe76a;text-shadow:0 0 12px #fff2a6,0 0 30px #ffbd00}
+@keyframes v91goldPulse{from{transform:scale(.78,.88);opacity:.48}to{transform:scale(1.18,1.08);opacity:1}}
+@keyframes v91goldAura{0%,17%{opacity:0;transform:translate(-50%,-50%) scale(.32)}30%{opacity:.12}43%{opacity:.34}55%{opacity:.72;transform:translate(-50%,-50%) scale(.78)}66%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}72%{opacity:.2}77%{opacity:1}100%{opacity:.5;transform:translate(-50%,-50%) scale(1.48)}}
+@keyframes v91goldBurst{0%,61%{opacity:0;transform:translate(-50%,-50%) scale(.1)}65%{opacity:1}77%{opacity:.55;transform:translate(-50%,-50%) scale(12)}100%{opacity:0;transform:translate(-50%,-50%) scale(19)}}
+</style>
 </head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -2365,6 +2384,8 @@ function saveData(d){try{localStorage.setItem('fitnessRPGv11',JSON.stringify(d))
 (function(){try{const marker='levelUpV87ResetDone';if(!localStorage.getItem(marker)){localStorage.removeItem('fitnessRPGv11');localStorage.removeItem('fitnessRPGStatsV1');localStorage.removeItem('fitnessRPGCelebrationLevelsV1');localStorage.setItem(marker,'1')}}catch(e){}})();
 // V90 requested one-time clean reset for transformation testing. Runs once only.
 (function(){try{const marker='levelUpV90ResetDone';if(!localStorage.getItem(marker)){localStorage.removeItem('fitnessRPGv11');localStorage.removeItem('fitnessRPGStatsV1');localStorage.removeItem('fitnessRPGCelebrationLevelsV1');localStorage.setItem(marker,'1')}}catch(e){}})();
+// V91 one-time clean reset requested for gold transformation testing.
+(function(){try{const marker='levelUpV91ResetDone';if(!localStorage.getItem(marker)){localStorage.removeItem('fitnessRPGv11');localStorage.removeItem('fitnessRPGStatsV1');localStorage.removeItem('fitnessRPGCelebrationLevelsV1');localStorage.setItem(marker,'1')}}catch(e){}})();
 function loadData(){try{const d=JSON.parse(localStorage.getItem('fitnessRPGv11')||'null');if(!d)return;keys.forEach(k=>{if(d[k]!=null)document.getElementById(k).value=d[k]});if(d.benchWeight!=null)benchWeight.value=d.benchWeight;if(d.benchReps!=null)benchReps.value=d.benchReps;if(d.bwSquatReps!=null)bwSquatReps.value=d.bwSquatReps;if(d.bwSquatRest!=null)bwSquatRest.value=d.bwSquatRest;else if(d.bwSquatReps)bwSquatRest.value=60;['chinAssist','chinRepsA','chinRepsBW','chinWeight','chinRepsW','cardioInclineKm','cardioStairs','cardioRunKm'].forEach(k=>{if(d[k]!=null)document.getElementById(k).value=d[k]});if(d.cardio5Sec){cardio5Min.value=Math.floor(d.cardio5Sec/60);cardio5Sec.value=d.cardio5Sec%60}if(d.cardio10Sec){cardio10Min.value=Math.floor(d.cardio10Sec/60);cardio10Sec.value=d.cardio10Sec%60};Object.keys(assessmentDefs).forEach(k=>{if(d.assess&&d.assess[k])document.getElementById('assess_'+k).checked=true});setMode(d.mode||'assist');setCardioMode(d.cardioMode||'incline')}catch(e){}}
 function chinPass(req,d){if(req.chin_type==='assist')return d.mode==='assist'&&d.chinAssist>0&&d.chinAssist<=req.chin_value&&d.chinRepsA>=req.chin_reps;if(req.chin_type==='bw')return (d.mode==='bw'&&d.chinRepsBW>=req.chin_reps)||(d.mode==='weighted'&&d.chinRepsW>=req.chin_reps);return d.mode==='weighted'&&d.chinWeight>=req.chin_value&&d.chinRepsW>=req.chin_reps}
 function cardioPass(req,d){if(req.cardio_type==='incline')return d.cardioInclineKm>=req.cardio_a;if(req.cardio_type==='combo')return d.cardioInclineKm>=req.cardio_a&&d.cardioStairs>=req.cardio_b;if(req.cardio_type==='run')return d.cardioRunKm>=req.cardio_a;if(req.cardio_type==='5k')return d.cardio5Sec>0&&d.cardio5Sec<=req.cardio_a;if(req.cardio_type==='5k10k')return d.cardio5Sec>0&&d.cardio5Sec<=req.cardio_a&&d.cardio10Sec>0&&d.cardio10Sec<=req.cardio_b;return false}
