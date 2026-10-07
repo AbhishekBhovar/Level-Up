@@ -2704,7 +2704,7 @@ function playNextCelebration(){if(celebrationPlaying||!celebrationQueue.length)r
   const streaks=`<div class="v100-energy-streaks"><svg viewBox="0 0 390 844" preserveAspectRatio="none" aria-hidden="true"><path class="s1" pathLength="1" d="M-40 735 C65 620 82 430 210 250 S382 90 445 -40"/><path class="s2" pathLength="1" d="M-65 165 C78 250 115 410 248 535 S388 720 455 890"/><path class="s3" pathLength="1" d="M35 900 C75 690 178 590 168 390 S230 110 330 -60"/><path class="s4" pathLength="1" d="M430 760 C310 650 320 510 198 438 S75 220 -35 100"/><path class="s5" pathLength="1" d="M-30 510 C90 470 125 340 245 290 S350 145 420 20"/></svg></div>`;
   ov.innerHTML=`<div class="celebration-energy"></div><div class="celebration-aura"></div>${streaks}<i class="celebration-bolt b1"></i><i class="celebration-bolt b2"></i><i class="celebration-bolt b3"></i><i class="celebration-bolt b4"></i><div class="celebration-particles">${particles}</div><div class="celebration-flash"></div><div class="celebration-card"><div class="celebration-kicker">${title}</div><div class="celebration-final-level">LEVEL ${e.to}</div>${e.kind!=='overall'?`<div class="celebration-reached">${toName}</div>`:''}${e.jump>1?`<div class="celebration-jump">+${e.jump}</div>`:''}<div class="celebration-tap">TAP TO SKIP</div></div>`;
   document.body.appendChild(ov);requestAnimationFrame(()=>ov.classList.add('show'));
-  let done=false;const close=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},330)};ov.addEventListener('click',close);const hold=e.kind==='overall'||e.kind==='mastered'?5900:e.kind==='surge'?6900:6300;setTimeout(close,hold);
+  let done=false;const close=(skipped=false)=>{if(done)return;done=true;if(e.kind!=='overall'&&!skipped){ov.classList.add('v101-exit');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},245)}else{ov.classList.add('out');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},330)}};ov.addEventListener('click',()=>close(true));const hold=e.kind==='overall'?5900:(e.kind==='mastered'?6650:e.kind==='surge'?6650:6350);setTimeout(()=>close(false),hold);
 }
 function calculate(){const d=readData();const prev=loadCelebrationLevels();saveData(d);recordPBHistory(d);let overall=highestOverall(d);if(overall<1)overall=1;renderHero(overall,d);renderStatuses(d);renderRankings(overall,d);renderStats(d);const next=snapshotLevels(d);if(celebrationsReady&&prev)queueLevelCelebrations(prev,next);saveCelebrationLevels(next);calcStatus.textContent='Rankings updated ✓';setTimeout(()=>calcStatus.textContent='',1400)}
 calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try{switchAppTab(({demos:'glossary'}[sessionStorage.getItem('fitnessRPGActiveTab')]||sessionStorage.getItem('fitnessRPGActiveTab'))||'progress')}catch(e){switchAppTab('progress')}calculate();celebrationsReady=true;
@@ -2834,4 +2834,35 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
   85%{opacity:.94} 88%{opacity:1} 96%{opacity:1} 100%{opacity:0}
 }
 @keyframes v98RevealAfterWhiteout{0%{opacity:0;transform:scale(.72);filter:brightness(2.4) blur(5px)}100%{opacity:1;transform:scale(1);filter:brightness(1) blur(0)}}
+</style>
+
+<style id="v101-exercise-celebration-ending">
+/* V101 — decisive ending for per-exercise rank-up celebrations: impact reveal, victory hold, hard exit. */
+.levelup-celebration:not(.overall) .celebration-card{
+  animation:v101ImpactReveal .46s 4.22s cubic-bezier(.08,1.32,.18,1) forwards!important;
+}
+.levelup-celebration:not(.overall) .celebration-reached{
+  animation:v101NameLand .34s 4.50s cubic-bezier(.08,1.25,.18,1) forwards!important;
+}
+.levelup-celebration:not(.overall) .celebration-jump{
+  animation:v101NameLand .30s 4.68s cubic-bezier(.08,1.25,.18,1) forwards!important;
+}
+.levelup-celebration:not(.overall) .celebration-tap{
+  animation:v100Tap .28s 4.92s forwards!important;
+}
+.levelup-celebration:not(.overall)::after{
+  content:""!important;display:block!important;position:absolute!important;inset:0!important;z-index:9!important;
+  pointer-events:none!important;opacity:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.98) 0 1.5%,rgba(103,220,255,.58) 2.5%,rgba(29,143,255,.16) 12%,transparent 31%)!important;
+  animation:v101FinalPulse .54s 4.18s ease-out both!important;
+}
+.levelup-celebration.multi:not(.overall)::after,.levelup-celebration.surge:not(.overall)::after,.levelup-celebration.mastered:not(.overall)::after{
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,1) 0 1.5%,rgba(255,239,127,.72) 2.8%,rgba(255,187,24,.20) 13%,transparent 32%)!important;
+}
+.levelup-celebration.v101-exit:not(.overall){animation:v101HardExit .24s cubic-bezier(.7,0,1,1) forwards!important}
+.levelup-celebration.v101-exit:not(.overall) .celebration-card{animation:v101CardCollapse .20s ease-in forwards!important}
+@keyframes v101ImpactReveal{0%{opacity:0;transform:scale(1.55);filter:blur(16px) brightness(3)}42%{opacity:1;transform:scale(.94);filter:blur(0) brightness(1.8)}72%{transform:scale(1.035);filter:brightness(1.15)}100%{opacity:1;transform:scale(1);filter:none}}
+@keyframes v101NameLand{0%{opacity:0;transform:translateY(20px) scale(1.16);filter:blur(8px)}62%{opacity:1;transform:translateY(-2px) scale(.98);filter:none}100%{opacity:1;transform:none;filter:none}}
+@keyframes v101FinalPulse{0%,7%{opacity:0;transform:scale(.25)}16%{opacity:1}42%{opacity:.28;transform:scale(2.8)}100%{opacity:0;transform:scale(5.4)}}
+@keyframes v101HardExit{0%{opacity:1;filter:brightness(1)}58%{opacity:1;filter:brightness(1.8)}100%{opacity:0;filter:brightness(2.6)}}
+@keyframes v101CardCollapse{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.88);filter:blur(5px)}}
 </style>
