@@ -2931,9 +2931,9 @@ html{overflow-x:hidden!important}body{overflow-x:hidden!important;background:#05
 </style>
 <script id="v104-arena-behaviour">
 (function(){
-const symbols=['◆','◈','◇','⬡','✦','▣','◎','⇄','⌁','↟','◉','★'];
+const symbols=[];
 const tiles=[...document.querySelectorAll('#progressView .vx-category')];
-tiles.forEach((tile,i)=>{tile.dataset.v104Symbol=symbols[i%symbols.length];tile.setAttribute('aria-label','Train '+(tile.querySelector('strong')?.textContent||'ability'));});
+tiles.forEach((tile,i)=>{tile.dataset.v104Symbol='';tile.setAttribute('aria-label','Train '+(tile.querySelector('strong')?.textContent||'ability'));});
 const portrait=document.getElementById('v103Portrait');if(portrait)portrait.addEventListener('error',()=>{portrait.style.opacity='.2'});
 const guide=document.querySelector('#vxGuideList');if(guide){guide.setAttribute('aria-label','Training academy techniques')}
 })();
@@ -3074,3 +3074,92 @@ body{padding-bottom:92px!important;color:#f1f5fc!important}
 #statsView .stats-shell{display:block!important}
 @media(max-width:390px){.vx-hero{height:310px}.vx-category{min-height:100px}.vx-hero .big{font-size:29px!important}}
 </style>
+<style id="v105-experience">
+/* V105: safe-area correct app shell and a functional arena, not cosmetic diamonds */
+:root{--arena:#46caff;--arena-gold:#ffcf73}
+.levelup-header{height:calc(64px + env(safe-area-inset-top,0px))!important;min-height:calc(64px + env(safe-area-inset-top,0px))!important;padding:env(safe-area-inset-top,0px) 18px 0!important;display:flex!important;align-items:center!important;position:relative!important;overflow:visible!important;background:#040a15!important;z-index:10!important}
+.levelup-brand{transform:none!important;display:flex!important;align-items:center!important;gap:12px!important;min-width:0!important;height:64px!important}
+.levelup-mark{width:48px!important;height:48px!important;min-width:48px!important;object-fit:contain!important;border:0!important}
+.levelup-wordmark{font-size:clamp(25px,7vw,34px)!important;line-height:1!important;display:flex!important;align-items:center!important;gap:8px!important;white-space:nowrap!important;letter-spacing:-.04em!important}
+.levelup-header:before{content:none!important}
+.wrap{padding-top:18px!important}
+.v103-train-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+.v103-train-tabs button{min-width:0!important;min-height:56px!important;padding:9px 4px!important;font-size:clamp(9px,2.6vw,12px)!important;line-height:1.15!important;white-space:normal!important;touch-action:manipulation}
+.v103-train-tabs button.active{background:linear-gradient(135deg,#166394,#123652)!important;box-shadow:inset 0 0 0 1px #4fd6ff,0 0 20px #17aaff40!important}
+.vx-categories{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+.vx-category{min-height:94px!important;border-radius:7px!important;clip-path:polygon(0 0,94% 0,100% 13%,100% 100%,6% 100%,0 87%)!important;background:linear-gradient(145deg,#1a3856,#0a172b 76%)!important;box-shadow:inset 3px 0 #39bfff!important;padding:12px!important;transition:transform .18s,filter .18s,box-shadow .18s!important}
+.vx-category:before{content:none!important}
+.vx-category small{font-size:9px!important;color:#67caff!important}
+.vx-category strong{font-size:14px!important}
+.vx-category:active{transform:scale(.94)!important;filter:brightness(1.5)!important}
+.v103-fighter-home{animation:v105Entrance .55s ease-out both}
+.v103-fighter-home .v103-art img{animation:v105Portrait .75s ease-out both}
+.v103-mission{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.vx-fighter img{transition:opacity .16s,transform .4s!important}
+.vx-fighter.v105-enter img{animation:v105FighterSwap .42s cubic-bezier(.12,.8,.2,1) both}
+.vx-fighter-nav button:active{transform:scale(.9);filter:brightness(1.5)}
+.vx-guide-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.vx-guide-list button{min-height:80px!important;border-radius:7px!important;clip-path:polygon(0 0,95% 0,100% 12%,100% 100%,0 100%)!important;font-size:12px!important;padding:12px!important}
+.vx-rank-item{border-radius:8px!important;clip-path:polygon(0 0,96% 0,100% 14%,100% 100%,0 100%)!important}
+#v105RankSpotlight{display:none;position:relative;min-height:180px;overflow:hidden;background:#0a1628;border:1px solid #47708c;border-radius:12px;margin:10px 0 18px;isolation:isolate}
+#v105RankSpotlight.open{display:flex;align-items:flex-end;animation:v105Entrance .25s ease-out}
+#v105RankSpotlight img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;opacity:.9;z-index:-2}
+#v105RankSpotlight:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#05101df0 0%,#07132388 54%,transparent),linear-gradient(0deg,#071323 0%,transparent 90%);z-index:-1}
+#v105RankSpotlight .copy{padding:18px;max-width:78%}
+#v105RankSpotlight .copy small{color:#79d7ff;letter-spacing:.16em;font-weight:900}
+#v105RankSpotlight .copy h2{font-size:24px;margin:7px 0 4px}
+#v105RankSpotlight .copy p{font-size:12px;color:#ffd17e;margin:0}
+#v105RankSpotlight .close{position:absolute;right:9px;top:9px;border:1px solid #6d9cbb;background:#0b1d33e6;color:white;border-radius:7px;padding:6px 10px}
+#v105ArenaFlash{position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 52%,#d8f7ffb8,#2bc2ff40 28%,transparent 72%)}
+#v105ArenaFlash.hit{animation:v105Flash .5s ease-out}
+#v105ArenaToast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 80px);left:50%;transform:translateX(-50%) translateY(-15px);z-index:990;pointer-events:none;background:#09273cf2;border:1px solid #65d6ff;color:white;padding:10px 18px;border-radius:8px;opacity:0;font-size:13px;font-weight:900;white-space:nowrap}
+#v105ArenaToast.show{animation:v105Toast 1.15s both}
+@keyframes v105Entrance{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+@keyframes v105Portrait{from{opacity:.3;filter:brightness(.2) saturate(.5);transform:scale(1.09)}to{opacity:1;filter:none;transform:scale(1)}}
+@keyframes v105FighterSwap{from{opacity:.25;transform:translateX(24px) scale(1.06);filter:brightness(1.5)}to{opacity:1;transform:none;filter:none}}
+@keyframes v105Flash{0%{opacity:0}15%{opacity:.65}100%{opacity:0}}
+@keyframes v105Toast{0%{opacity:0;transform:translateX(-50%) translateY(-12px)}18%,70%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.v103-fighter-home,.v103-fighter-home .v103-art img,.vx-fighter.v105-enter img{animation:none!important}}
+@media(max-width:370px){.levelup-wordmark{font-size:24px!important}.levelup-mark{width:42px!important;height:42px!important;min-width:42px!important}}
+</style><script id="v105-experience-logic">
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+// Repair category switches independently of older handlers; explicit hidden state prevents CSS overrides.
+const tabs=document.querySelector('.v103-train-tabs');
+const grid=$('vxCategories');
+if(tabs&&grid){
+ const items=[...grid.querySelectorAll('.vx-category')];
+ const apply=(cat)=>{items.forEach(el=>{const label=(el.querySelector('small')?.textContent||'').trim().toUpperCase();const match=label===cat;el.style.setProperty('display',match?'flex':'none','important');el.hidden=!match;});tabs.querySelectorAll('button').forEach(b=>{const selected=b.dataset.filter===cat;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));});};
+ tabs.querySelectorAll('button').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();apply(b.dataset.filter);fx('TRAINING SELECTED');},true));
+ apply('STRENGTH');
+}
+// Keep the approved logo: fall back to known existing asset only if the currently referenced path fails.
+const logo=document.querySelector('.levelup-mark');if(logo){logo.onerror=function(){if(!this.dataset.fallback){this.dataset.fallback='1';this.src='assets/level_up_logo_final_v78.png';}else{this.style.display='none';}};}
+const flash=document.createElement('div');flash.id='v105ArenaFlash';document.body.appendChild(flash);
+const toast=document.createElement('div');toast.id='v105ArenaToast';document.body.appendChild(toast);
+let flashTimer=0;
+function fx(message){flash.classList.remove('hit');toast.classList.remove('show');void flash.offsetWidth;flash.classList.add('hit');toast.textContent=message;toast.classList.add('show');clearTimeout(flashTimer);flashTimer=setTimeout(()=>{flash.classList.remove('hit');toast.classList.remove('show')},1200);}
+// Ability selection feedback without blocking the original editor and PB save logic.
+document.querySelectorAll('#vxCategories .vx-category').forEach(btn=>btn.addEventListener('click',()=>{const label=btn.querySelector('strong')?.textContent||'TRAINING';fx(label.toUpperCase());}));
+// Ranking detail uses already approved roster art, never generated placeholder art.
+const ranks=$('vxRankList');if(ranks){
+ const spot=document.createElement('section');spot.id='v105RankSpotlight';spot.setAttribute('aria-live','polite');spot.innerHTML='<img alt="" id="v105RankArt"><div class="copy"><small id="v105RankLabel">ABILITY RANK</small><h2 id="v105RankFighter"></h2><p id="v105RankTarget"></p></div><button class="close" id="v105RankClose" type="button" aria-label="Close fighter details">✕</button>';
+ ranks.before(spot);$('v105RankClose').onclick=()=>spot.classList.remove('open');
+ ranks.addEventListener('click',e=>{const card=e.target.closest('.vx-rank-item');if(!card)return;
+  const index=[...ranks.querySelectorAll('.vx-rank-item')].indexOf(card);
+  const rankText=card.textContent||'';const m=rankText.match(/\bL(\d+)\b/i);const lv=m?Number(m[1]):0;
+  const fighter=lv>0&&typeof levels!=='undefined'?levels[Math.min(30,lv)-1]:null;
+  $('v105RankLabel').textContent=card.querySelector('.vx-rank-name')?.textContent||'ABILITY RANK';
+  $('v105RankFighter').textContent=fighter?.character||'UNRANKED';
+  $('v105RankTarget').textContent=card.querySelector('.vx-rank-next')?.textContent||'Your next challenge awaits';
+  const art=lv>0&&typeof characterImages!=='undefined'?characterImages[Math.min(30,lv)]:'';
+  $('v105RankArt').src=art||'assets/01_hawkeye_v73.jpeg';spot.classList.add('open');spot.scrollIntoView({block:'nearest',behavior:'smooth'});fx('FIGHTER RANK');
+ },true);
+}
+// Fighter navigation adds animation to the real, approved portrait.
+const fighter=$('vxFighter'),portrait=$('vxFighterImage');if(fighter&&portrait){const observer=new MutationObserver(()=>{fighter.classList.remove('v105-enter');void fighter.offsetWidth;fighter.classList.add('v105-enter');});observer.observe(portrait,{attributes:true,attributeFilter:['src']});}
+// A compact guide search genuinely filters the academy buttons.
+const guide=$('vxGuideList');if(guide){const search=document.createElement('input');search.type='search';search.placeholder='Search techniques';search.setAttribute('aria-label','Search techniques');search.style.cssText='width:100%;margin:0 0 12px;padding:13px 14px;background:#102138;border:1px solid #3b6482;border-radius:8px;color:#fff;font-size:16px';guide.before(search);search.addEventListener('input',()=>{const q=search.value.toLowerCase().trim();guide.querySelectorAll('button').forEach(b=>b.hidden=!b.textContent.toLowerCase().includes(q));});}
+})();
+</script>
