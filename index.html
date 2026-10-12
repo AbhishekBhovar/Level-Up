@@ -3152,6 +3152,87 @@ views.forEach(([id,src,kicker,title])=>{
 });
 })();
 </script>
+
+<style id="v111-polish">
+/* V111: full-width fighter collection, crisp artwork and legible requirements */
+#levelsView .v109-roster{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;width:100%!important}
+#levelsView .v109-hero-tile{display:block!important;width:100%!important;min-width:0!important;max-width:none!important;aspect-ratio:3/4.2!important;overflow:hidden!important;border-radius:11px!important}
+#levelsView .v109-hero-tile img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 18%!important}
+#levelsView .v109-hero-tile .v109-hero-name{font-size:clamp(10px,2.8vw,13px)!important;overflow-wrap:break-word!important;word-break:normal!important;line-height:1.1!important}
+#levelsView .vx-fighter{height:min(55vh,465px)!important;min-height:340px!important;background:#0e1a2b!important;touch-action:pan-y!important}
+#levelsView #vxFighterImage{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center top!important;filter:none!important}
+#levelsView .vx-fighter-copy{background:linear-gradient(0deg,#07101cf5,#07101c99 72%,transparent)!important}
+#levelsView #vxReqToggle{display:none!important}
+#levelsView #vxReqs{display:block!important;margin-top:12px!important}
+#levelsView #vxReqs .reqs{display:block!important}
+#levelsView #vxReqs .req-row,#levelsView #vxReqs .requirement-row{min-width:0!important}
+#levelsView #vxReqs *{overflow-wrap:break-word}
+#levelsView .vx-fighter-nav select{min-width:0!important;text-overflow:ellipsis!important}
+#levelsView .v109-detail-open{touch-action:pan-y}
+@media(max-width:390px){#levelsView .v109-roster{gap:7px!important}#levelsView .vx-fighter{min-height:310px!important}}
+</style>
+<script id="v111-interactions">
+(function(){
+const $=id=>document.getElementById(id);
+const levelsView=$('levelsView'),fighter=$('vxFighter'),select=$('vxSelect'),reqs=$('vxReqs');
+if(!levelsView||!fighter||!select||!reqs)return;
+const shell=fighter.closest('section');
+function showNumber(n){
+ const count=select.options.length;
+ if(n<1||n>count)return;
+ select.value=String(n);
+ select.dispatchEvent(new Event('change',{bubbles:true}));
+ // The complete requirements are always shown, including future assessment milestones.
+ reqs.classList.add('open');
+ shell.classList.add('v109-detail-open');
+ shell.classList.remove('v109-collection-active');
+}
+select.addEventListener('change',()=>reqs.classList.add('open'));
+$('vxPrev')?.addEventListener('click',()=>reqs.classList.add('open'));
+$('vxNext')?.addEventListener('click',()=>reqs.classList.add('open'));
+const roster=$('v109Roster');
+roster?.addEventListener('click',()=>{if(shell.classList.contains('v109-detail-open'))reqs.classList.add('open')});
+let start=null;
+levelsView.addEventListener('touchstart',e=>{
+ if(!shell.classList.contains('v109-detail-open')||e.touches.length!==1)return;
+ if(e.target.closest('select,input,textarea,button,.vx-fighter-nav'))return;
+ const t=e.touches[0];start={x:t.clientX,y:t.clientY};
+},{passive:true,capture:true});
+levelsView.addEventListener('touchend',e=>{
+ if(!start)return;
+ const t=e.changedTouches[0],dx=t.clientX-start.x,dy=t.clientY-start.y;
+ start=null;
+ if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.5){
+  e.stopImmediatePropagation();
+  showNumber(Number(select.value)+(dx<0?1:-1));
+ }
+},{passive:true,capture:true});
+// Do not treat scrolling or touching form controls as a horizontal swipe.
+levelsView.addEventListener('touchcancel',()=>start=null,{passive:true});
+const image=$('vxFighterImage');
+if(image)image.setAttribute('decoding','async');
+// Horizontal category swipes use the existing category buttons; no PB changes.
+function addCategorySwipe(view){
+ if(!view)return;
+ let origin=null;
+ view.addEventListener('touchstart',e=>{
+  if(e.touches.length!==1||e.target.closest('input,select,textarea,button'))return;
+  origin={x:e.touches[0].clientX,y:e.touches[0].clientY};
+ },{passive:true});
+ view.addEventListener('touchend',e=>{
+  if(!origin)return;
+  const dx=e.changedTouches[0].clientX-origin.x,dy=e.changedTouches[0].clientY-origin.y;origin=null;
+  if(Math.abs(dx)<85||Math.abs(dx)<Math.abs(dy)*1.6)return;
+  const buttons=[...view.querySelectorAll('.v103-train-tabs button')];
+  if(!buttons.length)return;
+  const i=buttons.findIndex(b=>b.classList.contains('active'));
+  const next=buttons[i+(dx<0?1:-1)];
+  if(next)next.click();
+ },{passive:true});
+}
+addCategorySwipe($('rankingsView'));
+})();
+</script>
 </body></html>
 
 <style id="v98-cinematic-lightning-ramp">
