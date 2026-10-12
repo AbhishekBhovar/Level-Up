@@ -3071,7 +3071,49 @@ const oldActions=home.querySelector('.v107-hq-actions');if(oldActions)oldActions
 const stats=$('statsView');const fix=()=>{stats.querySelectorAll('.stat-title,.stats-title,.stat-card-head,.stats-card-head').forEach(el=>{for(const n of el.childNodes){if(n.nodeType===3)n.textContent=n.textContent.replace(/hack\s*(?:\/|&|and)\s*leg press/ig,'Leg Press')}})};
 fix();new MutationObserver(fix).observe(stats,{childList:true,subtree:true});
 })();
-</script></body></html>
+<style id="v109-collection-and-training">
+/* V109: preserve V108 visual language while making training scannable. */
+#rankingsView #vxCategories{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin:12px 0 20px!important}
+#rankingsView #vxCategories .vx-category{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:100px!important;padding:13px!important;background:linear-gradient(140deg,#142338,#0b1525)!important;border:0!important;border-radius:12px!important;box-shadow:none!important;clip-path:none!important;cursor:default;pointer-events:none}
+#rankingsView #vxCategories .vx-category:after{display:none!important}
+#rankingsView #vxCategories .vx-category small{display:none!important}
+#rankingsView #vxCategories .vx-category strong{font-size:13px!important;line-height:1.15!important;max-width:100%!important;letter-spacing:.01em}
+#rankingsView #vxCategories .vx-category em{font-size:13px!important;color:#f4c17a!important;font-style:normal!important;letter-spacing:0!important}
+#rankingsView #vxCategories .vx-category .v109-level{align-self:flex-end;font-size:10px;color:#67c8f2;font-weight:800;letter-spacing:.04em}
+.v109-update{display:block;width:100%;padding:15px 12px;margin:12px 0 17px;background:#188dc5;color:white;border:0;border-radius:12px;font-size:14px;font-weight:900;letter-spacing:.025em}
+.v109-collection{margin:4px 0 20px}.v109-collection-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}.v109-collection-top h2{font-size:21px;margin:0;color:#f3f7ff}.v109-collection-top small{font-size:11px;color:#83a5bc}
+.v109-roster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.v109-hero-tile{position:relative;overflow:hidden;aspect-ratio:3/4.2;padding:0;border:0;border-radius:11px;background:#152337;color:#fff;text-align:left;isolation:isolate}.v109-hero-tile img{height:100%;width:100%;object-fit:cover;display:block}.v109-hero-tile:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#040913ee)}.v109-hero-tile .v109-hero-level{position:absolute;z-index:1;top:7px;left:7px;font-size:10px;font-weight:900;color:#fff;background:#071426b8;border-radius:5px;padding:4px 5px}.v109-hero-tile .v109-hero-name{position:absolute;z-index:1;bottom:8px;left:7px;right:5px;font-size:11px;font-weight:900;line-height:1.08;text-shadow:0 1px 5px #000}.v109-hero-tile.locked img{filter:saturate(.35) brightness(.63)}.v109-hero-tile.next{outline:2px solid #52c8f7;outline-offset:-2px}.v109-hero-tile.unlocked .v109-hero-level{background:#176f58}.v109-hero-detail-back{display:none;border:0;background:transparent;color:#8cdbff;font-weight:800;padding:9px 0 15px;font-size:13px}.v109-detail-open .v109-collection{display:none}.v109-detail-open .v109-hero-detail-back{display:block}.v109-collection-active #vxFighter,.v109-collection-active .vx-fighter-nav,.v109-collection-active #vxReqToggle,.v109-collection-active #vxReqs{display:none!important}.v109-collection-active .v109-hero-detail-back{display:none!important}
+@media(max-width:360px){.v109-roster{gap:6px}.v109-hero-tile .v109-hero-name{font-size:10px}}
+</style>
+<script id="v109-collection-and-training-script">
+(function(){
+const $=id=>document.getElementById(id);
+const training=$('rankingsView'),grid=$('vxCategories'),editor=$('vxEditor'),levelsView=$('levelsView');
+if(!training||!grid||!editor||!levelsView)return;
+const tiles=[...grid.querySelectorAll('.vx-category')];
+// The original buttons retain their existing DOM nodes and PB-refresh logic; remove misleading per-exercise navigation.
+tiles.forEach(tile=>{tile.onclick=null;tile.setAttribute('aria-disabled','true');tile.tabIndex=-1;const em=tile.querySelector('em');if(em){const observer=new MutationObserver(()=>{const clean=em.textContent.replace(/\s*→\s*$/,'');if(clean!==em.textContent)em.textContent=clean});observer.observe(em,{childList:true,characterData:true,subtree:true});em.textContent=em.textContent.replace(/\s*→\s*$/,'')} });
+const update=document.createElement('button');update.type='button';update.className='v109-update';update.textContent='UPDATE PERSONAL BESTS  ↗';const tabs=training.querySelector('.v103-train-tabs');(tabs||grid).before(update);
+update.onclick=()=>{const fields=$('vxEditorFields');if(!fields)return;fields.querySelectorAll('.exercise').forEach(e=>e.classList.add('vx-visible'));const assessments=fields.querySelector('.assessment-section-card');if(assessments)assessments.classList.add('vx-visible');$('vxEditorCategory').textContent='TRAINING';$('vxEditorTitle').textContent='Update Your Bests';editor.classList.add('open');editor.scrollTop=0;document.body.style.overflow='hidden'};
+// Display rank from the existing calculator; no benchmark or persistence changes.
+const ids=['hack','leg','single','hip','chest','benchWeight','bwSquatReps','row','pull','chinAssist','cardioInclineKm','assess_hamstring'];
+function rankFor(id,d){try{if(id==='benchWeight')return benchLevel(d);if(id==='bwSquatReps')return bwSquatLevel(d);if(id==='chinAssist')return chinLevel(d);if(id==='cardioInclineKm')return cardioLevel(d);if(id==='assess_hamstring')return assessLevel(d);return strengthLevel(id,d)}catch(e){return null}}
+const badges=tiles.map((tile,i)=>{const badge=document.createElement('span');badge.className='v109-level';tile.prepend(badge);return badge});
+function updateRanks(){try{const d=readData();badges.forEach((b,i)=>{const rank=rankFor(ids[i],d);b.textContent=rank===null?'':rank?'L'+rank:'L0'})}catch(e){}}
+updateRanks();const save=$('vxSave');if(save)save.addEventListener('click',()=>setTimeout(updateRanks,0));document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',updateRanks));
+// Collection uses exactly the original 30 level records and original approved portrait paths.
+const collection=document.createElement('section');collection.className='v109-collection';collection.innerHTML='<div class="v109-collection-top"><h2>FIGHTER COLLECTION</h2><small>30 CHARACTERS</small></div><div class="v109-roster" id="v109Roster"></div>';
+const fighter=$('vxFighter');if(!fighter)return;const shell=fighter.closest('section');if(!shell)return;const back=document.createElement('button');back.className='v109-hero-detail-back';back.type='button';back.textContent='← ALL FIGHTERS';fighter.before(back);shell.prepend(collection);
+const roster=$('v109Roster');const buttons=[];
+levels.forEach((l,i)=>{const n=i+1,b=document.createElement('button');b.type='button';b.className='v109-hero-tile';const img=document.createElement('img');img.src=characterImages[n]||'';img.alt='';img.loading=i<9?'eager':'lazy';const num=document.createElement('span');num.className='v109-hero-level';num.textContent='LV '+n;const name=document.createElement('span');name.className='v109-hero-name';name.textContent=l.character;b.append(img,num,name);b.setAttribute('aria-label','View '+l.character+' level '+n);b.onclick=()=>{const select=$('vxSelect');if(select){select.value=String(n);select.dispatchEvent(new Event('change',{bubbles:true}))}shell.classList.remove('v109-collection-active');shell.classList.add('v109-detail-open');shell.scrollIntoView({block:'start',behavior:'instant'})};roster.appendChild(b);buttons.push(b)});
+function refreshCollection(){try{const achieved=highestOverall(readData());buttons.forEach((b,i)=>{b.classList.toggle('unlocked',i+1<=achieved);b.classList.toggle('next',i+1===achieved+1);b.classList.toggle('locked',i+1>achieved+1);b.querySelector('.v109-hero-level').textContent='LV '+(i+1)+(i+1<=achieved?' ✓':'')})}catch(e){}}
+function showCollection(){refreshCollection();shell.classList.add('v109-collection-active');shell.classList.remove('v109-detail-open')}
+back.onclick=()=>{showCollection();shell.scrollIntoView({block:'start',behavior:'instant'})};showCollection();
+// Returning to Heroes via the main navigation shows the collection again.
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.tab==='levels')showCollection()}));
+const navObserver=new MutationObserver(()=>{if(levelsView.classList.contains('active')&&!shell.classList.contains('v109-detail-open'))refreshCollection()});navObserver.observe(levelsView,{attributes:true,attributeFilter:['class']});
+})();
+</script></script></body></html>
 
 <style id="v98-cinematic-lightning-ramp">
 /* V98 — defined lightning first, escalating chaos, then a sustained eruption/whiteout. */
