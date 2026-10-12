@@ -3071,6 +3071,7 @@ const oldActions=home.querySelector('.v107-hq-actions');if(oldActions)oldActions
 const stats=$('statsView');const fix=()=>{stats.querySelectorAll('.stat-title,.stats-title,.stat-card-head,.stats-card-head').forEach(el=>{for(const n of el.childNodes){if(n.nodeType===3)n.textContent=n.textContent.replace(/hack\s*(?:\/|&|and)\s*leg press/ig,'Leg Press')}})};
 fix();new MutationObserver(fix).observe(stats,{childList:true,subtree:true});
 })();
+</script>
 <style id="v109-collection-and-training">
 /* V109: preserve V108 visual language while making training scannable. */
 #rankingsView #vxCategories{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin:12px 0 20px!important}
@@ -3113,7 +3114,45 @@ back.onclick=()=>{showCollection();shell.scrollIntoView({block:'start',behavior:
 document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.dataset.tab==='levels')showCollection()}));
 const navObserver=new MutationObserver(()=>{if(levelsView.classList.contains('active')&&!shell.classList.contains('v109-detail-open'))refreshCollection()});navObserver.observe(levelsView,{attributes:true,attributeFilter:['class']});
 })();
-</script></script></body></html>
+</script>
+<style id="v110-environments">
+/* Original approved artwork; banners are intentionally separate from controls and charts. */
+.v110-scene{position:relative;isolation:isolate;overflow:hidden;height:174px;margin:0 0 17px;border-radius:15px;background:#101c2b;color:white}
+.v110-scene::before{content:"";position:absolute;inset:0;background-image:var(--v110-image);background-position:center 43%;background-size:cover;opacity:.82}
+.v110-scene::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#070d19 0%,rgba(7,13,25,.48) 48%,rgba(7,13,25,.05) 100%)}
+.v110-scene-copy{position:absolute;z-index:1;bottom:15px;left:17px;right:17px;text-shadow:0 2px 10px #0009}
+.v110-scene-copy small{display:block;color:#7bdaff;font-size:10px;font-weight:850;letter-spacing:.18em;margin-bottom:4px}
+.v110-scene-copy strong{font-size:25px;line-height:1.05;font-style:italic;font-weight:950;letter-spacing:-.03em;text-transform:uppercase}
+#progressView>.v110-scene{height:260px}
+#progressView>.v110-scene::before{background-position:center 47%}
+#rankingsView>.v110-scene{height:150px}
+#statsView>.v110-scene{height:160px}
+#levelsView>.v110-scene{height:170px}
+#rankingsView .v108-train-header{margin-top:0!important}
+#rankingsView .v109-update{position:relative;z-index:2}
+@media(max-width:380px){.v110-scene-copy strong{font-size:22px}#progressView>.v110-scene{height:235px}}
+@media(prefers-reduced-motion:reduce){.v110-scene{animation:none!important}}
+</style>
+<script id="v110-environments-script">
+(function(){
+'use strict';
+const views=[
+ ['progressView','assets/v110_hq.png','ORBITAL COMMAND','YOUR HEADQUARTERS'],
+ ['rankingsView','assets/v110_training.png','TRAINING FACILITY','BUILD YOUR POWER'],
+ ['statsView','assets/v110_performance.png','PERFORMANCE LAB','YOUR PERFORMANCE'],
+ ['levelsView','assets/v110_hall.png','HALL OF HEROES','THE FIGHTER COLLECTION']
+];
+views.forEach(([id,src,kicker,title])=>{
+ const view=document.getElementById(id);if(!view||view.querySelector('.v110-scene'))return;
+ const scene=document.createElement('div');scene.className='v110-scene';scene.style.setProperty('--v110-image',`url("${src}")`);
+ const copy=document.createElement('div');copy.className='v110-scene-copy';
+ const small=document.createElement('small');small.textContent=kicker;
+ const heading=document.createElement('strong');heading.textContent=title;
+ copy.append(small,heading);scene.append(copy);view.prepend(scene);
+});
+})();
+</script>
+</body></html>
 
 <style id="v98-cinematic-lightning-ramp">
 /* V98 — defined lightning first, escalating chaos, then a sustained eruption/whiteout. */
