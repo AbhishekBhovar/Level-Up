@@ -2832,7 +2832,65 @@ showFighter(Math.max(1,Math.min(30,highestOverall(readData())+1)));refreshVx();
 @keyframes v92Shock{0%,89%{opacity:0;transform:translate(-50%,-50%) scale(.12)}90%{opacity:.95;transform:translate(-50%,-50%) scale(.25)}93%{opacity:.82;transform:translate(-50%,-50%) scale(1.8)}96%{opacity:.48;transform:translate(-50%,-50%) scale(5)}99%{opacity:.14;transform:translate(-50%,-50%) scale(9)}100%{opacity:0;transform:translate(-50%,-50%) scale(11)}}
 
 </style>
-</div></body></html>
+</div><script>
+/* V103: separate mobile UI from legacy hero; original saved data and calculations untouched */
+(function(){
+ const p=document.getElementById('progressView');if(!p)return;
+ const old=p.querySelector('.vx-hero');
+ const h=document.createElement('section');h.className='v103-fighter-home';h.innerHTML=`<div class="v103-art"><img id="v103Portrait" src="assets/01_hawkeye_v73.jpeg" alt="Current fighter"></div><div class="v103-fighter-info"><span class="v103-overline">CURRENT FIGHTER</span><h1 id="v103Name">HAWKEYE</h1><div id="v103Stage">LEVEL 1 · FOUNDATION</div></div><div class="v103-mission"><div class="v103-mission-label">NEXT UNLOCK</div><b id="v103Next">GREEN ARROW · LEVEL 2</b><div id="v103MissionProgress">2 / 3 groups complete</div><div class="v103-meter"><i id="v103Meter"></i></div><button id="v103Challenge" type="button">VIEW CHALLENGE <span>→</span></button></div>`;
+ old.style.setProperty('display','none','important');old.parentNode.insertBefore(h,old);
+ const head=p.querySelector('.vx-bar');if(head && head.parentElement && head.parentElement!==p){const parent=head.parentElement; if(parent.textContent.includes('THE JOURNEY'))parent.style.display='none'}
+ const launch=p.querySelector('.vx-launch');if(launch)launch.style.display='none';
+ const categories=p.querySelector('.vx-categories');if(categories){const tabs=document.createElement('div');tabs.className='v103-train-tabs';tabs.innerHTML='<button data-filter="STRENGTH" class="active">STRENGTH</button><button data-filter="CONDITIONING">CARDIO & CHINS</button><button data-filter="SKILLS">SKILLS</button>';categories.before(tabs);const cards=[...categories.querySelectorAll('.vx-category')];function filter(cat){cards.forEach(b=>{const typ=b.querySelector('small')?.textContent||'';b.style.display=typ===cat?'flex':'none'});tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.filter===cat))}tabs.querySelectorAll('button').forEach(b=>b.onclick=()=>filter(b.dataset.filter));filter('STRENGTH')}
+ const ranks=document.getElementById('vxRankList');if(ranks)ranks.classList.add('v103-ranks');
+ const lvl=document.getElementById('vxFighter');if(lvl)lvl.classList.add('v103-level-portrait');
+ function update(){try{const d=readData(),current=Math.max(1,highestOverall(d));const fighter=levels[current-1];const next=levels[Math.min(29,current)];document.getElementById('v103Name').textContent=fighter.character.toUpperCase();document.getElementById('v103Stage').textContent='LEVEL '+current+' · '+fighter.stage.toUpperCase();document.getElementById('v103Portrait').src=characterImages[current]||'assets/01_hawkeye_v73.jpeg';document.getElementById('v103Next').textContent=current<30?next.character.toUpperCase()+' · LEVEL '+(current+1):'ALL FIGHTERS UNLOCKED';const box=document.getElementById('nextBox');const txt=box?.innerText||'';const m=txt.match(/(\d+)\s*\/\s*(\d+)\s*requirement groups/i);if(m){document.getElementById('v103MissionProgress').textContent=m[1]+' / '+m[2]+' requirement groups complete';document.getElementById('v103Meter').style.width=(100*Number(m[1])/Number(m[2]))+'%'} }catch(e){console.warn('V103 hero update',e)}}
+ document.getElementById('v103Challenge').onclick=()=>{document.querySelector('.vx-launch')?.click()};
+ const oldCalc=window.calculate;if(typeof oldCalc==='function'){window.calculate=function(){oldCalc();update()}};
+ update();
+})();
+</script>
+<style id="v103MobileFix">
+/* V103 clean mobile layout; do not alter the fitness engine or saved storage */
+html{overflow-x:hidden!important}body{overflow-x:hidden!important;background:#050b15!important}
+.levelup-header{position:relative!important;min-height:0!important;height:auto!important;padding:calc(env(safe-area-inset-top, 0px) + 14px) 16px 14px!important;overflow:hidden!important}
+.levelup-brand{gap:12px!important;min-height:44px!important;display:flex!important;align-items:center!important}
+.levelup-mark{width:43px!important;height:43px!important;flex:0 0 43px!important}
+.levelup-wordmark{font-size:26px!important;line-height:1.15!important;gap:6px!important;display:flex!important;align-items:center!important;white-space:nowrap!important}
+.levelup-header small{display:none!important}
+.wrap{width:100%!important;max-width:540px!important;padding:14px 14px 108px!important;margin:0 auto!important;overflow:visible!important}
+#progressView .vx-hero{display:none!important}
+.v103-fighter-home{position:relative;isolation:isolate;height:340px;border:1px solid #2d4963;border-radius:17px;overflow:hidden;background:#0a1727;margin:0 0 12px;box-shadow:0 14px 35px #0007}
+.v103-art{position:absolute;inset:0 0 0 31%;z-index:0;overflow:hidden}
+.v103-art img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.v103-fighter-home:after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(0deg,#07111f 1%,#07111fd9 29%,transparent 66%),linear-gradient(90deg,#07111f 0%,#07111fe6 26%,#07111f00 75%)}
+.v103-fighter-info{position:absolute;z-index:1;left:16px;top:20px;max-width:75%}
+.v103-overline,.v103-mission-label{font-size:10px;letter-spacing:.16em;font-weight:850;color:#80c9f7}
+.v103-fighter-info h1{font-size:clamp(26px,7vw,38px)!important;line-height:1!important;letter-spacing:-.035em;margin:8px 0 7px!important;color:#fff!important;text-shadow:0 2px 14px #000}
+#v103Stage{font-size:12px;font-weight:800;color:#c3d4e6}
+.v103-mission{position:absolute;z-index:2;left:12px;right:12px;bottom:12px;padding:13px 14px;border:1px solid #355775;border-radius:12px;background:#08172be8;backdrop-filter:blur(10px)}
+.v103-mission b{display:block;font-size:17px;line-height:1.2;margin:5px 0;color:#fff}
+#v103MissionProgress{font-size:12px;color:#b8c8d9}
+.v103-meter{height:5px;border-radius:10px;background:#26394d;margin:9px 0;overflow:hidden}.v103-meter i{display:block;height:100%;width:0;background:#38bdf8;border-radius:10px}
+#v103Challenge{width:100%;display:flex;justify-content:space-between;align-items:center;border:0!important;border-top:1px solid #29435c!important;background:transparent!important;color:#8ddaff!important;font-weight:900!important;font-size:11px!important;letter-spacing:.07em;padding:9px 0 0!important;margin-top:5px}
+#progressView .vx-bar{margin:12px 0!important}#progressView .vx-bar b{font-size:17px!important}#progressView .vx-bar .vx-small{display:none!important}
+.v103-train-tabs{display:flex;gap:6px;margin:8px 0 11px}.v103-train-tabs button{flex:1;min-width:0;background:#102037!important;border:1px solid #344c68!important;color:#9bb0c8!important;border-radius:9px!important;padding:11px 4px!important;font-size:10px!important;font-weight:850!important}
+.v103-train-tabs button.active{color:#fff!important;background:#145181!important;border-color:#3eb8f4!important}
+.vx-categories{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:0 0 18px!important}
+.vx-category{min-height:94px!important;padding:12px!important;border-radius:11px!important;gap:4px!important}
+.vx-category small{font-size:9px!important;letter-spacing:.1em!important}.vx-category strong{font-size:15px!important;line-height:1.15!important}.vx-category em{font-size:11px!important}
+.vx-rank-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.vx-rank-item{min-width:0!important;min-height:110px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:4px!important;padding:12px!important;position:relative}
+.vx-rank-number{font-size:25px!important;line-height:1!important}.vx-rank-name{font-size:13px!important;line-height:1.15!important}.vx-rank-next{font-size:10px!important;line-height:1.25!important;overflow-wrap:anywhere!important}.vx-rank-chevron{position:absolute;right:10px;top:10px;font-size:17px!important}
+.vx-fighter{height:min(45vh,370px)!important;min-height:260px!important}.vx-fighter-copy b{font-size:24px!important}
+.vx-fighter-nav{margin-top:9px!important}.vx-fighter-nav button{min-width:50px!important}
+.vx-screen{padding:calc(env(safe-area-inset-top,0px) + 18px) 16px calc(env(safe-area-inset-bottom,0px) + 30px)!important}
+#vxEditorTitle{font-size:25px!important}
+.vx-stats-wrap .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.vx-stats-wrap .stats-card{padding:10px!important;min-width:0!important;overflow:hidden!important}
+@media(max-width:360px){.v103-fighter-home{height:315px}.vx-category strong{font-size:13px!important}.vx-rank-list{grid-template-columns:1fr!important}}
+</style>
+</body></html>
 
 <style id="v98-cinematic-lightning-ramp">
 /* V98 — defined lightning first, escalating chaos, then a sustained eruption/whiteout. */
