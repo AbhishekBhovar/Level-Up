@@ -3233,6 +3233,128 @@ function addCategorySwipe(view){
 addCategorySwipe($('rankingsView'));
 })();
 </script>
+<style id="v112-design">
+/* LEVEL UP V112 — distinct editorial/game typography, open layouts, no clipped corners. */
+:root{--v112-ice:#7ce3ff;--v112-amber:#ffcc83;--v112-muted:#9db1c7}
+#progressView,#rankingsView,#statsView,#levelsView{overflow-x:hidden}
+.v110-scene{height:clamp(178px,27vh,255px)!important;border:0!important;border-radius:0!important;clip-path:none!important;margin:0 -15px 15px!important;background-position:center 44%!important}
+.v110-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#060e1c 0%,#060e1c20 60%,transparent)!important;pointer-events:none}
+.v110-scene-copy{position:absolute!important;z-index:2!important;bottom:13px!important;left:21px!important;right:15px!important;transform:none!important}
+.v110-scene-copy small{font:500 10px/1.3 system-ui,sans-serif!important;letter-spacing:.28em!important;color:#83d9f9!important}
+.v110-scene-copy strong{display:block;font:italic 900 clamp(31px,9vw,47px)/.95 Impact,'Arial Narrow',sans-serif!important;letter-spacing:-.035em!important;color:white!important;text-shadow:0 3px 18px #000b!important}
+/* Remove duplicated screen introductions. */
+#rankingsView .v108-train-header,#rankingsView .v107-train-intro,#levelsView .v109-collection-top,#levelsView .vx-kicker,#levelsView .vx-bar{display:none!important}
+#rankingsView .v109-update{width:100%!important;min-height:44px!important;border:0!important;border-radius:0!important;clip-path:none!important;background:linear-gradient(90deg,#195a83,#13324c)!important;box-shadow:inset 0 -2px #4ac7fa!important;font:700 13px/1.2 system-ui!important;letter-spacing:.08em!important}
+#rankingsView .v103-train-tabs{margin:7px 0 13px!important}
+#rankingsView .v103-train-tabs button{border:0!important;border-radius:0!important;clip-path:none!important;background:transparent!important;box-shadow:none!important;font:600 12px/1.25 system-ui!important;letter-spacing:0!important;padding:10px 6px!important}
+#rankingsView .v103-train-tabs button.active{border-bottom:2px solid #6dd9ff!important;color:#fff!important}
+#rankingsView .vx-categories{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+#rankingsView .vx-category{min-height:96px!important;padding:13px 10px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:space-between!important;gap:7px!important;background:linear-gradient(155deg,#16273d,#0d192b)!important;border:0!important;border-bottom:1px solid #2c5872!important;border-radius:0!important;clip-path:none!important;box-shadow:none!important}
+#rankingsView .vx-category small{display:none!important}
+#rankingsView .vx-category strong{font:600 clamp(12px,3.5vw,15px)/1.2 system-ui,sans-serif!important;letter-spacing:0!important;color:#dce7f4!important;text-transform:none!important}
+#rankingsView .vx-category em{font:800 17px/1.15 'Arial Narrow',system-ui!important;letter-spacing:0!important;color:#ffcc83!important;max-width:100%!important;text-align:left!important;font-style:normal!important}
+#levelsView .v109-collection{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#levelsView .v109-roster{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;width:100%!important}
+#levelsView .v109-hero-tile{position:relative!important;display:block!important;aspect-ratio:2/3.15!important;min-width:0!important;width:100%!important;height:auto!important;max-width:none!important;overflow:hidden!important;padding:0!important;border:0!important;border-radius:0!important;clip-path:none!important;background:#142237!important;box-shadow:none!important}
+#levelsView .v109-hero-tile img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 17%!important;filter:none!important;opacity:1!important;transform:none!important}
+#levelsView .v109-hero-tile.locked img{filter:saturate(.68) brightness(.73)!important}
+#levelsView .v109-hero-tile:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(0deg,#050b15 0%,#050b15b8 34%,transparent);pointer-events:none}
+#levelsView .v109-hero-level{position:absolute!important;z-index:2!important;top:7px!important;left:7px!important;background:#08111dc9!important;padding:3px 5px!important;border:0!important;border-radius:0!important;font:700 10px/1 system-ui!important;letter-spacing:.03em!important;color:#f6d09b!important}
+#levelsView .v109-hero-name{position:absolute!important;z-index:2!important;bottom:9px!important;left:7px!important;right:5px!important;top:auto!important;background:none!important;padding:0!important;font:800 clamp(11px,3.2vw,15px)/1.05 'Arial Narrow',system-ui!important;letter-spacing:-.02em!important;color:white!important;text-align:left!important;overflow-wrap:normal!important;word-break:normal!important;text-transform:none!important}
+#levelsView .v109-hero-tile.next{outline:2px solid #70dfff!important;outline-offset:-2px!important}
+#levelsView .v109-hero-tile.unlocked{box-shadow:inset 0 -3px #ffcf84!important}
+#levelsView .v109-hero-detail-back{border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;color:#7fe0ff!important;font:600 13px system-ui!important;letter-spacing:0!important;padding:8px 0 14px!important}
+#levelsView .vx-fighter{height:min(57vh,485px)!important;min-height:350px!important;border-radius:0!important;clip-path:none!important;background:#0b1525!important}
+#levelsView #vxFighterImage{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center top!important;filter:none!important;image-rendering:auto!important}
+#levelsView .vx-fighter-copy{padding:16px!important;background:linear-gradient(0deg,#06101cf5 0%,#06101c80 70%,transparent)!important}
+#levelsView #vxFighterName{font:italic 900 clamp(32px,9vw,45px)/1 Impact,'Arial Narrow',sans-serif!important;letter-spacing:-.02em!important;color:#fff!important}
+#levelsView #vxFighterStage{font:600 10px/1.3 system-ui!important;letter-spacing:.13em!important;color:#8bdcf8!important}
+#levelsView #vxFighterStatus{font:500 12px/1.3 system-ui!important;letter-spacing:0!important;color:#f4cc8d!important}
+#levelsView .vx-fighter-nav button{background:transparent!important;border:0!important;border-radius:0!important;clip-path:none!important;box-shadow:none!important;color:#83dcff!important;font-size:24px!important}
+#levelsView .vx-fighter-nav select{background:#101d30!important;border:0!important;border-radius:0!important;clip-path:none!important;font:600 13px system-ui!important}
+#levelsView #vxReqToggle{display:none!important}
+#levelsView #vxReqs{display:block!important;max-height:none!important;overflow:visible!important}
+#levelsView #vxReqs .reqs{display:block!important}
+#levelsView #vxReqs .req-row,#levelsView #vxReqs .requirement-row{display:flex!important;flex-wrap:wrap!important;gap:5px 12px!important;min-width:0!important;overflow-wrap:anywhere!important}
+#levelsView #vxReqs .reqs>*{max-width:100%!important;min-width:0!important;overflow-wrap:anywhere!important}
+#statsView .stats-card,#statsView .stat-card{border:0!important;border-radius:0!important;clip-path:none!important;background:linear-gradient(140deg,#142338,#0c1727)!important;box-shadow:none!important}
+#statsView .stat-title{font:700 14px system-ui!important;letter-spacing:0!important;text-transform:none!important}
+.v112-journey-launch{display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 3px 14px!important;margin:10px 0 15px;background:transparent!important;border:0!important;border-top:1px solid #31516b!important;border-bottom:1px solid #31516b!important;border-radius:0!important;clip-path:none!important;text-align:left!important;box-shadow:none!important;color:white!important}
+.v112-journey-launch strong{display:block;font:italic 900 26px/1 Impact,'Arial Narrow',sans-serif;letter-spacing:-.02em;color:#fff}
+.v112-journey-launch small{display:block;font:400 12px/1.5 system-ui;color:#aac1d5;letter-spacing:0;margin-top:5px}
+.v112-journey-launch .v112-arrow{font:300 30px system-ui;color:#75d7f7}
+#v112Map{position:fixed;inset:0;z-index:100000;background:#06101e;overflow-y:auto;overscroll-behavior:contain;padding:env(safe-area-inset-top) 0 calc(env(safe-area-inset-bottom) + 32px);color:#fff;display:none}
+#v112Map.open{display:block}
+.v112-map-head{padding:22px 22px 8px;display:flex;justify-content:space-between;align-items:flex-start}
+.v112-map-head h1{font:italic 900 clamp(39px,12vw,60px)/.9 Impact,'Arial Narrow',sans-serif;letter-spacing:-.04em;margin:6px 0 0}
+.v112-map-head small{font:500 10px system-ui;letter-spacing:.2em;color:#6ddaff}
+.v112-map-close{background:none;border:0;color:#fff;font:300 32px system-ui;padding:0 5px}
+.v112-map-intro{padding:4px 22px 17px;color:#adc1d5;font:400 13px/1.5 system-ui;max-width:450px}
+.v112-map-filter{display:flex;gap:19px;overflow-x:auto;scrollbar-width:none;padding:0 22px 13px;border-bottom:1px solid #20384d}
+.v112-map-filter button{white-space:nowrap;background:none!important;border:0!important;border-radius:0!important;clip-path:none!important;color:#93a9bf;font:500 13px system-ui;padding:8px 0!important;box-shadow:none!important}
+.v112-map-filter button.active{color:#fff!important;border-bottom:2px solid #67d8ff!important}
+.v112-timeline{position:relative;padding:20px 21px 30px 59px}
+.v112-timeline:before{content:'';position:absolute;left:34px;top:25px;bottom:45px;width:2px;background:linear-gradient(#e2a95b,#4cccf4,#8bbbd5,#8e80f1)}
+.v112-stage{position:relative;margin:0 0 24px;padding:0 0 0 0}
+.v112-stage:before{content:'';position:absolute;left:-33px;top:4px;width:15px;height:15px;border:2px solid var(--accent,#6bd6f6);border-radius:50%;background:#06101e;box-shadow:0 0 13px #3b97b055}
+.v112-stage-title{font:italic 900 23px/1.05 Impact,'Arial Narrow',sans-serif;letter-spacing:-.015em;color:#fff;margin-bottom:5px}
+.v112-stage-sub{font:400 12px/1.5 system-ui;color:#a6bcd1;margin-bottom:9px}
+.v112-milestones{display:flex;flex-direction:column;gap:0}
+.v112-milestone{display:grid;grid-template-columns:37px 1fr auto;gap:8px;align-items:center;width:100%;padding:11px 0;border:0!important;border-bottom:1px solid #23394c!important;border-radius:0!important;background:transparent!important;clip-path:none!important;text-align:left;color:#eaf4fc;box-shadow:none!important}
+.v112-milestone .v112-lv{font:800 18px/1 Impact,'Arial Narrow',sans-serif;color:var(--accent,#6bd6f6)}
+.v112-milestone .v112-name{font:600 13px/1.25 system-ui;color:#f4f6fa}
+.v112-milestone .v112-tag{font:400 11px/1.3 system-ui;color:#a6bcd1;margin-top:4px}
+.v112-milestone .v112-chevron{color:#6bc9e9;font:300 21px system-ui}
+.v112-milestone.dim{opacity:.48}
+.v112-skill-notice{margin:15px 22px 0;padding:12px 0;border-top:1px solid #294459;color:#a4bad0;font:400 12px/1.6 system-ui}
+@media(max-width:360px){#levelsView .v109-roster{gap:6px!important}#levelsView .v109-hero-name{font-size:10px!important}}
+</style>
+<script id="v112-journey-and-polish">
+(function(){
+const $=id=>document.getElementById(id);
+function init(){
+const home=$('progressView'),heroes=$('levelsView');if(!home||!heroes||!Array.isArray(levels))return;
+// Remove duplicated V108 navigation copy, leaving the original functional Training grid.
+const training=$('rankingsView');if(training){const heading=training.querySelector('.v108-train-header');if(heading)heading.remove();}
+const map=document.createElement('div');map.id='v112Map';map.setAttribute('role','dialog');map.setAttribute('aria-label','Evolution map');map.setAttribute('aria-modal','true');document.body.appendChild(map);
+const stages=[...new Set(levels.map(l=>l.stage))];
+const colors=['#f0b76f','#f1bb72','#7dd7ff','#5cbeff','#b6a4ff','#e89eae','#9fd4ad','#e4bd77'];
+const kinds=[{id:'all',label:'All abilities'},{id:'strength',label:'Strength'},{id:'cardio',label:'Cardio & running'},{id:'mobility',label:'Mobility'},{id:'combat',label:'Martial arts'}];
+let filter='all';
+const assessNames={hamstring:'Hamstring mobility',flexibility:'Straddle flexibility',hipAnkle:'Hip & ankle mobility',highKick:'High-kick mobility',jumps:'Jumps & landings',plyo:'Plyometrics',maBeginner:'Martial arts — Beginner',maIntermediate:'Martial arts — Intermediate',sparring:'Sparring'};
+function changes(l,previous){let out=[];if(!previous)out.push({kind:'strength',text:'Strength, bodyweight squats and incline treadmill'});
+ if(previous&&l.cardio_type!==previous.cardio_type){let t={incline:'Incline treadmill',combo:'Incline treadmill + StairMaster',run:'Running', '5k':'5 km running', '5k10k':'5 km + 10 km running'};out.push({kind:'cardio',text:t[l.cardio_type]||'Cardio progression'});}
+ if(l.assessment)out.push({kind:['maBeginner','maIntermediate','sparring'].includes(l.assessment)?'combat':'mobility',text:assessNames[l.assessment]||l.assessment});
+ return out;
+}
+const milestones=levels.map((l,i)=>({...l,changes:changes(l,levels[i-1])}));
+function render(){
+ const close='<button type="button" class="v112-map-close" id="v112Close" aria-label="Close map">×</button>';
+ map.innerHTML='<header class="v112-map-head"><div><small>LEVEL UP · PROGRESSION SYSTEM</small><h1>EVOLUTION<br>MAP</h1></div>'+close+'</header><p class="v112-map-intro">Explore all 30 fighters and discover exactly when new training disciplines enter your journey.</p><nav class="v112-map-filter" aria-label="Skill categories">'+kinds.map(k=>'<button type="button" data-filter="'+k.id+'" class="'+(filter===k.id?'active':'')+'">'+k.label+'</button>').join('')+'</nav><div class="v112-timeline">'+stages.map((stage,i)=>{
+ const members=milestones.filter(l=>l.stage===stage && (filter==='all'||(filter==='strength')||l.changes.some(c=>c.kind===filter)));
+ if(!members.length)return '';
+ return '<section class="v112-stage" style="--accent:'+colors[i%colors.length]+'"><div class="v112-stage-title">'+stage+'</div><div class="v112-stage-sub">Levels '+levels.find(l=>l.stage===stage).level+'–'+levels.filter(l=>l.stage===stage).at(-1).level+'</div><div class="v112-milestones">'+members.map(l=>'<button class="v112-milestone" data-fighter="'+l.level+'"><span class="v112-lv">'+String(l.level).padStart(2,'0')+'</span><span><span class="v112-name">'+l.character.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span><span class="v112-tag">'+(l.changes.filter(c=>filter==='all'||filter==='strength'||c.kind===filter).map(c=>c.text).join(' · ')||'Build on previous abilities')+'</span></span><span class="v112-chevron">›</span></button>').join('')+'</div></section>';
+ }).join('')+'</div><p class="v112-skill-notice">All milestones are read from your existing 30-fighter requirements. Selecting a fighter opens their complete requirements. Your personal bests and unlock rules are unchanged.</p>';
+ $('v112Close').onclick=closeMap;
+ map.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});
+ map.querySelectorAll('[data-fighter]').forEach(b=>b.onclick=()=>{const n=Number(b.dataset.fighter);closeMap();if(typeof switchAppTab==='function')switchAppTab('levels');const tile=heroes.querySelectorAll('.v109-hero-tile')[n-1];if(tile)tile.click();});
+ }
+ function openMap(){render();map.classList.add('open');map.scrollTop=0;document.body.style.overflow='hidden';}
+ function closeMap(){map.classList.remove('open');document.body.style.overflow='';}
+ const launch=()=>{const b=document.createElement('button');b.type='button';b.className='v112-journey-launch';b.innerHTML='<span><strong>EVOLUTION MAP</strong><small>30 fighters · See when every skill unlocks</small></span><span class="v112-arrow">↗</span>';b.onclick=openMap;return b};
+ const hqLaunch=launch();const hqActions=home.querySelector('.v108-quick');if(hqActions)hqActions.after(hqLaunch);else home.appendChild(hqLaunch);
+ const heroesLaunch=launch();const collection=heroes.querySelector('.v109-collection');if(collection)collection.before(heroesLaunch);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&map.classList.contains('open'))closeMap()});
+ // V111 hid the requirements toggle but showFighter() still removes the open class.
+ // Force the requirement content visible without changing any calculations.
+ const reqs=$('vxReqs');if(reqs){const mo=new MutationObserver(()=>{if(!reqs.classList.contains('open'))reqs.classList.add('open')});mo.observe(reqs,{attributes:true,attributeFilter:['class']});reqs.classList.add('open');}
+ // Replace duplicate banner text without changing the artwork.
+ const trainBanner=training?.querySelector('.v110-scene-copy strong');if(trainBanner)trainBanner.textContent='TRAINING';
+ const heroesBanner=heroes.querySelector('.v110-scene-copy strong');if(heroesBanner)heroesBanner.textContent='HEROES';
+ }
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body></html>
 
 <style id="v98-cinematic-lightning-ramp">
