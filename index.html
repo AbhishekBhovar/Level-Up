@@ -3501,6 +3501,25 @@ function init(){
  });
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();})();
 </script>
+
+<style id="v118-training-functional-fix">
+/* V117 regression: V109 disabled every training tile with pointer-events:none. */
+#rankingsView #vxCategories .vx-category{pointer-events:auto!important;cursor:pointer!important;touch-action:manipulation!important;position:relative!important}
+#rankingsView #vxCategories .vx-category[aria-expanded="true"]{background:#192d42!important;outline:2px solid #f5c26b!important;outline-offset:-2px!important}
+#rankingsView #vxCategories .v115-detail{grid-column:1/-1!important;min-width:0!important;width:100%!important;box-sizing:border-box!important;position:relative!important;z-index:2!important}
+#rankingsView #vxCategories .v115-detail.open{display:block!important}
+#rankingsView .v115-progression{max-height:none!important;overflow:visible!important}
+/* Field Guide: single-column compact tappable index; no competing huge empty cards. */
+#glossaryView,#glossaryView>section,#glossaryView .vx-guide-list{min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+#glossaryView .vx-guide-list{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+#glossaryView .vx-guide-list button{width:100%!important;min-width:0!important;min-height:56px!important;padding:12px 15px!important;display:flex!important;flex-direction:row!important;justify-content:space-between!important;align-items:center!important;gap:12px!important;background:#102035!important;border:0!important;border-bottom:1px solid #2a425a!important;border-radius:0!important;clip-path:none!important;text-align:left!important;font:700 14px/1.35 system-ui!important;white-space:normal!important}
+#glossaryView .vx-guide-list button:before{display:none!important}
+#glossaryView .vx-guide-list button span:first-child{min-width:0!important;overflow-wrap:anywhere!important}
+#glossaryView .vx-guide-list button span:last-child{flex:none;color:#76d7ff!important}
+#glossaryView .vx-guide-detail{max-width:100%!important;min-width:0!important;overflow-wrap:anywhere!important}
+#glossaryView .vx-title{font-size:clamp(29px,9vw,43px)!important;line-height:1.06!important}
+#rankingsView .v109-update{position:relative!important;z-index:1!important;margin-top:14px!important}
+</style>
 </body></html>
 
 <style id="v98-cinematic-lightning-ramp">
