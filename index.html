@@ -2384,6 +2384,12 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 .v114-glow{position:absolute;inset:-15%;background:radial-gradient(ellipse at 50% 46%,#156b9d77,transparent 48%),radial-gradient(ellipse at 50% 95%,#132f6670,transparent 50%);animation:v114glow 2.4s both}.v114-halo{position:absolute;top:45%;left:50%;width:min(78vw,340px);aspect-ratio:1;border-radius:50%;border:1px solid #9ce6ff88;box-shadow:0 0 80px #2299ef55,inset 0 0 60px #2299ef22;animation:v114halo 2.4s both}.v114-victory.multi .v114-glow,.v114-victory.mastered .v114-glow{background:radial-gradient(ellipse at 50% 46%,#a66c1577,transparent 48%),radial-gradient(ellipse at 50% 95%,#4b301770,transparent 50%)}
 .v114-stage{position:relative;z-index:2;box-sizing:border-box;min-height:100dvh;width:min(96vw,490px);padding:calc(env(safe-area-inset-top,0px) + 18px) 12px calc(env(safe-area-inset-bottom,0px) + 20px);display:flex;flex-direction:column;justify-content:center;align-items:center}.v114-tag{font-size:10px;letter-spacing:.25em;color:#92b4ce;font-weight:600;margin:0;animation:v114rise .6s .1s both}.v114-ability{font-size:clamp(18px,5vw,25px);line-height:1.25;font-weight:500;margin-top:12px;animation:v114rise .6s .4s both}.v114-title{font-size:clamp(25px,8vw,43px);line-height:1.04;letter-spacing:-.055em;font-weight:900;margin:19px 0 0;animation:v114rise .6s 1s both}.v114-level{display:flex;flex-direction:column;align-items:center;margin:18px 0 9px;animation:v114slam .8s 1.8s both}.v114-level span{font-size:clamp(19px,6vw,28px);font-weight:800;letter-spacing:.35em;margin-left:.35em;color:#b4edff}.v114-level strong{font-size:clamp(112px,33vw,172px);line-height:.9;font-weight:950;letter-spacing:-.1em;padding-right:.1em;text-shadow:0 0 24px #57c3ff88,0 0 70px #2588ff77}.v114-transition{font-size:12px;letter-spacing:.12em;font-weight:750;color:#8bd6ff;animation:v114rise .6s 2.25s both}.v114-character{display:flex;flex-direction:column;gap:8px;font-size:10px;letter-spacing:.18em;color:#9eafc1;margin-top:22px;animation:v114rise .6s 2.55s both}.v114-character b{font-size:clamp(20px,6vw,30px);line-height:1.15;letter-spacing:-.02em;color:#fff}.v114-next{margin-top:clamp(25px,6vh,52px);padding:13px 20px;background:transparent;color:#fff;border:0;border-bottom:2px solid #83d9ff;border-radius:0;font:750 15px system-ui,-apple-system,sans-serif;letter-spacing:.15em;animation:v114rise .6s 3s both;cursor:pointer}.v114-next span{font-size:22px;margin-left:12px;color:#83d9ff}
 @keyframes v114glow{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}@keyframes v114halo{from{opacity:0;transform:translate(-50%,-50%) scale(.15)}to{opacity:.65;transform:translate(-50%,-50%) scale(1)}}@keyframes v114rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}@keyframes v114slam{from{opacity:0;transform:scale(2.3);filter:blur(12px)}to{opacity:1;transform:scale(1);filter:blur(0)}}@media(max-height:700px){.v114-title{margin-top:9px}.v114-level{margin:7px 0}.v114-level strong{font-size:105px}.v114-character{margin-top:10px}.v114-next{margin-top:16px}}@media(prefers-reduced-motion:reduce){.v114-victory *{animation-duration:.01ms!important;animation-delay:0ms!important}}
+</style><style id="v116-gold">
+.v116-victory{position:fixed;inset:0;z-index:2147483000;isolation:isolate;overflow:hidden;background:#030304;color:#fff;opacity:0;transition:opacity .35s;display:grid;place-items:center;text-align:center;font-family:system-ui,-apple-system,sans-serif}.v116-victory.visible{opacity:1}.v116-victory.leaving{opacity:0;pointer-events:none}
+.v116-aura{position:absolute;inset:-40%;background:radial-gradient(ellipse 24% 35% at 50% 48%,#fff7b8 0%,#ffca3ad9 19%,#ef92008c 37%,#8b36003d 56%,transparent 72%);filter:blur(18px);animation:v116flare 2.2s both,v116breathe 2.8s 2.2s infinite alternate}.v116-energy{position:absolute;left:50%;top:49%;width:min(76vw,340px);height:min(96vw,430px);transform:translate(-50%,-50%);border-radius:48% 52% 40% 60%;background:radial-gradient(ellipse,#fff4aa88,#ffd44444 35%,transparent 72%);box-shadow:0 0 80px 35px #fbb32250,0 0 150px 70px #ed8e0038;filter:blur(12px);animation:v116ignite 2.1s both,v116pulse 1.3s 2.1s infinite alternate}
+.v116-bolts{position:absolute;inset:0;pointer-events:none;overflow:hidden}.v116-bolts i{position:absolute;left:50%;top:50%;height:43vh;width:5px;transform-origin:center top;transform:rotate(calc(var(--i)*30deg)) translateY(-65%);background:linear-gradient(transparent,#ffb918,#fff9b5 40%,#ffd32d 54%,transparent);clip-path:polygon(40% 0,100% 21%,30% 44%,100% 65%,25% 100%,50% 59%,0 40%);filter:drop-shadow(0 0 9px #ffe266);opacity:0;animation:v116lightning 2.8s calc(var(--i)*.08s) infinite}
+.v116-stage{position:relative;z-index:2;box-sizing:border-box;width:min(94vw,500px);min-height:100dvh;padding:calc(env(safe-area-inset-top,0px) + 28px) 12px calc(env(safe-area-inset-bottom,0px) + 28px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-shadow:0 2px 20px #000}.v116-kicker{font-size:11px;letter-spacing:.3em;font-weight:750;color:#ffe4a2;animation:v116rise .6s .15s both}.v116-heading{font-family:Impact,'Arial Narrow',system-ui,sans-serif;font-style:italic;font-size:clamp(58px,17vw,92px);letter-spacing:-.035em;line-height:.95;margin:18px 0 4px;color:#fff7d8;text-shadow:0 0 22px #ffc12c,0 4px 2px #9a4700;animation:v116impact .85s .8s both}.v116-level{display:flex;flex-direction:column;align-items:center;margin:12px 0 0;animation:v116impact .9s 1.45s both}.v116-level span{font-size:13px;font-weight:800;letter-spacing:.42em;margin-left:.42em;color:#ffe5a0}.v116-level strong{font-family:Impact,'Arial Narrow',system-ui,sans-serif;font-size:clamp(132px,43vw,225px);line-height:.88;letter-spacing:-.04em;color:#fff9d4;text-shadow:0 0 15px #fff,0 0 48px #ffc019,0 0 110px #f0a200}.v116-details{margin-top:24px;display:flex;flex-direction:column;gap:9px;align-items:center;animation:v116rise .7s 2.05s both}.v116-details b{font-size:clamp(22px,7vw,33px);font-weight:800;line-height:1.13;letter-spacing:-.03em}.v116-details span{font-size:12px;letter-spacing:.13em;color:#f7d898;font-weight:700}.v116-mastered{margin-top:15px;color:#ffe59a;font-size:12px;font-weight:800;letter-spacing:.15em}.v116-next{background:transparent;border:0;border-bottom:2px solid #ffcb45;border-radius:0;box-shadow:none;color:#fff;font:750 15px system-ui,sans-serif;letter-spacing:.16em;padding:15px 23px;margin-top:clamp(38px,8vh,85px);cursor:pointer;animation:v116rise .7s 2.65s both}.v116-next span{margin-left:16px;color:#ffd04b;font-size:23px}.v116-fighter{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.38;filter:drop-shadow(0 0 25px #ffc400);animation:v116flare 2s both}
+@keyframes v116flare{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}@keyframes v116ignite{from{opacity:0;transform:translate(-50%,-50%) scale(.2)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}@keyframes v116breathe{from{opacity:.8;transform:scale(.96)}to{opacity:1;transform:scale(1.12)}}@keyframes v116pulse{from{opacity:.55}to{opacity:1}}@keyframes v116lightning{0%,12%,23%,100%{opacity:0}14%,17%,20%{opacity:.95}16%,19%{opacity:.18}}@keyframes v116rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes v116impact{0%{opacity:0;transform:scale(2.5);filter:blur(12px)}70%{opacity:1;transform:scale(.94);filter:blur(0)}100%{opacity:1;transform:scale(1)}}@media(max-height:720px){.v116-heading{font-size:58px;margin-top:10px}.v116-level strong{font-size:125px}.v116-details{margin-top:12px}.v116-next{margin-top:22px}}@media(prefers-reduced-motion:reduce){.v116-victory *{animation-duration:.01ms!important;animation-delay:0ms!important}}
 </style></head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -2751,18 +2757,21 @@ function queueLevelCelebrations(prev,next){
 function playNextCelebration(){
  if(celebrationPlaying||!celebrationQueue.length)return;
  celebrationPlaying=true;
- const e=celebrationQueue.shift(),ov=document.createElement('div');
+ const e=celebrationQueue.shift(),overall=e.kind==='overall',multi=e.jump>1;
  const safe=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- ov.className='v114-victory'+(e.kind==='overall'?' overall':'')+(e.kind==='mastered'?' mastered':'')+(e.jump>1?' multi':'');
+ const ov=document.createElement('div');ov.className='v116-victory'+(overall?' hero-unlock':'')+(multi?' multi':'');
  ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
- const title=e.kind==='mastered'?'ABILITY MASTERED':e.kind==='overall'?'NEW HERO UNLOCKED':e.jump>1?'POWER SURGE':'PERSONAL BEST';
- ov.innerHTML='<div class="v114-glow"></div><div class="v114-halo"></div><main class="v114-stage"><p class="v114-tag">LEVEL UP / ACHIEVEMENT</p><div class="v114-ability">'+safe(e.label)+'</div><h1 class="v114-title">'+title+'</h1><div class="v114-level"><span>LEVEL</span><strong>'+e.to+'</strong></div><div class="v114-transition">'+(e.from?'LEVEL '+e.from+' → ':'')+'LEVEL '+e.to+(e.jump>1?' · +'+e.jump+' LEVELS':'')+'</div><div class="v114-character">'+(e.kind==='overall'?'YOU HAVE BECOME':'FIGHTER RANK')+'<b>'+safe(celebrationCharacter(e.to))+'</b></div><button class="v114-next" type="button">CONTINUE <span>→</span></button></main>';
+ const fighter=overall?celebrationCharacter(e.to):'';
+ const img=overall&&typeof characterImages!=='undefined'?characterImages[Math.max(0,e.to-1)]:'';
+ const bolts=Array.from({length:12},(_,i)=>'<i style="--i:'+i+'"></i>').join('');
+ ov.innerHTML='<div class="v116-aura"></div><div class="v116-bolts">'+bolts+'</div><div class="v116-energy"></div>'+(img?'<img class="v116-fighter" src="'+safe(img)+'" alt="">':'')+'<main class="v116-stage"><div class="v116-kicker">'+(overall?'FIGHTER UNLOCKED':'POWER INCREASED')+'</div><h1 class="v116-heading">'+(overall?'NEW FIGHTER':'LEVEL UP')+'</h1><div class="v116-level"><span>'+(overall?'RANK':'LEVEL')+'</span><strong>'+e.to+'</strong></div><div class="v116-details"><b>'+(overall?safe(fighter):safe(e.label))+'</b><span>'+(overall?'YOUR NEXT CHAPTER BEGINS':(e.from?'LEVEL '+e.from+' → ':'')+'LEVEL '+e.to+(multi?' · +'+e.jump+' LEVELS':''))+'</span></div>'+(e.kind==='mastered'?'<div class="v116-mastered">ABILITY MASTERED</div>':'')+'<button class="v116-next" type="button">CONTINUE <span>→</span></button></main>';
  document.body.appendChild(ov);requestAnimationFrame(()=>ov.classList.add('visible'));
- let done=false;function close(){if(done)return;done=true;ov.classList.add('leaving');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},300)}
- ov.querySelector('.v114-next').addEventListener('click',close);
+ let done=false;function close(){if(done)return;done=true;ov.classList.add('leaving');setTimeout(()=>{ov.remove();celebrationPlaying=false;playNextCelebration()},330)}
+ ov.querySelector('.v116-next').addEventListener('click',close);
  ov.addEventListener('keydown',ev=>{if(ev.key==='Escape')close()});
- setTimeout(()=>ov.querySelector('.v114-next')?.focus({preventScroll:true}),3100);
+ setTimeout(()=>{if(ov.isConnected)ov.querySelector('.v116-next')?.focus({preventScroll:true})},2700);
 }
+
 function calculate(){const d=readData();const prev=loadCelebrationLevels();saveData(d);recordPBHistory(d);let overall=highestOverall(d);if(overall<1)overall=1;renderHero(overall,d);renderStatuses(d);renderRankings(overall,d);renderStats(d);const next=snapshotLevels(d);if(celebrationsReady&&prev)queueLevelCelebrations(prev,next);saveCelebrationLevels(next);calcStatus.textContent='Rankings updated ✓';setTimeout(()=>calcStatus.textContent='',1400)}
 calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try{switchAppTab(({demos:'glossary'}[sessionStorage.getItem('fitnessRPGActiveTab')]||sessionStorage.getItem('fitnessRPGActiveTab'))||'progress')}catch(e){switchAppTab('progress')}calculate();celebrationsReady=true;
 
@@ -2794,7 +2803,7 @@ const fieldArea=$('vxEditorFields');oldCards.forEach(card=>{if(card.contains($('
 const calc=$('calcBtn');if(calc)calc.style.display='none';
 const allExercises=[...fieldArea.querySelectorAll('.exercise')];
 const assessmentCard=fieldArea.querySelector('.assessment-section-card');
-const specs=[['STRENGTH','hack','Leg Press'],['STRENGTH','leg','Leg Extension'],['STRENGTH','single','Single-Leg Press'],['STRENGTH','hip','Hip Abduction'],['STRENGTH','chest','Chest Press'],['STRENGTH','benchWeight','Bench Press'],['STRENGTH','bwSquatReps','Bodyweight Squat'],['STRENGTH','row','Seated Row'],['STRENGTH','pull','Lat Pulldown'],['CONDITIONING','chinAssist','Chin-ups'],['CONDITIONING','cardioInclineKm','Cardio'],['SKILLS','assess_hamstring','Assessments']];
+const specs=[['STRENGTH','hack','Leg Press'],['STRENGTH','leg','Leg Extension'],['STRENGTH','single','Single-Leg Press'],['STRENGTH','hip','Hip Abduction'],['STRENGTH','chest','Machine Chest Press'],['STRENGTH','benchWeight','Bench Press'],['STRENGTH','bwSquatReps','Bodyweight Squat'],['STRENGTH','row','Seated Row'],['STRENGTH','pull','Lat Pulldown'],['CONDITIONING','chinAssist','Chin-ups'],['CONDITIONING','cardioInclineKm','Cardio'],['SKILLS','assess_hamstring','Assessments']];
 function findBlock(id){let el=$(id);if(!el)return null;if(id.startsWith('assess_'))return assessmentCard;return el.closest('.exercise')}
 function openEditor(id){const spec=specs.find(x=>x[1]===id);if(!spec)return;allExercises.forEach(el=>el.classList.remove('vx-visible'));if(assessmentCard)assessmentCard.classList.remove('vx-visible');const block=findBlock(id);if(!block)return;block.classList.add('vx-visible');$('vxEditorCategory').textContent=spec[0];$('vxEditorTitle').textContent=spec[2];editor.classList.add('open');editor.scrollTop=0;document.body.style.overflow='hidden'}
 function closeEditor(){editor.classList.remove('open');document.body.style.overflow=''}
@@ -3353,7 +3362,7 @@ function render(){
  function openMap(){render();map.classList.add('open');map.scrollTop=0;document.body.style.overflow='hidden';}
  function closeMap(){map.classList.remove('open');document.body.style.overflow='';}
  const launch=()=>{const b=document.createElement('button');b.type='button';b.className='v112-journey-launch';b.innerHTML='<span><strong>EVOLUTION MAP</strong><small>30 fighters · See when every skill unlocks</small></span><span class="v112-arrow">↗</span>';b.onclick=openMap;return b};
- const hqLaunch=launch();const hqActions=home.querySelector('.v108-quick');if(hqActions)hqActions.after(hqLaunch);else home.appendChild(hqLaunch);
+ // Evolution Map is available exclusively from Heroes.
  const heroesLaunch=launch();const collection=heroes.querySelector('.v109-collection');if(collection)collection.before(heroesLaunch);
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&map.classList.contains('open'))closeMap()});
  // V111 hid the requirements toggle but showFighter() still removes the open class.
@@ -3394,6 +3403,68 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 .v112-journey-launch .v112-arrow{flex:none!important;line-height:1!important}
 @media(max-width:390px){#v112Map .v112-map-head{padding-left:51px!important;padding-right:16px!important}#v112Map .v112-map-head h1{font-size:38px!important}#v112Map .v112-timeline{padding-right:15px!important}}
 </style>
+<style id="v115-polish">
+/* Readable scene titles: editorial hierarchy, never cropped by banner edges. */
+.v110-scene-copy{max-width:calc(100% - 28px)!important;overflow:visible!important}
+.v110-scene-copy strong{font-family:Impact,'Arial Narrow',system-ui,sans-serif!important;font-style:normal!important;font-weight:900!important;font-size:clamp(26px,7.5vw,39px)!important;line-height:1.08!important;letter-spacing:-.018em!important;overflow-wrap:normal!important;word-break:normal!important;white-space:normal!important}
+#progressView .v108-quick{gap:10px!important;align-items:stretch!important}
+#progressView .v108-quick>*{min-width:0!important;padding:17px 15px!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;gap:14px!important}
+#progressView .v108-quick>* *{max-width:100%!important;overflow-wrap:break-word!important}
+#rankingsView .vx-categories{gap:5px 9px!important}
+#rankingsView .vx-category{min-height:76px!important;padding:11px 12px!important;gap:4px!important;cursor:pointer!important}
+#rankingsView .vx-category strong{font-size:clamp(12px,3.45vw,15px)!important;line-height:1.2!important}
+#rankingsView .vx-category:focus-visible{outline:2px solid #65d9ff!important;outline-offset:2px!important}
+#rankingsView .v115-detail{grid-column:1/-1;display:none;padding:15px 3px 20px;border-bottom:1px solid #395772;background:transparent;color:#e7f4ff}
+#rankingsView .v115-detail.open{display:block}
+.v115-detail h3{font:750 18px/1.2 system-ui;margin:0 0 5px}
+.v115-detail p{font:400 12px/1.5 system-ui;color:#a8bed0;margin:0 0 12px}
+.v115-progression{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;max-height:300px;overflow-y:auto}
+.v115-progression div{padding:7px 2px 8px;border-bottom:1px solid #24435b;min-width:0}
+.v115-progression b{display:block;font:750 12px system-ui;color:#70d5fb}
+.v115-progression span{display:block;font:500 10px/1.3 system-ui;color:#e7f4ff;overflow-wrap:anywhere}
+.v115-detail button{background:transparent;border:0;border-bottom:1px solid #70d5fb;border-radius:0;color:#8edbff;font:650 12px system-ui;padding:9px 0;margin-top:10px}
+#v112Map .v112-map-head{padding-left:22px!important}
+#v112Map .v112-map-head h1{font-family:Impact,'Arial Narrow',system-ui,sans-serif!important;font-style:normal!important;letter-spacing:-.01em!important;line-height:1.03!important}
+#v112Map .v112-stage-title{font-style:normal!important;font-family:Impact,'Arial Narrow',system-ui,sans-serif!important}
+#v112Map .v112-name,#v112Map .v112-tag{display:block!important}
+#v112Map .v112-tag{text-transform:none!important}
+#levelsView .v109-hero-tile{background:#0a1421!important}
+#levelsView .v109-hero-tile img{object-fit:contain!important;object-position:center center!important;background:#0b1625!important}
+#levelsView .v109-hero-tile.locked img{filter:saturate(.7) brightness(.78)!important}
+#levelsView .v109-hero-tile:after{inset:65% 0 0!important}
+</style>
+<script id="v115-interactions">
+(function(){
+function init(){
+ const grid=document.getElementById('vxCategories');if(!grid||!Array.isArray(window.levels||typeof levels!=='undefined'&&levels))return;
+ const list=typeof levels!=='undefined'?levels:window.levels;
+ const ids=['hack','leg','single','hip','chest','benchWeight','bwSquatReps','row','pull','chinAssist','cardioInclineKm','assess_hamstring'];
+ const bodyOrder=['chinAssist','pull','chest','benchWeight','row','hip','hack','single','leg','bwSquatReps','cardioInclineKm','assess_hamstring'];
+ const tiles=[...grid.querySelectorAll('.vx-category')];
+ const tileMap=new Map(tiles.map((tile,i)=>[ids[i],tile]));
+ // Upper body to lower body; conditioning and assessment follow the anatomical list.
+ bodyOrder.forEach(id=>{const tile=tileMap.get(id);if(tile)grid.appendChild(tile)});
+ const names={chest:'Machine Chest Press',bwSquatReps:'Bodyweight Squats',cardioInclineKm:'Incline Treadmill / Cardio',chinAssist:'Chin-Ups'};
+ const keys={hack:'hack',leg:'leg',single:'single',hip:'hip',chest:'chest',benchWeight:'bench',bwSquatReps:'bw_squat_reps',row:'row',pull:'pull',chinAssist:'chin_value',cardioInclineKm:'cardio_a',assess_hamstring:'assessment'};
+ const detail=document.createElement('section');detail.className='v115-detail';detail.setAttribute('aria-live','polite');
+ let opened=null;
+ const esc=v=>String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function format(id,l){if(id==='assess_hamstring')return l.assessment||'—';if(id==='chinAssist')return l.chin_type==='assist'?l.chin_value+' kg assist':l.chin_value+' reps';if(id==='benchWeight')return l.bench+' kg / '+l.bench_reps+' reps';if(id==='bwSquatReps')return l.bw_squat_reps+' reps';if(id==='cardioInclineKm')return l.cardio_type==='incline'?l.cardio_a+' km':(l.cardio_type==='combo'?'Treadmill + stairs':l.cardio_type==='run'?'Running':l.cardio_type==='5k'?'5 km run':l.cardio_type==='5k10k'?'5 + 10 km':esc(l.cardio_type));return l[keys[id]]+' kg'}
+ function show(id){const tile=tileMap.get(id);if(!tile)return;
+  if(opened===id){detail.classList.remove('open');detail.remove();opened=null;tile.setAttribute('aria-expanded','false');return}
+  tileMap.forEach(t=>t.setAttribute('aria-expanded','false'));
+  opened=id;tile.setAttribute('aria-expanded','true');
+  const name=names[id]||tile.querySelector('strong')?.textContent||id;
+  detail.innerHTML='<h3>'+esc(name)+'</h3><p>Level-by-level requirements · existing benchmarks</p><div class="v115-progression">'+list.map(l=>'<div><b>L'+l.level+'</b><span>'+esc(format(id,l))+'</span></div>').join('')+'</div><button type="button" class="v115-edit">UPDATE PERSONAL BEST ↗</button>';
+  tile.after(detail);detail.classList.add('open');detail.querySelector('.v115-edit').onclick=()=>document.querySelector('#rankingsView .v109-update')?.click();
+ }
+ tileMap.forEach((tile,id)=>{tile.removeAttribute('aria-disabled');tile.tabIndex=0;tile.setAttribute('aria-expanded','false');tile.addEventListener('click',()=>show(id));tile.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id)}});if(names[id]){const label=tile.querySelector('strong');if(label)label.textContent=names[id]}});
+ // Keep the preexisting rank badges attached to their original exercises.
+ const home=document.getElementById('progressView');home?.querySelectorAll('.v112-journey-launch').forEach(b=>b.remove());
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body></html>
 
 <style id="v98-cinematic-lightning-ramp">
