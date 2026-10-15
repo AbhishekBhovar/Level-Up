@@ -3451,22 +3451,49 @@ function init(){
  let opened=null;
  const esc=v=>String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function format(id,l){
-  const terms={hack:'Leg Press',leg:'Leg Extension',single:'Single-Leg Press',hip:'Hip Abduction',chest:'Machine Chest Press',benchWeight:'Bench Press',bwSquatReps:'Bodyweight Squats',row:'Seated Row',pull:'Lat Pulldown'};
-  const card=document.querySelector('.level-card[data-level="'+l.level+'"] .reqs');
-  if(card&&terms[id]){const rows=[...card.querySelectorAll('div')];const found=rows.find(r=>r.querySelector('span')?.textContent.trim()===terms[id]);if(found)return found.querySelector('b')?.textContent.trim()||'—';}
-  if(card&&(id==='chinAssist'||id==='cardioInclineKm')){const labels=[...card.querySelectorAll('.section-label')];const label=labels.find(s=>s.textContent.trim()===(id==='chinAssist'?'Chin-up':'Cardio'));const row=label?.nextElementSibling;if(row)return row.querySelector('b')?.textContent.trim()||'—';}
-  if(id==='assess_hamstring')return l.assessment||'No new assessment';
-  return 'See level requirements';
+  const strength={hack:'hack',leg:'leg',single:'single',hip:'hip',chest:'chest',row:'row',pull:'pull'};
+  if(strength[id])return `${l[strength[id]]} kg × 8 controlled reps`;
+  if(id==='benchWeight')return `${l.bench} kg × ${l.bench_reps} reps · 1 qualifying set`;
+  if(id==='bwSquatReps')return `3 sets × ${l.bw_squat_reps} reps · ${l.bw_squat_rest} sec rest`;
+  if(id==='chinAssist')return l.chin_type==='assist'?`${l.chin_value} kg assistance × ${l.chin_reps} reps`:l.chin_type==='bw'?`Bodyweight × ${l.chin_reps} reps`:`+${l.chin_value} kg × ${l.chin_reps} reps`;
+  if(id==='cardioInclineKm'){
+   const km=x=>`${x} km`;
+   const time=x=>`${Math.floor(x/60)}:${String(x%60).padStart(2,'0')}`;
+   if(l.cardio_type==='incline')return `Incline treadmill · ${km(l.cardio_a)}`;
+   if(l.cardio_type==='combo')return `Incline treadmill ${km(l.cardio_a)} + StairMaster ${l.cardio_b} floors`;
+   if(l.cardio_type==='run')return `Run ${km(l.cardio_a)}`;
+   if(l.cardio_type==='5k')return `5 km run ≤ ${time(l.cardio_a)}`;
+   if(l.cardio_type==='5k10k')return `5 km ≤ ${time(l.cardio_a)} · 10 km ≤ ${time(l.cardio_b)}`;
+  }
+  if(id==='assess_hamstring')return l.assessment?({hamstring:'Hamstring mobility',flexibility:'Straddle flexibility',hipAnkle:'Hip & ankle mobility',highKick:'High-kick mobility',jumps:'Jumps & landings',plyo:'Plyometrics',maBeginner:'Martial arts — beginner',maIntermediate:'Martial arts — intermediate',sparring:'Sparring — competent'}[l.assessment]||l.assessment)+' · pass assessment':'No new assessment at this level';
+  return '—';
  }
+ function applicable(id,l){
+  const cap={hack:19,leg:14,single:20,hip:18,chest:21,benchWeight:21,bwSquatReps:14,row:23,pull:23};
+  if(id==='assess_hamstring')return !!l.assessment;
+  return l.level<=(cap[id]||30);
+ }
+ function currentLevel(id){
+  try{
+   const d=JSON.parse(localStorage.getItem('fitnessRPGv11')||'{}');
+   const k={hack:'hack',leg:'leg',single:'single',hip:'hip',chest:'chest',row:'row',pull:'pull'}[id];
+   if(k)return list.filter(l=>applicable(id,l)&&Number(d[k])>=l[k]).length;
+   if(id==='benchWeight')return list.filter(l=>applicable(id,l)&&(Number(d.benchWeight)>l.bench||(Number(d.benchWeight)===l.bench&&Number(d.benchReps)>=l.bench_reps))).length;
+   if(id==='bwSquatReps')return list.filter(l=>applicable(id,l)&&Number(d.bwSquatReps)>=l.bw_squat_reps&&(Number(d.bwSquatRest)||60)<=l.bw_squat_rest).length;
+  }catch(e){}
+  return null;
+ }
+
  function show(id){const tile=tileMap.get(id);if(!tile)return;
   if(opened===id){detail.classList.remove('open');detail.remove();opened=null;tile.setAttribute('aria-expanded','false');return}
   tileMap.forEach(t=>t.setAttribute('aria-expanded','false'));
   opened=id;tile.setAttribute('aria-expanded','true');
   const name=names[id]||tile.querySelector('strong')?.textContent||id;
-  detail.innerHTML='<h3>'+esc(name)+'</h3><p>Level-by-level requirements · existing benchmarks</p><div class="v115-progression">'+list.map(l=>'<div><b>L'+l.level+'</b><span>'+esc(format(id,l))+'</span></div>').join('')+'</div><button type="button" class="v115-edit">UPDATE PERSONAL BEST ↗</button>';
+  const rows=list.filter(l=>applicable(id,l)),current=currentLevel(id);
+  detail.innerHTML='<h3>'+esc(name)+'</h3><p>Level-by-level requirements · existing benchmarks</p><div class="v115-progression">'+rows.map(l=>'<div class="'+(current!==null&&l.level<=current?'v119-done':current!==null&&l.level===current+1?'v119-next':'')+'"><b>L'+l.level+'</b><span>'+esc(format(id,l))+'</span></div>').join('')+'</div><button type="button" class="v115-edit">UPDATE PERSONAL BEST ↗</button>';
   tile.after(detail);detail.classList.add('open');detail.querySelector('.v115-edit').onclick=()=>document.querySelector('#rankingsView .v109-update')?.click();
  }
- tileMap.forEach((tile,id)=>{tile.removeAttribute('aria-disabled');tile.tabIndex=0;tile.setAttribute('aria-expanded','false');tile.addEventListener('click',()=>show(id));tile.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id)}});if(names[id]){const label=tile.querySelector('strong');if(label)label.textContent=names[id]}});
+ tileMap.forEach((tile,id)=>{tile.onclick=null;tile.removeAttribute('aria-disabled');tile.tabIndex=0;tile.setAttribute('aria-expanded','false');tile.addEventListener('click',()=>show(id));tile.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(id)}});if(names[id]){const label=tile.querySelector('strong');if(label)label.textContent=names[id]}});
  // Keep the preexisting rank badges attached to their original exercises.
  const home=document.getElementById('progressView');home?.querySelectorAll('.v112-journey-launch').forEach(b=>b.remove());
  }
@@ -3519,6 +3546,14 @@ function init(){
 #glossaryView .vx-guide-detail{max-width:100%!important;min-width:0!important;overflow-wrap:anywhere!important}
 #glossaryView .vx-title{font-size:clamp(29px,9vw,43px)!important;line-height:1.06!important}
 #rankingsView .v109-update{position:relative!important;z-index:1!important;margin-top:14px!important}
+</style>
+<style id="v119-real-benchmarks">
+#rankingsView .v115-progression{max-height:47vh!important;overflow-y:auto!important;overscroll-behavior:contain!important}
+#rankingsView .v115-progression .v119-done{opacity:.55}
+#rankingsView .v115-progression .v119-next{background:rgba(245,194,107,.12);border-left:3px solid #f5c26b}
+#rankingsView .v115-detail{padding:15px!important}
+#rankingsView .v115-detail h3{font-size:19px!important}
+#rankingsView .v115-detail p{font-size:12px!important}
 </style>
 </body></html>
 
