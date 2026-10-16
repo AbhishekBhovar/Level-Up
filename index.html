@@ -2436,6 +2436,14 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 <div class="bolt b6"></div><div class="bolt b7"></div>
 <div class="bolt b8"></div><div class="bolt b9"></div>
 <div class="bolt b10"></div>
+<script id="v122-splash-failsafe">
+(function(){
+ function dismiss(){var splash=document.getElementById('powerSplash');if(!splash)return;splash.classList.add('splash-hide');splash.style.pointerEvents='none';setTimeout(function(){if(splash.isConnected)splash.remove()},700)}
+ // Independent of the progression engine: a startup error must never trap navigation.
+ setTimeout(dismiss,5200);
+ window.addEventListener('pageshow',function(e){if(e.persisted)dismiss()});
+})();
+</script>
 <div class="splash-core">
 <div class="splash-title">Powering Up</div>
 <div class="splash-sub">Loading your progression</div>
@@ -2448,7 +2456,7 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 <div class="card hero"><div class="eyebrow">Current fitness level</div><div class="big" id="currentChar">Hawkeye</div><div id="heroMedia"><img alt="Hawkeye" class="demo-image-clean char-image show" src="assets/01_hawkeye_v73.jpeg"/></div><div class="meta" id="currentMeta">Level 1 • Foundation</div><div class="progress"><div class="bar" id="bar"></div></div><div class="next-level-card" id="nextBox"><h3>Next Level</h3><div>Enter your current bests, assessments and tap Calculate Rankings.</div></div></div>
 <div class="card"><h2>Your Fitness Benchmarks</h2><div class="notice">Athletic ceilings are intentional. Once a machine benchmark is mastered, later levels are earned through strength-to-weight, running, mobility, explosiveness and combat skill.</div>
 <div class="weights-grid">
-<div class="exercise"><label class="benchmark-label"><span>45° Angled Leg Press</span><small>(kg × 8 reps)</small></label><input id="angled" inputmode="decimal" step=".5" type="number"/><div class="status" id="st_hack">Enter your current best</div></div>
+<div class="exercise"><label class="benchmark-label"><span>45° Angled Leg Press</span><small>(kg × 8 reps)</small></label><input id="angled" inputmode="decimal" step=".5" type="number"/><div class="status" id="st_angled">Enter your current best</div></div>
 <div class="exercise"><label class="benchmark-label"><span>Leg Extension</span><small>(kg × 8 reps)</small></label><input id="leg" inputmode="decimal" step=".5" type="number"/><div class="status" id="st_leg">Enter your current best</div></div>
 <div class="exercise"><label class="benchmark-label"><span>Single-Leg Press</span><small>(kg × 8 reps each leg)</small></label><input id="single" inputmode="decimal" step=".5" type="number"/><div class="status" id="st_single">Enter your current best</div></div>
 <div class="exercise"><label class="benchmark-label"><span>Hip Abduction</span><small>(kg × 8 reps)</small></label><input id="hip" inputmode="decimal" step=".5" type="number"/><div class="status" id="st_hip">Enter your current best</div></div>
