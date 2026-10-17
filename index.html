@@ -2629,6 +2629,12 @@ function decorateLevelRequirements(d){
       const track=row.dataset.cardioTrack;
       if(track){const p=cardioParts(req,d).find(x=>x.key===track);if(!p)return;const state=p.done?'done':'todo';row.classList.add('req-'+state);const badge=document.createElement('i');badge.className='req-state';badge.textContent=p.done?'✓ DONE':'TO CONQUER';row.appendChild(badge);return;}
       if(!k)return;
+      // V128: Mastery is an achieved status, never part of the target itself.
+      // The cap is represented by the same fixed target at later fighter levels.
+      if(mastery[k]){
+        const target=row.querySelector('b');
+        if(target)target.textContent=target.textContent.replace(/\s*[✓✔]\s*Mastered\b/gi,'').replace(/\s*Mastered\s*[✓✔]/gi,'').trim();
+      }
       const state=requirementRowState(k,req,d);row.classList.add('req-'+state);
       const badge=document.createElement('i');badge.className='req-state';badge.textContent=state==='mastered'?'✓ MASTERED':state==='done'?'✓ DONE':'TO CONQUER';row.appendChild(badge);
     });
@@ -3169,7 +3175,7 @@ updateRanks();const save=$('vxSave');if(save)save.addEventListener('click',()=>s
 const collection=document.createElement('section');collection.className='v109-collection';collection.innerHTML='<div class="v109-collection-top"><h2>FIGHTER COLLECTION</h2><small>30 CHARACTERS</small></div><div class="v109-roster" id="v109Roster"></div>';
 const fighter=$('vxFighter');if(!fighter)return;const shell=fighter.closest('section');if(!shell)return;const back=document.createElement('button');back.className='v109-hero-detail-back';back.type='button';back.textContent='← ALL FIGHTERS';fighter.before(back);shell.prepend(collection);
 const roster=$('v109Roster');const buttons=[];
-levels.forEach((l,i)=>{const n=i+1,b=document.createElement('button');b.type='button';b.className='v109-hero-tile';const img=document.createElement('img');img.src=galleryImages[n]||'';img.alt='';img.loading=i<9?'eager':'lazy';const num=document.createElement('span');num.className='v109-hero-level';num.textContent='LV '+n;const name=document.createElement('span');name.className='v109-hero-name';name.textContent=l.character;b.append(img,num,name);b.setAttribute('aria-label','View '+l.character+' level '+n);b.onclick=()=>{const select=$('vxSelect');if(select){select.value=String(n);select.dispatchEvent(new Event('change',{bubbles:true}))}shell.classList.remove('v109-collection-active');shell.classList.add('v109-detail-open');shell.scrollIntoView({block:'start',behavior:'instant'})};roster.appendChild(b);buttons.push(b)});
+levels.forEach((l,i)=>{const n=i+1,b=document.createElement('button');b.type='button';b.className='v109-hero-tile';const img=document.createElement('img');img.src=galleryImages[n]||'';img.alt='';img.loading=i<9?'eager':'lazy';img.addEventListener('error',()=>{if(img.dataset.fallback)return;img.dataset.fallback='1';const backup=characterImages[n];if(backup&&backup!==img.getAttribute('src'))img.src=backup;});const num=document.createElement('span');num.className='v109-hero-level';num.textContent='LV '+n;const name=document.createElement('span');name.className='v109-hero-name';name.textContent=l.character;b.append(img,num,name);b.setAttribute('aria-label','View '+l.character+' level '+n);b.onclick=()=>{const select=$('vxSelect');if(select){select.value=String(n);select.dispatchEvent(new Event('change',{bubbles:true}))}shell.classList.remove('v109-collection-active');shell.classList.add('v109-detail-open');shell.scrollIntoView({block:'start',behavior:'instant'})};roster.appendChild(b);buttons.push(b)});
 function refreshCollection(){try{const achieved=highestOverall(readData());buttons.forEach((b,i)=>{b.classList.toggle('unlocked',i+1<=achieved);b.classList.toggle('next',i+1===achieved+1);b.classList.toggle('locked',i+1>achieved+1);b.querySelector('.v109-hero-level').textContent='LV '+(i+1)+(i+1<=achieved?' ✓':'')})}catch(e){}}
 function showCollection(){refreshCollection();shell.classList.add('v109-collection-active');shell.classList.remove('v109-detail-open')}
 back.onclick=()=>{showCollection();shell.scrollIntoView({block:'start',behavior:'instant'})};showCollection();
@@ -3649,6 +3655,63 @@ function init(){
   document.querySelectorAll('#cardioStairs,#cardioRunKm,#cardio5Min,#cardio5Sec,#cardio10Min,#cardio10Sec').forEach(el=>el.addEventListener('change',paint));
   document.querySelectorAll('.v103-train-tabs button').forEach(b=>b.addEventListener('click',()=>{panel.remove();opened='';cards.forEach(c=>c.setAttribute('aria-expanded','false'));}));
  });
+})();
+</script>
+
+<style id="v128-gallery-and-guide-fixes">
+/* Gallery portraits fill the frame: no dark letterbox above/below the art. */
+#levelsView .v109-hero-tile img{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:center top!important;
+  background:transparent!important;
+}
+#levelsView .v109-hero-tile .v109-hero-level{
+  top:6px!important;left:6px!important;z-index:4!important;
+}
+/* The guide uses the original list/detail design, with reliable tap targets. */
+#glossaryView .vx-guide-list button{
+  pointer-events:auto!important;cursor:pointer!important;
+  touch-action:manipulation!important;position:relative!important;z-index:1!important;
+}
+#glossaryView .vx-guide-detail.open{display:block!important}
+#glossaryView .vx-guide-detail:not(.open){display:none!important}
+#glossaryView .vx-guide-detail .glossary-card[open] .definition{display:block!important}
+</style>
+<script id="v128-guide-click-repair">
+(function(){
+ const list=document.getElementById('vxGuideList');
+ const detail=document.getElementById('vxGuideDetail');
+ const content=document.getElementById('vxGuideContent');
+ const back=document.getElementById('vxGuideBack');
+ const glossary=document.getElementById('glossaryView');
+ if(!list||!detail||!content||!back||!glossary)return;
+ const source=[...glossary.querySelectorAll('.glossary-card')].filter(x=>!content.contains(x));
+ const buttons=[...list.querySelectorAll('button')];
+ function openGuide(i){
+   const original=source[i];if(!original)return;
+   const copy=original.cloneNode(true);copy.open=true;copy.setAttribute('open','');
+   content.replaceChildren(copy);
+   list.style.setProperty('display','none','important');
+   const search=list.previousElementSibling;
+   if(search&&search.tagName==='INPUT'&&search.type==='search')search.style.display='none';
+   detail.classList.add('open');
+   detail.style.setProperty('display','block','important');
+   detail.scrollIntoView({block:'start',behavior:'auto'});
+ }
+ function closeGuide(){
+   detail.classList.remove('open');detail.style.removeProperty('display');
+   list.style.removeProperty('display');
+   const search=list.previousElementSibling;
+   if(search&&search.tagName==='INPUT'&&search.type==='search')search.style.display='';
+   glossary.scrollIntoView({block:'start',behavior:'auto'});
+ }
+ buttons.forEach((button,i)=>{
+   button.type='button';
+   button.onclick=function(e){e.preventDefault();e.stopPropagation();openGuide(i)};
+ });
+ back.type='button';
+ back.onclick=function(e){e.preventDefault();closeGuide()};
 })();
 </script>
 </body></html>
