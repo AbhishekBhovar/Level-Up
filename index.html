@@ -2409,6 +2409,23 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 /* Six cardio entry modes fit the same compact controls on mobile. */
 .cardio-grid.cardio-grid-5{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
 .cardio-grid.cardio-grid-5 button{min-width:0!important;white-space:normal!important;min-height:40px!important}
+</style><style id="v131-splash-progress-repair">
+@keyframes v131SplashFill{0%{width:0%}100%{width:100%}}
+#powerSplash #splashBar{
+ width:0%;height:100%;
+ animation:v131SplashFill 4.2s linear both!important;
+ transition:none!important;
+ background:linear-gradient(90deg,#20b8f4,#b9f2ff,#fff)!important;
+ box-shadow:0 0 14px rgba(195,244,255,.95)!important;
+}
+</style>
+<style id="v133-training-mobile-layout">
+/* Keep the PB instruction away from the right screen edge. */
+#progressView .vx-bar .vx-small{padding-right:16px!important;max-width:57%;text-align:right;line-height:1.35;white-space:normal;box-sizing:border-box}
+#progressView .vx-bar{gap:12px;align-items:center}
+/* Four equal tabs, sized for a narrow phone without overflowing. */
+#progressView .v103-train-tabs{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}
+#progressView .v103-train-tabs button{font-size:9px!important;padding:10px 2px!important;line-height:1.2!important;white-space:normal!important;overflow-wrap:break-word!important;min-width:0!important}
 </style></head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -2469,6 +2486,19 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 <div class="splash-track"><div class="splash-bar" id="splashBar"></div></div>
 </div>
 </div>
+<script id="v131-splash-timeout-failsafe">
+(function(){
+ var splash=document.getElementById('powerSplash');
+ if(!splash)return;
+ // Even if later app initialization fails, the loading overlay cannot block navigation forever.
+ setTimeout(function(){
+   if(!splash.isConnected)return;
+   splash.classList.add('splash-hide');
+   splash.style.pointerEvents='none';
+   setTimeout(function(){if(splash.isConnected)splash.remove()},650);
+ },5200);
+})();
+</script>
 <header class="levelup-header"><div class="levelup-brand"><img alt="" class="levelup-mark" src="assets/level_up_logo_final_v78.png"/><div class="levelup-wordmark"><span>LEVEL</span><strong>UP</strong></div></div></header>
 <div class="wrap">
 <div class="tab-view active" id="progressView">
@@ -2497,7 +2527,7 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 <div class="stats-kicker">Overall Progress</div>
 <div class="stats-percent" id="statsOverallPct">0%</div>
 <div class="stats-progress"><span id="statsOverallBar"></span></div>
-<div class="stats-caption">Across 12 key areas</div>
+<div class="stats-caption">Across 14 key areas</div>
 </div>
 <div class="stats-summary">
 <div class="stats-summary-item"><b id="statsProgressing">0</b><span>Progressing</span><small>Seeing gains</small></div>
@@ -2698,8 +2728,8 @@ function areaLevel(key,d){
   if(key==='bench')return benchLevel(d);
   if(key==='bwSquat')return bwSquatLevel(d);
   if(key==='chin')return chinLevel(d);
-  if(def.key==='stairs')return stairsTrackLevel(d);
-  if(def.key==='walking')return walkingTrackLevel(d);
+  if(key==='stairs')return stairsTrackLevel(d);
+  if(key==='walking')return walkingTrackLevel(d);
   if(key==='running')return runningTrackLevel(d);
   if(key==='cardio')return cardioLevel(d);
   if(key==='assess')return assessLevel(d);
@@ -2864,7 +2894,7 @@ calcBtn.onclick=calculate;loadData();setMode(mode);setCardioMode(cardioMode);try
  const ver='v92'; let first=true;
  try{first=localStorage.getItem('levelUpSplashVersion')!==ver}catch(e){}
  const duration=4500;
- if(bar){bar.style.transition='width '+(duration-300)+'ms cubic-bezier(.22,.7,.2,1)';requestAnimationFrame(()=>requestAnimationFrame(()=>bar.style.width='100%'))}
+ /* V131: the splash bar fills using CSS independently of JavaScript. */
  setTimeout(()=>{splash.classList.add('splash-hide');try{localStorage.setItem('levelUpSplashVersion',ver)}catch(e){}setTimeout(()=>splash.remove(),650)},duration);
 })();
 
@@ -2885,9 +2915,9 @@ const fieldArea=$('vxEditorFields');oldCards.forEach(card=>{if(card.contains($('
 const calc=$('calcBtn');if(calc)calc.style.display='none';
 const allExercises=[...fieldArea.querySelectorAll('.exercise')];
 const assessmentCard=fieldArea.querySelector('.assessment-section-card');
-const specs=[['STRENGTH','angled','45° Angled Leg Press'],['STRENGTH','leg','Leg Extension'],['STRENGTH','single','Single-Leg Press'],['STRENGTH','hip','Hip Abduction'],['STRENGTH','chest','Machine Chest Press'],['STRENGTH','benchWeight','Bench Press'],['STRENGTH','bwSquatReps','Bodyweight Squat'],['STRENGTH','row','Seated Row'],['STRENGTH','pull','Lat Pulldown'],['CONDITIONING','chinAssist','Chin-ups'],['CONDITIONING','cardioInclineKm','Cardio'],['SKILLS','assess_hamstring','Assessments']];
+const specs=[['STRENGTH','angled','45° Angled Leg Press'],['STRENGTH','leg','Leg Extension'],['STRENGTH','single','Single-Leg Press'],['STRENGTH','hip','Hip Abduction'],['STRENGTH','chest','Machine Chest Press'],['STRENGTH','benchWeight','Bench Press'],['STRENGTH','bwSquatReps','Bodyweight Squat'],['STRENGTH','row','Seated Row'],['STRENGTH','pull','Lat Pulldown'],['CONDITIONING','chinAssist','Chin-ups'],['CONDITIONING','cardioInclineKm','Cardio'],['SKILLS','assess_hamstring','Assessments'],['MARTIAL ARTS','assess_maBeginner','Martial Arts Assessments']];
 function findBlock(id){let el=$(id);if(!el)return null;if(id.startsWith('assess_'))return assessmentCard;return el.closest('.exercise')}
-function openEditor(id){const spec=specs.find(x=>x[1]===id);if(!spec)return;allExercises.forEach(el=>el.classList.remove('vx-visible'));if(assessmentCard)assessmentCard.classList.remove('vx-visible');const block=findBlock(id);if(!block)return;block.classList.add('vx-visible');$('vxEditorCategory').textContent=spec[0];$('vxEditorTitle').textContent=spec[2];editor.classList.add('open');editor.scrollTop=0;document.body.style.overflow='hidden'}
+function openEditor(id){const spec=specs.find(x=>x[1]===id);if(!spec)return;allExercises.forEach(el=>el.classList.remove('vx-visible'));if(assessmentCard)assessmentCard.classList.remove('vx-visible');const block=findBlock(id);if(!block)return;block.classList.add('vx-visible');$('vxEditorCategory').textContent=spec[0];$('vxEditorTitle').textContent=spec[2];editor.classList.add('open');editor.scrollTop=0;document.body.style.overflow='hidden';if(id==='assess_maBeginner'){requestAnimationFrame(()=>{const field=document.getElementById('assess_maBeginner');if(field){field.closest('label')?.scrollIntoView({block:'center',behavior:'instant'});}})}}
 function closeEditor(){editor.classList.remove('open');document.body.style.overflow=''}
 $('vxEditorBack').onclick=closeEditor;
 $('vxSave').onclick=()=>{calculate();closeEditor();refreshVx()};
@@ -2900,7 +2930,7 @@ const fighterShell=document.createElement('section');fighterShell.innerHTML='<di
 const originalLevelCards=[...levelsTab.querySelectorAll('.level-card[data-level]')];
 const select=$('vxSelect');levels.forEach(l=>{const o=document.createElement('option');o.value=l.level;o.textContent='LV '+l.level+' · '+l.character;select.appendChild(o)});
 let fighterIndex=1,reqExpanded=false;
-function showFighter(n){fighterIndex=Math.min(30,Math.max(1,n));const l=levels[fighterIndex-1];select.value=fighterIndex;$('vxFighterCount').textContent=fighterIndex+' / 30';$('vxFighterImage').src=galleryImages[fighterIndex]||'';$('vxFighterImage').alt=l.character;$('vxFighterStage').textContent='LEVEL '+fighterIndex+' · '+l.stage;$('vxFighterName').textContent=l.character;const achieved=highestOverall(readData());$('vxFighterStatus').textContent=fighterIndex<=achieved?'✓ UNLOCKED':fighterIndex===achieved+1?'NEXT TO UNLOCK':'LOCKED';reqExpanded=false;$('vxReqs').classList.remove('open');$('vxReqToggle').textContent='VIEW REQUIREMENTS ↓';$('vxReqs').innerHTML='';const original=originalLevelCards[fighterIndex-1];if(original){const copy=original.querySelector('.reqs').cloneNode(true);copy.querySelectorAll('img').forEach(x=>x.remove());$('vxReqs').appendChild(copy)} }
+function showFighter(n){fighterIndex=Math.min(30,Math.max(1,n));const l=levels[fighterIndex-1];select.value=fighterIndex;$('vxFighterCount').textContent=fighterIndex+' / 30';$('vxFighterImage').src=galleryImages[fighterIndex]||'';$('vxFighterImage').alt=l.character;$('vxFighterStage').textContent='LEVEL '+fighterIndex+' · '+l.stage;$('vxFighterName').textContent=l.character;const achieved=highestOverall(readData());$('vxFighterStatus').textContent=fighterIndex<=achieved?'✓ UNLOCKED':fighterIndex===achieved+1?'NEXT TO UNLOCK':'LOCKED';reqExpanded=false;$('vxReqs').classList.remove('open');$('vxReqToggle').textContent='VIEW REQUIREMENTS ↓';$('vxReqs').innerHTML='';const original=originalLevelCards[fighterIndex-1];if(original){decorateLevelRequirements(readData());const copy=original.querySelector('.reqs').cloneNode(true);copy.querySelectorAll('img').forEach(x=>x.remove());$('vxReqs').appendChild(copy)} }
 $('vxPrev').onclick=()=>showFighter(fighterIndex-1);$('vxNext').onclick=()=>showFighter(fighterIndex+1);select.onchange=()=>showFighter(Number(select.value));$('vxReqToggle').onclick=()=>{reqExpanded=!reqExpanded;$('vxReqs').classList.toggle('open',reqExpanded);$('vxReqToggle').textContent=reqExpanded?'HIDE REQUIREMENTS ↑':'VIEW REQUIREMENTS ↓'};
 let touchX=0;$('vxFighter').addEventListener('touchstart',e=>touchX=e.touches[0].clientX,{passive:true});$('vxFighter').addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-touchX;if(Math.abs(delta)>65)showFighter(fighterIndex+(delta<0?1:-1))},{passive:true});
 const guideShell=document.createElement('section');guideShell.innerHTML='<div class="vx-kicker">THE TRAINING CODEX</div><h1 class="vx-title">FIELD GUIDE</h1><div class="vx-small" style="margin-bottom:15px">Choose a movement to see its demonstration and pass criteria.</div><div class="vx-guide-list" id="vxGuideList"></div><div class="vx-guide-detail" id="vxGuideDetail"><button class="vx-back" id="vxGuideBack">← All techniques</button><div id="vxGuideContent"></div></div>';guide.prepend(guideShell);
@@ -2993,7 +3023,7 @@ showFighter(Math.max(1,Math.min(30,highestOverall(readData())+1)));refreshVx();
  old.style.setProperty('display','none','important');old.parentNode.insertBefore(h,old);
  const head=p.querySelector('.vx-bar');if(head && head.parentElement && head.parentElement!==p){const parent=head.parentElement; if(parent.textContent.includes('THE JOURNEY'))parent.style.display='none'}
  const launch=p.querySelector('.vx-launch');if(launch)launch.style.display='none';
- const categories=p.querySelector('.vx-categories');if(categories){const tabs=document.createElement('div');tabs.className='v103-train-tabs';tabs.innerHTML='<button data-filter="STRENGTH" class="active">STRENGTH</button><button data-filter="CONDITIONING">CARDIO & CHINS</button><button data-filter="SKILLS">SKILLS</button>';categories.before(tabs);const cards=[...categories.querySelectorAll('.vx-category')];function filter(cat){cards.forEach(b=>{const typ=b.querySelector('small')?.textContent||'';b.style.display=typ===cat?'flex':'none'});tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.filter===cat))}tabs.querySelectorAll('button').forEach(b=>b.onclick=()=>filter(b.dataset.filter));filter('STRENGTH')}
+ const categories=p.querySelector('.vx-categories');if(categories){const tabs=document.createElement('div');tabs.className='v103-train-tabs';tabs.innerHTML='<button data-filter="STRENGTH" class="active">STRENGTH</button><button data-filter="CONDITIONING">CARDIO & CHINS</button><button data-filter="SKILLS">SKILLS</button><button data-filter="MARTIAL ARTS">MARTIAL ARTS</button>';categories.before(tabs);const cards=[...categories.querySelectorAll('.vx-category')];function filter(cat){cards.forEach(b=>{const typ=b.querySelector('small')?.textContent||'';b.style.display=typ===cat?'flex':'none'});tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.filter===cat))}tabs.querySelectorAll('button').forEach(b=>b.onclick=()=>filter(b.dataset.filter));filter('STRENGTH')}
  const ranks=document.getElementById('vxRankList');if(ranks)ranks.classList.add('v103-ranks');
  const lvl=document.getElementById('vxFighter');if(lvl)lvl.classList.add('v103-level-portrait');
  function update(){try{const d=readData(),current=Math.max(1,highestOverall(d));const fighter=levels[current-1];const next=levels[Math.min(29,current)];document.getElementById('v103Name').textContent=fighter.character.toUpperCase();document.getElementById('v103Stage').textContent='LEVEL '+current+' · '+fighter.stage.toUpperCase();document.getElementById('v103Portrait').src=characterImages[current]||'assets/01_hawkeye_v73.jpeg';document.getElementById('v103Next').textContent=current<30?next.character.toUpperCase()+' · LEVEL '+(current+1):'ALL FIGHTERS UNLOCKED';const checks=[strengthPass(next,d),chinPass(next,d),...cardioParts(next,d).map(x=>x.done)];if(next.assessment||levels.slice(0,next.level).some(x=>x.assessment))checks.push(assessmentPass(next,d));const complete=checks.filter(Boolean).length;document.getElementById('v103MissionProgress').textContent=complete+' / '+checks.length+' requirement groups complete';document.getElementById('v103Meter').style.width=(100*complete/checks.length)+'%' }catch(e){console.warn('V103 hero update',e)}}
