@@ -2467,6 +2467,24 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 #v136Karate button,#v136Karate select,#v136Karate input{font:inherit}
 .k136-panel{background:linear-gradient(145deg,#12243a,#091423);border:1px solid #31516b;border-radius:12px;padding:13px;margin:10px 0}
 .k136-title{font-weight:850;font-size:18px;letter-spacing:.04em}.k136-muted{font-size:12px;color:#a9bfd2}.k136-flex{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.k136-btn{background:#154d74;color:white;border:1px solid #4388b5;border-radius:6px;padding:8px 10px;cursor:pointer}.k136-btn:disabled{opacity:.45}.k136-pill{font-size:11px;background:#203a53;border-radius:5px;padding:4px 7px}.k136-bar{height:6px;border-radius:5px;background:#203246;overflow:hidden;margin:6px 0}.k136-bar>i{display:block;height:100%;background:#50c5e9}.k136-tech{width:100%;text-align:left;color:#fff;border:1px solid #35546c;background:#14273a;border-radius:8px;padding:10px;margin:6px 0}.k136-tech strong{display:block}.k136-mode{border-top:1px solid #2c4356;padding:12px 0}.k136-mode input{width:70px;max-width:25%;background:#0c1a29;border:1px solid #54708a;color:white;border-radius:5px;padding:8px}.k136-image{width:100%;max-height:290px;object-fit:contain;border-radius:8px;margin:8px 0}.k136-link{color:#73d8ff}.k136-note{font-size:11px;color:#a4b9c9;line-height:1.5}
+</style><style id="v138-compact-karate-log">
+#v136Karate .k138-detail{padding:13px!important;margin:8px 0 12px!important}
+#v136Karate .k138-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:9px}
+#v136Karate .k138-name{font-size:18px;font-weight:800;line-height:1.2;color:#f1f6ff}
+#v136Karate .k138-japanese{font-size:12px;color:#9cb2c5;margin-top:2px}
+#v136Karate .k138-close{border:1px solid #3a5a73;background:transparent;color:#cde7f9;font-size:22px;line-height:1;border-radius:7px;width:30px;height:30px;flex-shrink:0}
+#v136Karate .k138-mode{padding:8px 0;border-top:1px solid #28445a}
+#v136Karate .k138-mode-top{display:flex;justify-content:space-between;font-size:13px;gap:8px;margin-bottom:5px}
+#v136Karate .k138-controls{margin-top:7px;gap:6px}
+#v136Karate .k138-controls input{width:65px!important;height:36px!important;padding:5px!important;font-size:15px!important}
+#v136Karate .k138-controls .k136-btn{padding:7px 12px!important;min-height:36px!important}
+#v136Karate .k138-undo{background:transparent;border:1px solid #3a5a73;border-radius:6px;color:#a9bfd2;padding:7px 10px;font-size:12px;min-height:36px}
+#v136Karate .k138-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;font-size:12px;color:#a9bfd2}
+#v136Karate .k138-reference-toggle{border:0;background:transparent;color:#7bd6ff;text-decoration:underline;font-size:12px;padding:8px 0}
+#v136Karate #k138Reference[hidden]{display:none!important}
+#v136Karate #k138Reference{padding-top:12px}
+#v136Karate #k138Reference .k136-image{width:100%;max-height:270px;object-fit:contain;margin:0 auto 8px;display:block}
+#v136Karate .k138-tech .k136-flex strong{font-size:15px!important}
 </style></head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -3851,7 +3869,7 @@ function render(){
  if(done.length){html+='<button class="k136-btn" id="k137ToggleDone">'+(showDone?'Hide':'Show')+' completed ('+done.length+')</button>';if(showDone)for(const r of done)html+=techButton(r,true)}
  html+='<div id="k136Detail"></div><div class="k136-panel"><div class="k136-flex"><strong>Technique Library · 29</strong><button id="k137ToggleLibrary" class="k136-btn">'+(libraryOpen?'Close':'Browse')+'</button></div>';
  if(libraryOpen){html+='<div class="k137-library-grid">'+['strikes','blocks','kicks'].map(c=>'<button data-cat="'+c+'" class="'+(libraryCategory===c?'active':'')+'">'+c[0].toUpperCase()+c.slice(1)+'</button>').join('')+'</div>';
- for(const t of Object.values(tech).filter(t=>t.category===libraryCategory)){const r=stage(t.id,lvl);html+='<button class="k136-tech k137-compact" data-tech="'+esc(t.id)+'"><strong>'+esc(t.name)+'</strong><span class="k136-muted">'+esc(t.english)+(r?' · Level '+lvl:'')+'</span></button>'}}
+ for(const t of Object.values(tech).filter(t=>t.category===libraryCategory)){const r=stage(t.id,lvl);html+='<button class="k136-tech k137-compact" data-tech="'+esc(t.id)+'"><strong>'+esc(t.english||t.name)+'</strong><span class="k136-muted">'+esc(t.name)+(r?' · Level '+lvl:'')+'</span></button>'}}
  html+='</div>';host.innerHTML=html;
  $('k136Level').onchange=e=>{state.level=+e.target.value;selected=null;save();render()};
  $('k137ToggleLibrary').onclick=()=>{libraryOpen=!libraryOpen;selected=null;render()};
@@ -3861,23 +3879,26 @@ function render(){
  if(selected)detail(selected,false);
 }
 function techButton(r,isDone){const t=tech[r.technique_id],progress=modes.reduce((n,[k])=>n+Math.min(+r[k],total(t.id,+r.fighter_level,k)),0);
- return '<button class="k136-tech" data-tech="'+esc(t.id)+'"><div class="k136-flex"><strong>'+esc(t.name)+'</strong><span class="'+(isDone?'k137-done':'')+'">'+(isDone?'✓ DONE':progress+' / '+r.total_new_reps)+'</span></div><span class="k136-muted">'+esc(t.english)+' · '+esc(r.training_stage)+'</span><div class="k136-bar"><i style="width:'+(100*progress/Math.max(1,+r.total_new_reps))+'%"></i></div></button>'}
+ return '<button class="k136-tech k138-tech" data-tech="'+esc(t.id)+'"><div class="k136-flex"><strong>'+esc(t.english||t.name)+'</strong><span class="'+(isDone?'k137-done':'')+'">'+(isDone?'✓ DONE':progress+' / '+r.total_new_reps)+'</span></div><span class="k136-muted">'+esc(t.name)+' · '+esc(r.training_stage)+'</span><div class="k136-bar"><i style="width:'+(100*progress/Math.max(1,+r.total_new_reps))+'%"></i></div></button>'}
 function detail(id,scroll=true){const t=tech[id],r=stage(id,state.level),d=$('k136Detail');if(!t||!d)return;selected=id;
  const canLog=state.level===current()&&!!r;
- let html='<div class="k136-panel k137-detail"><div class="k136-flex"><div><div class="k136-title">'+esc(t.name)+'</div><span class="k136-muted">'+esc(t.english)+'</span></div><button class="k136-btn" id="k136Close">Close</button></div>';
- if(t.art)html+='<img class="k136-image" loading="lazy" src="'+esc(t.art)+'" alt="'+esc(t.name)+' technique illustration">';
- if(t.video)html+='<p><a class="k136-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v='+encodeURIComponent(t.video)+'">▶ YouTube demonstration ↗</a></p>';
- if(!t.art&&!t.video)html+='<p class="k137-summary">Illustration and video reference not yet available.</p>';
- if(!r)html+='<p class="k137-summary">Not required at this level.</p>';
+ let html='<div class="k136-panel k137-detail k138-detail"><div class="k138-head"><div><div class="k138-name">'+esc(t.english||t.name)+'</div><div class="k138-japanese">'+esc(t.name)+'</div></div><button class="k138-close" id="k136Close" aria-label="Close technique">×</button></div>';
+ if(!r)html+='<p class="k137-summary">Not required at this fighter level.</p>';
  else for(const [k,name] of modes){const target=+r[k];if(!target)continue;const count=total(id,state.level,k);
- html+='<div class="k136-mode"><div class="k136-flex"><strong>'+name+'</strong><span>'+count+' / '+target+(count>=target?' ✓':'')+'</span></div><div class="k136-bar"><i style="width:'+Math.min(100,100*count/target)+'%"></i></div>';
- if(canLog)html+='<div class="k137-controls"><input type="number" inputmode="numeric" min="1" max="1000" value="20" aria-label="'+name+' reps" id="k136Input'+k+'"><button class="k136-btn" data-log="'+k+'">Log reps</button><button class="k136-btn" data-undo="'+k+'">Undo</button></div>';
+ html+='<div class="k138-mode"><div class="k138-mode-top"><strong>'+name+'</strong><span>'+count+' / '+target+(count>=target?' ✓':'')+'</span></div><div class="k136-bar"><i style="width:'+Math.min(100,100*count/target)+'%"></i></div>';
+ if(canLog)html+='<div class="k137-controls k138-controls"><input type="number" inputmode="numeric" min="1" max="1000" value="20" aria-label="'+name+' repetitions" id="k136Input'+k+'"><button class="k136-btn" data-log="'+k+'">Log</button><button class="k138-undo" data-undo="'+k+'">Undo</button></div>';
  html+='</div>'}
- if(r&&!canLog)html+='<p class="k137-summary">View-only level. Select your current fighter level to log reps.</p>';
- html+='<p class="k137-summary">Lifetime: '+state.logs.filter(x=>x.id===id).reduce((a,x)=>a+(+x.n||0),0)+' reps</p></div>';
+ if(r&&!canLog)html+='<p class="k137-summary">Select your current fighter level to log repetitions.</p>';
+ html+='<div class="k138-footer"><span>Lifetime: '+state.logs.filter(x=>x.id===id).reduce((a,x)=>a+(+x.n||0),0)+' reps</span><button id="k138ReferenceToggle" class="k138-reference-toggle" aria-expanded="false">View technique guide ▾</button></div>';
+ html+='<div id="k138Reference" hidden>';
+ if(t.art)html+='<img class="k136-image" loading="lazy" src="'+esc(t.art)+'" alt="'+esc(t.english||t.name)+' technique illustration">';
+ if(t.video)html+='<p><a class="k136-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v='+encodeURIComponent(t.video)+'">▶ Watch YouTube demonstration ↗</a></p>';
+ if(!t.art&&!t.video)html+='<p class="k137-summary">No illustration or video reference available yet.</p>';
+ html+='</div></div>';
  d.innerHTML=html;
- if(scroll)d.scrollIntoView({behavior:'smooth',block:'start'});
+ if(scroll)d.scrollIntoView({behavior:'smooth',block:'nearest'});
  $('k136Close').onclick=()=>{selected=null;d.innerHTML=''};
+ $('k138ReferenceToggle').onclick=()=>{const ref=$('k138Reference'),open=ref.hidden;ref.hidden=!open;$('k138ReferenceToggle').textContent=open?'Hide technique guide ▴':'View technique guide ▾';$('k138ReferenceToggle').setAttribute('aria-expanded',String(open))};
  d.querySelectorAll('[data-log]').forEach(b=>b.onclick=()=>{const k=b.dataset.log,n=+$('k136Input'+k).value;if(!Number.isInteger(n)||n<1||n>1000)return;state.logs.push({id,level:state.level,mode:k,n,at:Date.now()});save();render();try{calculate()}catch(e){}});
  d.querySelectorAll('[data-undo]').forEach(b=>b.onclick=()=>{const k=b.dataset.undo,i=state.logs.findLastIndex(x=>x.id===id&&+x.level===state.level&&x.mode===k);if(i<0)return;state.logs.splice(i,1);save();render();try{calculate()}catch(e){}});
 }
