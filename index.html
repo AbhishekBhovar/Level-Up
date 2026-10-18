@@ -3959,11 +3959,12 @@ let tries=0;const timer=setInterval(()=>{if(init()||++tries>40)clearInterval(tim
 </script>
 
 <style id="v140-karate-hero-requirements">
+/* V141: Each training speed is a separate requirements row. */
 #vxReqs .v140-karate-heading{display:block!important;padding:10px 0 3px!important;color:#39c9fa!important;font-weight:900!important;font-size:11px!important;letter-spacing:.07em!important;text-transform:uppercase!important;border:0!important;background:none!important}
-#vxReqs .v140-karate-row{display:flex!important;align-items:center!important;position:relative!important;padding:10px 86px 10px 0!important;border-bottom:1px solid #263543!important;gap:8px!important;min-height:39px!important;font-size:11px!important}
-#vxReqs .v140-karate-row>span{flex:1 1 43%!important;min-width:0!important;color:#d6c09a!important}
-#vxReqs .v140-karate-row>b{flex:0 1 45%!important;min-width:0!important;text-align:right!important;font-size:11px!important;color:#fff!important}
-#vxReqs .v140-karate-row>i{position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important;font-size:8px!important;font-weight:950!important;white-space:nowrap!important;color:#efbd60!important}
+#vxReqs .v140-karate-row{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(86px,auto) 84px!important;align-items:center!important;column-gap:8px!important;padding:10px 0!important;margin:0!important;min-height:42px!important;border-bottom:1px solid #263543!important;font-size:11px!important;box-sizing:border-box!important}
+#vxReqs .v140-karate-row>span{min-width:0!important;overflow-wrap:normal!important;color:#d6c09a!important;font-size:11px!important;line-height:1.25!important}
+#vxReqs .v140-karate-row>b{min-width:0!important;text-align:right!important;white-space:nowrap!important;font-size:11px!important;color:#fff!important}
+#vxReqs .v140-karate-row>i{position:static!important;transform:none!important;display:block!important;min-width:0!important;text-align:right!important;font-size:8px!important;font-weight:950!important;white-space:nowrap!important;color:#efbd60!important}
 #vxReqs .v140-karate-row.req-done>span,#vxReqs .v140-karate-row.req-done>b{color:#91b9a5!important}
 #vxReqs .v140-karate-row.req-done>i{color:#65d695!important}
 #vxReqs .v140-karate-history{font-size:11px!important;color:#91b9a5!important;padding:9px 0!important}
@@ -3987,14 +3988,17 @@ let tries=0;const timer=setInterval(()=>{if(init()||++tries>40)clearInterval(tim
   let logs=[];try{logs=JSON.parse(localStorage.getItem(key)||'{}').logs||[]}catch(e){}
   required.forEach(r=>{
    const t=data.techniques[r.technique_id];if(!t)return;
-   const counts=modes.map(([k])=>logs.filter(x=>x.id===r.technique_id&&Number(x.level)===target&&x.mode===k).reduce((n,x)=>n+(Number(x.n)||0),0));
-   const targetCounts=modes.map(([k])=>Number(r[k])||0);
-   const done=counts.every((n,i)=>n>=targetCounts[i]);
-   const row=document.createElement('div');row.className='v140-karate-row '+(done?'req-done':'req-todo');
-   const name=document.createElement('span');name.textContent=t.english||t.name;
-   const amount=document.createElement('b');amount.textContent=modes.map(([,label],i)=>targetCounts[i]?label+' '+Math.min(counts[i],targetCounts[i])+'/'+targetCounts[i]:null).filter(Boolean).join(' · ');
-   const status=document.createElement('i');status.textContent=done?'✓ DONE':'TO CONQUER';
-   row.append(name,amount,status);reqs.appendChild(row);
+   // Each required speed is its own row, with an independent DONE state.
+   modes.forEach(([k,label])=>{
+    const needed=Number(r[k])||0;if(needed<=0)return;
+    const count=logs.filter(x=>x.id===r.technique_id&&Number(x.level)===target&&x.mode===k).reduce((n,x)=>n+(Number(x.n)||0),0);
+    const done=count>=needed;
+    const row=document.createElement('div');row.className='v140-karate-row '+(done?'req-done':'req-todo');
+    const name=document.createElement('span');name.textContent=(t.english||t.name)+' · '+label;
+    const amount=document.createElement('b');amount.textContent=Math.min(count,needed)+' / '+needed+' reps';
+    const status=document.createElement('i');status.textContent=done?'✓ DONE':'TO CONQUER';
+    row.append(name,amount,status);reqs.appendChild(row);
+   });
   });
  }
  // Observe changes to the fighter selector and requirements panel, without observing our own rows.
