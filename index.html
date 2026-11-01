@@ -2507,15 +2507,16 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 #v136Karate .k136-tech strong{font-size:13px!important}
 #v136Karate .k136-muted,#v136Karate .k137-summary{font-size:11px!important}
 #v136Karate .k136-title{font-size:15px!important}
-</style><style id="v145-farmer-editor-fix">
-#vxEditor #vxFarmerForm{display:none;margin:0 0 16px;padding:15px;border-radius:12px;background:#112238;border:1px solid #34536c;max-width:100%}
-#vxEditor #vxFarmerForm.open{display:block}
-#vxEditor #vxFarmerForm h3{display:none}
-#vxEditor #vxFarmerForm .v142-fields{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
-#vxEditor #vxFarmerForm input{font-size:16px;height:45px}
-#vxEditor #vxFarmerForm button{min-height:38px}
-#vxEditor #vxSave[hidden]{display:none!important}
-@media(max-width:360px){#vxEditor #vxFarmerForm .v142-fields{gap:4px}#vxEditor #vxFarmerForm input{padding:5px}}
+</style><style id="v146-farmer-native">
+#vxEditor #vxFarmerForm{display:none;box-sizing:border-box;max-width:100%;margin:0;padding:14px 15px 17px;border-radius:12px;background:#0f2035;border:1px solid #34536c;color:#f2f7ff}
+#vxEditor #vxFarmerForm.vx-visible{display:block}
+#vxEditor #vxFarmerForm h3{display:block;margin:0 0 4px;font-size:15px;font-weight:850}
+#vxEditor #vxFarmerForm .v142-muted{font-size:11px;line-height:1.4;color:#9db1c3}
+#vxEditor #vxFarmerForm .v142-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+#vxEditor #vxFarmerForm label{min-width:0;font-size:11px}
+#vxEditor #vxFarmerForm input{width:100%;height:44px;box-sizing:border-box;font-size:17px;border-radius:7px;padding:8px}
+#vxEditor #vxFarmerForm #v142Summary{margin:6px 0 0}
+@media(max-width:360px){#vxEditor #vxFarmerForm .v142-fields{gap:5px}}
 </style></head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -4325,41 +4326,67 @@ levelPass=function(req,d){return oldLevelPass(req,d)&&(Number(req.level)<=floor|
 window.levelUpFarmersWalk={targets,pass,floor};
 const grid=document.getElementById('vxCategories');
 if(grid){
- const card=document.createElement('button');card.className='vx-category';card.innerHTML='<small>STRENGTH</small><strong>Farmer\'s Walk</strong><em id="vxValue_farmerCarry">LOG RESULT →</em>';grid.appendChild(card);
- const form=document.createElement('section');form.id='vxFarmerForm';form.innerHTML='<h3>Farmer\'s Walk</h3><div class="v142-muted">Dumbbells or kettlebells · weight per hand · count each step once</div><div class="v142-fields"><label>kg / hand<input id="v142Kg" type="number" min="0.5" step="0.5" inputmode="decimal" value="8"></label><label>Steps / set<input id="v142Steps" type="number" min="1" step="1" inputmode="numeric" value="20"></label><label>Sets<input id="v142Sets" type="number" min="1" step="1" inputmode="numeric" value="2"></label></div><button id="v142Save">Save result +</button> <button id="v142Undo" style="background:transparent">Undo last</button> <button id="v142Close" style="display:none">Close</button><p class="v142-muted" id="v142Summary" aria-live="polite"></p>';
- // Farmer's Walk belongs in the same Personal Bests editor as Strength and Cardio.
+ const card=document.createElement('button');
+ card.className='vx-category';
+ card.innerHTML='<small>STRENGTH</small><strong>Farmer\'s Walk</strong><em id="vxValue_farmerCarry">LOG RESULT →</em>';
+ grid.appendChild(card);
  const editor=document.getElementById('vxEditor');
  const fields=document.getElementById('vxEditorFields');
  const editorSave=document.getElementById('vxSave');
- if(fields)fields.appendChild(form);else grid.after(form);
- function openFarmerEditor(){
-   if(!editor||!fields){form.classList.add('open');form.scrollIntoView({block:'nearest'});return}
-   fields.querySelectorAll('.vx-visible').forEach(el=>el.classList.remove('vx-visible'));
-   form.classList.add('open');
-   document.getElementById('vxEditorCategory').textContent='STRENGTH';
-   document.getElementById('vxEditorTitle').textContent="Farmer's Walk";
-   if(editorSave)editorSave.hidden=true;
+ // A regular strength exercise, inside the existing PB list.
+ const form=document.createElement('section');
+ form.id='vxFarmerForm';form.className='exercise vx-visible';
+ form.innerHTML='<h3>Farmer\'s Walk</h3><div class="v142-muted">Dumbbells or kettlebells · weight per hand · count each step once</div><div class="v142-fields"><label>kg / hand<input id="v142Kg" type="number" min="0.5" max="150" step="0.5" inputmode="decimal" placeholder="kg"></label><label>Steps / set<input id="v142Steps" type="number" min="1" max="10000" step="1" inputmode="numeric" placeholder="Steps"></label><label>Sets<input id="v142Sets" type="number" min="1" max="100" step="1" inputmode="numeric" placeholder="Sets"></label></div><p class="v142-muted" id="v142Summary" aria-live="polite"></p>';
+ const chin=fields?.querySelector('#chinAssist')?.closest('.exercise');
+ if(chin)chin.before(form);else if(fields)fields.appendChild(form);else grid.after(form);
+ const kgField=form.querySelector('#v142Kg'),stepsField=form.querySelector('#v142Steps'),setsField=form.querySelector('#v142Sets');
+ let dirty=false;
+ [kgField,stepsField,setsField].forEach(el=>el.addEventListener('input',()=>{dirty=true}));
+ function summary(){
+   const logs=get(),latest=logs[logs.length-1];
+   document.getElementById('v142Summary').textContent=latest?'Best recorded: '+latest.kg+' kg/hand × '+latest.steps+' steps × '+latest.sets+' sets':'No carries logged yet';
+   const v=document.getElementById('vxValue_farmerCarry');
+   if(v)v.textContent=latest?latest.kg+' kg/hand · '+latest.steps+' steps':'LOG RESULT →';
+ }
+ function prefill(){
+   const logs=get(),latest=logs[logs.length-1];
+   if(latest){kgField.value=latest.kg;stepsField.value=latest.steps;setsField.value=latest.sets}
+   dirty=false;summary();
+ }
+ function recordFarmer(){
+   if(!dirty)return true;
+   const kg=Number(kgField.value),steps=Number(stepsField.value),sets=Number(setsField.value);
+   if(!kgField.value||!stepsField.value||!setsField.value||!(Number.isFinite(kg)&&kg>0&&kg<=150&&Number.isInteger(steps)&&steps>=1&&steps<=10000&&Number.isInteger(sets)&&sets>=1&&sets<=100)){
+     document.getElementById('v142Summary').textContent='Enter valid kg per hand, steps and sets.';
+     return false;
+   }
+   const logs=get();
+   const previous=logs[logs.length-1];
+   if(!previous||previous.kg!==kg||previous.steps!==steps||previous.sets!==sets){
+     logs.push({kg,steps,sets,at:Date.now()});save(logs);
+   }
+   dirty=false;summary();updateHeroRows();return true;
+ }
+ // Save together with the existing Save Personal Best button.
+ editorSave?.addEventListener('click',e=>{
+   if(!form.classList.contains('vx-visible'))return;
+   if(!recordFarmer()){e.preventDefault();e.stopImmediatePropagation();return}
+ },true);
+ function openRegularEditor(){
+   if(!editor||!fields)return;
+   fields.querySelectorAll('.exercise').forEach(el=>el.classList.add('vx-visible'));
+   fields.querySelector('.assessment-section-card')?.classList.add('vx-visible');
+   form.classList.add('vx-visible');
+   document.getElementById('vxEditorCategory').textContent='TRAINING';
+   document.getElementById('vxEditorTitle').textContent='Update Your Bests';
+   if(editorSave)editorSave.hidden=false;
    editor.classList.add('open');editor.scrollTop=0;document.body.style.overflow='hidden';
  }
- // Restore the ordinary editor when any other ability is selected.
- grid.addEventListener('click',e=>{
-   if(e.target.closest('.vx-category')===card)return;
-   form.classList.remove('open');if(editorSave)editorSave.hidden=false;
- },true);
- document.getElementById('vxEditorBack')?.addEventListener('click',()=>{
-   form.classList.remove('open');if(editorSave)editorSave.hidden=false;
- });
- const summary=()=>{const logs=get(),level=Math.max(1,Math.min(30,highestOverall(readData()))),next=targets[Math.min(29,level)];document.getElementById('v142Summary').textContent=logs.length?'Latest: '+logs[logs.length-1].kg+' kg/hand × '+logs[logs.length-1].steps+' steps × '+logs[logs.length-1].sets+' sets · '+logs.length+' sessions logged':'No carries logged yet';const value=document.getElementById('vxValue_farmerCarry');if(value)value.textContent=logs.length?logs[logs.length-1].kg+' kg/hand · '+logs[logs.length-1].steps+' steps':'LOG RESULT →'};
- card.addEventListener('click',()=>{summary();openFarmerEditor()});
- document.getElementById('v142Close').onclick=()=>{form.classList.remove('open');if(editorSave)editorSave.hidden=false;if(editor){editor.classList.remove('open');document.body.style.overflow=''}};
- document.getElementById('v142Undo').onclick=()=>{const logs=get();if(!logs.length)return;logs.pop();save(logs);summary();try{calculate()}catch(e){};updateHeroRows()};
- document.getElementById('v142Save').onclick=()=>{
- const kg=Number(document.getElementById('v142Kg').value),steps=Number(document.getElementById('v142Steps').value),sets=Number(document.getElementById('v142Sets').value);
- if(!(Number.isFinite(kg)&&kg>0&&kg<=150&&Number.isInteger(steps)&&steps>=1&&steps<=10000&&Number.isInteger(sets)&&sets>=1&&sets<=100)){document.getElementById('v142Summary').textContent='Enter a valid weight, steps and sets.';return}
- const logs=get();logs.push({kg,steps,sets,at:Date.now()});save(logs);summary();try{calculate()}catch(e){};updateHeroRows();
- };
- summary();
- }
+ card.addEventListener('click',()=>{prefill();openRegularEditor();form.scrollIntoView({block:'center',behavior:'instant'})});
+ // The Update Your Bests entry opens every exercise; Farmer's Walk stays visible there.
+ document.querySelector('.v109-update')?.addEventListener('click',()=>{form.classList.add('vx-visible');if(editorSave)editorSave.hidden=false;},true);
+ prefill();
+}
 function updateHeroRows(){
  const box=document.getElementById('vxReqs'),sel=document.getElementById('vxSelect');if(!box||!sel)return;
  const reqs=box.querySelector('.reqs');if(!reqs)return;
