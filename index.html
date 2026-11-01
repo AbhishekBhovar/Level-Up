@@ -2507,6 +2507,15 @@ button:not(.tab-btn),select,.card,.exercise,.stats-card,.stat-card,.vx-category,
 #v136Karate .k136-tech strong{font-size:13px!important}
 #v136Karate .k136-muted,#v136Karate .k137-summary{font-size:11px!important}
 #v136Karate .k136-title{font-size:15px!important}
+</style><style id="v145-farmer-editor-fix">
+#vxEditor #vxFarmerForm{display:none;margin:0 0 16px;padding:15px;border-radius:12px;background:#112238;border:1px solid #34536c;max-width:100%}
+#vxEditor #vxFarmerForm.open{display:block}
+#vxEditor #vxFarmerForm h3{display:none}
+#vxEditor #vxFarmerForm .v142-fields{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#vxEditor #vxFarmerForm input{font-size:16px;height:45px}
+#vxEditor #vxFarmerForm button{min-height:38px}
+#vxEditor #vxSave[hidden]{display:none!important}
+@media(max-width:360px){#vxEditor #vxFarmerForm .v142-fields{gap:4px}#vxEditor #vxFarmerForm input{padding:5px}}
 </style></head><body><div aria-label="Level Up loading screen" id="powerSplash">
 <svg aria-hidden="true" class="thor-storm" preserveaspectratio="none" viewbox="0 0 390 844">
 <g class="strike strike1">
@@ -4317,11 +4326,32 @@ window.levelUpFarmersWalk={targets,pass,floor};
 const grid=document.getElementById('vxCategories');
 if(grid){
  const card=document.createElement('button');card.className='vx-category';card.innerHTML='<small>STRENGTH</small><strong>Farmer\'s Walk</strong><em id="vxValue_farmerCarry">LOG RESULT →</em>';grid.appendChild(card);
- const form=document.createElement('section');form.id='vxFarmerForm';form.innerHTML='<h3>Farmer\'s Walk</h3><div class="v142-muted">Dumbbells or kettlebells · weight per hand · count each step once</div><div class="v142-fields"><label>kg / hand<input id="v142Kg" type="number" min="0.5" step="0.5" inputmode="decimal" value="8"></label><label>Steps / set<input id="v142Steps" type="number" min="1" step="1" inputmode="numeric" value="20"></label><label>Sets<input id="v142Sets" type="number" min="1" step="1" inputmode="numeric" value="2"></label></div><button id="v142Save">Save result +</button> <button id="v142Undo" style="background:transparent">Undo last</button> <button id="v142Close" style="background:transparent">Close</button><p class="v142-muted" id="v142Summary" aria-live="polite"></p>';
- grid.after(form);
+ const form=document.createElement('section');form.id='vxFarmerForm';form.innerHTML='<h3>Farmer\'s Walk</h3><div class="v142-muted">Dumbbells or kettlebells · weight per hand · count each step once</div><div class="v142-fields"><label>kg / hand<input id="v142Kg" type="number" min="0.5" step="0.5" inputmode="decimal" value="8"></label><label>Steps / set<input id="v142Steps" type="number" min="1" step="1" inputmode="numeric" value="20"></label><label>Sets<input id="v142Sets" type="number" min="1" step="1" inputmode="numeric" value="2"></label></div><button id="v142Save">Save result +</button> <button id="v142Undo" style="background:transparent">Undo last</button> <button id="v142Close" style="display:none">Close</button><p class="v142-muted" id="v142Summary" aria-live="polite"></p>';
+ // Farmer's Walk belongs in the same Personal Bests editor as Strength and Cardio.
+ const editor=document.getElementById('vxEditor');
+ const fields=document.getElementById('vxEditorFields');
+ const editorSave=document.getElementById('vxSave');
+ if(fields)fields.appendChild(form);else grid.after(form);
+ function openFarmerEditor(){
+   if(!editor||!fields){form.classList.add('open');form.scrollIntoView({block:'nearest'});return}
+   fields.querySelectorAll('.vx-visible').forEach(el=>el.classList.remove('vx-visible'));
+   form.classList.add('open');
+   document.getElementById('vxEditorCategory').textContent='STRENGTH';
+   document.getElementById('vxEditorTitle').textContent="Farmer's Walk";
+   if(editorSave)editorSave.hidden=true;
+   editor.classList.add('open');editor.scrollTop=0;document.body.style.overflow='hidden';
+ }
+ // Restore the ordinary editor when any other ability is selected.
+ grid.addEventListener('click',e=>{
+   if(e.target.closest('.vx-category')===card)return;
+   form.classList.remove('open');if(editorSave)editorSave.hidden=false;
+ },true);
+ document.getElementById('vxEditorBack')?.addEventListener('click',()=>{
+   form.classList.remove('open');if(editorSave)editorSave.hidden=false;
+ });
  const summary=()=>{const logs=get(),level=Math.max(1,Math.min(30,highestOverall(readData()))),next=targets[Math.min(29,level)];document.getElementById('v142Summary').textContent=logs.length?'Latest: '+logs[logs.length-1].kg+' kg/hand × '+logs[logs.length-1].steps+' steps × '+logs[logs.length-1].sets+' sets · '+logs.length+' sessions logged':'No carries logged yet';const value=document.getElementById('vxValue_farmerCarry');if(value)value.textContent=logs.length?logs[logs.length-1].kg+' kg/hand · '+logs[logs.length-1].steps+' steps':'LOG RESULT →'};
- card.addEventListener('click',()=>{form.classList.add('open');summary();form.scrollIntoView({block:'nearest',behavior:'smooth'})});
- document.getElementById('v142Close').onclick=()=>form.classList.remove('open');
+ card.addEventListener('click',()=>{summary();openFarmerEditor()});
+ document.getElementById('v142Close').onclick=()=>{form.classList.remove('open');if(editorSave)editorSave.hidden=false;if(editor){editor.classList.remove('open');document.body.style.overflow=''}};
  document.getElementById('v142Undo').onclick=()=>{const logs=get();if(!logs.length)return;logs.pop();save(logs);summary();try{calculate()}catch(e){};updateHeroRows()};
  document.getElementById('v142Save').onclick=()=>{
  const kg=Number(document.getElementById('v142Kg').value),steps=Number(document.getElementById('v142Steps').value),sets=Number(document.getElementById('v142Sets').value);
@@ -4350,5 +4380,94 @@ for(const id of ['vxPrev','vxNext','vxSelect','vxReqToggle'])document.getElement
 const priorRenderStats=renderStats;
 renderStats=function(d){const result=priorRenderStats(d);const grid=document.getElementById('statsGrid')||window.statsGrid;if(grid){const old=grid.querySelector('.v142-farmer-stat');if(old)old.remove();const l=get(),highest=targets.reduce((n,_,i)=>pass(i+1)?i+1:n,0);const card=document.createElement('article');card.className='stat-card v142-farmer-stat';const last=l.at(-1);card.innerHTML='<div class="stat-card-head"><div><div class="stat-title">Farmer\'s Walk</div><div class="stat-level">Level '+highest+' / 30</div></div></div><div class="stat-metrics"><div><small>Latest</small><b>'+(last?last.kg+' kg/hand · '+last.steps+' steps · '+last.sets+' sets':'Not logged')+'</b></div><div><small>Sessions</small><b>'+l.length+'</b></div></div>';grid.appendChild(card)}return result};
 setTimeout(updateHeroRows,250);
+})();
+</script>
+
+
+<style id="v144-hq-next-requirements">
+#v144ReqOverlay{position:fixed;inset:0;z-index:2147482000;display:none;align-items:flex-end;justify-content:center;background:#020916bb;backdrop-filter:blur(5px);padding:env(safe-area-inset-top,12px) 0 0;box-sizing:border-box}
+#v144ReqOverlay.open{display:flex}
+#v144ReqSheet{width:100%;max-width:540px;max-height:87dvh;overflow-y:auto;overscroll-behavior:contain;background:#0c192b;color:#eaf5ff;border:1px solid #335777;border-bottom:0;border-radius:18px 18px 0 0;padding:16px 17px calc(20px + env(safe-area-inset-bottom,0px));box-sizing:border-box;font-family:inherit;-webkit-overflow-scrolling:touch}
+#v144ReqSheet .v144-head{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:-16px;background:#0c192b;padding:4px 0 12px;z-index:1;border-bottom:1px solid #263d52}
+#v144ReqSheet .v144-head strong{font-size:17px;line-height:1.3}
+#v144ReqSheet .v144-close{background:transparent;border:1px solid #385a77;color:#eaf5ff;border-radius:7px;min-width:36px;min-height:36px;font-size:21px}
+#v144ReqSheet .v144-label{font-size:11px;font-weight:900;letter-spacing:.07em;color:#3cc8fa;margin:18px 0 4px;text-transform:uppercase}
+#v144ReqSheet .v144-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid #22344a;font-size:12px}
+#v144ReqSheet .v144-row span{min-width:0;overflow-wrap:anywhere}
+#v144ReqSheet .v144-row b{font-size:11px;text-align:right;color:#f0c47e;white-space:normal;max-width:155px}
+#v144ReqSheet .v144-empty{color:#9eb3c7;font-size:13px;line-height:1.5;margin-top:16px}
+#v144ReqSheet .v144-footer{display:block;width:100%;min-height:42px;margin-top:19px;border:1px solid #418eb9;border-radius:8px;background:#16486d;color:#e8f7ff;font:inherit;font-size:12px;font-weight:800}
+@media(min-width:700px){#v144ReqOverlay{align-items:center;padding:20px}#v144ReqSheet{border-radius:16px;border-bottom:1px solid #335777;max-height:85vh}}
+</style>
+<script id="v144-hq-next-requirements-script">
+(function(){
+'use strict';
+function byId(id){return document.getElementById(id)}
+let overlay, lastGroup='';
+function close(){overlay?.classList.remove('open');document.body.style.overflow=''}
+function row(group,name,target){
+ const section=byId('v144ReqContent');
+ if(lastGroup!==group){const h=document.createElement('div');h.className='v144-label';h.dataset.group=group;h.textContent=group;section.appendChild(h);lastGroup=group}
+ const r=document.createElement('div');r.className='v144-row';
+ const a=document.createElement('span');a.textContent=name;
+ const b=document.createElement('b');b.textContent=target;
+ r.append(a,b);section.appendChild(r);
+}
+function open(){
+ if(typeof highestOverall!=='function'||typeof readData!=='function'||typeof levels==='undefined')return;
+ const level=Math.min(30,Math.max(1,highestOverall(readData())+1)),r=levels[level-1];
+ if(!r)return;
+ byId('v144ReqTitle').textContent=level===30&&highestOverall(readData())>=30?'All levels unlocked':'LEVEL '+level+' · '+r.character;
+ const content=byId('v144ReqContent');content.replaceChildren();lastGroup='';
+ const original=document.querySelector('.level-card[data-level="'+level+'"] .reqs');
+ if(original){
+  let category='REQUIREMENTS';
+  for(const node of original.children){
+   if(node.classList.contains('section-label')){category=node.textContent.trim();continue}
+   if(!node.classList.contains('req-todo'))continue;
+   const name=node.querySelector('span')?.textContent.trim()||'Requirement';
+   const target=node.querySelector('b')?.textContent.trim()||'Not completed';
+   row(category,name,target);
+  }
+ }
+ // Carry requirement comes from the actual 30-level farmer progression.
+ const f=window.levelUpFarmersWalk;
+ if(f&&level>f.floor&&!f.pass(level)){
+  const target=f.targets[level-1];
+  if(target)row('STRENGTH','Farmer’s Walk',target[0]+' kg/hand × '+target[1]+' steps × '+target[2]+' sets');
+ }
+ // Karate for unlocking fighter L corresponds to practice at fighter L-1.
+ const k=window.__levelUpKarateData,gate=window.levelUpKarateGate;
+ if(k&&gate&&level>gate.earnedAtIntegration){
+  const lev=level-1;
+  let logs=[];try{logs=JSON.parse(localStorage.getItem('levelUpKarateV136')||'{}').logs||[]}catch(e){}
+  const modes=[['slow_controlled_reps','Slow'],['medium_technical_reps','Medium'],['fast_explosive_reps','Fast']];
+  for(const x of k.requirements.filter(x=>+x.fighter_level===lev)){
+   const technique=k.techniques[x.technique_id];
+   for(const [key,label] of modes){
+    const need=+x[key]||0;if(!need)continue;
+    const got=logs.filter(a=>a.id===x.technique_id&&+a.level===lev&&a.mode===key).reduce((sum,a)=>sum+(+a.n||0),0);
+    if(got<need)row('MARTIAL ARTS',(technique?.english||technique?.name||x.technique_id)+' · '+label,got+' / '+need+' reps');
+   }
+  }
+ }
+ if(!content.children.length){const p=document.createElement('p');p.className='v144-empty';p.textContent='All requirements for this level are complete.';content.appendChild(p)}
+ overlay.classList.add('open');document.body.style.overflow='hidden';
+ byId('v144Close').focus();
+}
+function init(){
+ const trigger=byId('v103Challenge');if(!trigger)return;
+ overlay=document.createElement('div');overlay.id='v144ReqOverlay';
+ overlay.innerHTML='<section id="v144ReqSheet" role="dialog" aria-modal="true" aria-labelledby="v144ReqTitle"><div class="v144-head"><strong id="v144ReqTitle">Next Level</strong><button type="button" id="v144Close" class="v144-close" aria-label="Close">×</button></div><div id="v144ReqContent"></div><button id="v144GoTrain" class="v144-footer" type="button">GO TO TRAINING →</button></section>';
+ document.body.appendChild(overlay);
+ trigger.textContent='SEE WHAT’S LEFT ↓';
+ // Capture so the old View Challenge handler cannot redirect to Heroes.
+ trigger.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open()},true);
+ byId('v144Close').onclick=close;
+ overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+ byId('v144GoTrain').onclick=()=>{close();const train=document.querySelector('[data-tab="progress"],[data-tab="train"],#navTrain');if(train)train.click();else document.querySelector('.vx-launch')?.click()};
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
