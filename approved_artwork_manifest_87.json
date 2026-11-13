@@ -1,0 +1,1748 @@
+{
+  "date": "2026-11-13",
+  "source_tracker": "https://docs.google.com/spreadsheets/d/1TiSyH3Nr6nBUbnPttIy4pRbSNUMw9R-eo2ln8GUmscA/edit",
+  "roster_artwork_count": 87,
+  "approved_slots": 174,
+  "assets": [
+    {
+      "character": "Drax the Destroyer",
+      "slug": "drax_the_destroyer",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/drax_the_destroyer/portrait.jpeg",
+          "approved_filename": "46096078-7982-472D-8D41-79735BD5327C.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1mVB6lTqxVJtLrZFpLE8f7Uzk-yC_7tIu/view",
+          "bytes": 544861,
+          "sha256": "bb9c53a760e50293cba314f2e246fc93466d442e519512cae5c05721187a8789"
+        },
+        "landscape": {
+          "path": "assets/approved_87/drax_the_destroyer/landscape.png",
+          "approved_filename": "BF282F59-963F-48CC-902D-19F40E9D7D97.png",
+          "drive_url": "https://drive.google.com/file/d/1JTkAq8VkvzmNoxyfNDWzubTsw4ensOte/view",
+          "bytes": 737507,
+          "sha256": "1397779bed1e02a5a923acc1e127fd58162c225c8fc118d87118bc6fefcd3d5e"
+        }
+      }
+    },
+    {
+      "character": "Deathstroke",
+      "slug": "deathstroke",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/deathstroke/portrait.webp",
+          "approved_filename": "deathstroke_portrait_selected_IMG_0671.webp",
+          "drive_url": "https://drive.google.com/file/d/1woGHO32QmMSltnCeqw7FOXp_5OpNtYrF/view",
+          "bytes": 580510,
+          "sha256": "57901f4c8fde89ff7daf309fd900a301a8b49c47f6359502b1214674df007cdd"
+        },
+        "landscape": {
+          "path": "assets/approved_87/deathstroke/landscape.jpeg",
+          "approved_filename": "deathstroke_landscape_selected_IMG_0667.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1pmmzHxsakE1MC7Ph1_OyP0f7An0zMIeB/view",
+          "bytes": 261695,
+          "sha256": "afcb2df156e8b6148cb1e1d0587bed0e7ca64e37eebb508b77687477472e1e4e"
+        }
+      }
+    },
+    {
+      "character": "Future Trunks",
+      "slug": "future_trunks",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/future_trunks/portrait.png",
+          "approved_filename": "Future_Trunks_APP_ORIGINAL_Portrait_26_future_trunks.png",
+          "drive_url": "https://drive.google.com/file/d/18tUn_leNBfUfRNtxN9jVlZTxEzPitbmz/view",
+          "bytes": 2446443,
+          "sha256": "58efb4163124981781e31d3a4b5b332b511c3d79d1d77f956214c0f777768751"
+        },
+        "landscape": {
+          "path": "assets/approved_87/future_trunks/landscape.jpeg",
+          "approved_filename": "future_trunks_landscape_selected_IMG_0676.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1e7AmG7nw7aPSklINtGSZoxC7Vxq2yMKQ/view",
+          "bytes": 170008,
+          "sha256": "52b4115ab71066d46c76b35d5aa78e1cdc8fc72f8e34539b29e49c1f3bfae018"
+        }
+      }
+    },
+    {
+      "character": "Future Gohan",
+      "slug": "future_gohan",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/future_gohan/portrait.jpeg",
+          "approved_filename": "Future_Gohan_APP_ORIGINAL_Portrait_22_future_gohan_v36.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1Te42oHI9wIBS-4OWOhrTqakUBcarxmv9/view",
+          "bytes": 347282,
+          "sha256": "8592c510bcc5cce51fb26c78e7adc5ebdd9d74d0982fb0e493cf3daaa9fa8a31"
+        },
+        "landscape": {
+          "path": "assets/approved_87/future_gohan/landscape.jpeg",
+          "approved_filename": "future_gohan_landscape_selected_IMG_0679.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1VcCnEmW4M2Ecif_MymcCzO4-syMR2zPA/view",
+          "bytes": 136882,
+          "sha256": "1d44de2f2b7bf76caf4fef1ebd55b337f0d6bee8b1caf94a98233683e0e668cb"
+        }
+      }
+    },
+    {
+      "character": "Captain America (Steve Rogers)",
+      "slug": "captain_america_steve_rogers",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/captain_america_steve_rogers/portrait.png",
+          "approved_filename": "Captain_America_APP_ORIGINAL_Portrait_15_captain_america.png",
+          "drive_url": "https://drive.google.com/file/d/1dF6sYE_UhO8FS0kUCXfLHxXehZexzNsk/view",
+          "bytes": 319366,
+          "sha256": "cf60fb0373d23cb28ecf52465c3bfb5f8b68a1fac487e3696f011fe23ad152be"
+        },
+        "landscape": {
+          "path": "assets/approved_87/captain_america_steve_rogers/landscape.jpeg",
+          "approved_filename": "captain_america_landscape_selected_IMG_0682.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1hgBuWXyXBjSnTCEqz1Lv2LwHv9qhXdxZ/view",
+          "bytes": 151540,
+          "sha256": "460f8a21d6133f316bca2028d0609e0fd41035b9ad41faf27c63fbf85d2d7f1b"
+        }
+      }
+    },
+    {
+      "character": "Vixen",
+      "slug": "vixen",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/vixen/portrait.jpeg",
+          "approved_filename": "vixen_portrait_selected_IMG_0688.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1KFmGneBsT9rVEKBVcoi3HFTZM1-x1JuR/view",
+          "bytes": 55596,
+          "sha256": "3813a9f6ec1f3a333a23db413fb096e702cd4b4ff0d4435d67c256e2a6be16aa"
+        },
+        "landscape": {
+          "path": "assets/approved_87/vixen/landscape.jpeg",
+          "approved_filename": "vixen_landscape_selected_IMG_0631(1).jpeg",
+          "drive_url": "https://drive.google.com/file/d/1b2hHo5qhpGg2iVj8I_giVGRcadWzpHok/view",
+          "bytes": 161584,
+          "sha256": "a76549d4c90648f60644d03849163410a746835a171a3e1a3344a145007d7b93"
+        }
+      }
+    },
+    {
+      "character": "Wonder Woman",
+      "slug": "wonder_woman",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/wonder_woman/portrait.jpeg",
+          "approved_filename": "Wonder_Woman_APPROVED_Portrait_896F339F-36F6-4C6F-880A-AC71E8C636EC.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1z5CA2z8zEJQoPNmpapK211kdlMIdkTwq/view",
+          "bytes": 197511,
+          "sha256": "9212d160859bc97c6c9e35d8b0b7b1464a511259f4c730b092486b5c770e8e76"
+        },
+        "landscape": {
+          "path": "assets/approved_87/wonder_woman/landscape.jpeg",
+          "approved_filename": "Wonder_Woman_APPROVED_HQ_36CAF344-B614-4307-AD6E-65B075CC07B8.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1a-uyWZOzk8AOiCeKO7dXt8uuu-k5uu3o/view",
+          "bytes": 224304,
+          "sha256": "3ba0d1c556b6aaa9b144a29505f6440b37d7e1ac58b8644345d3403c97ec84bc"
+        }
+      }
+    },
+    {
+      "character": "Green Lantern (John Stewart)",
+      "slug": "green_lantern_john_stewart",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/green_lantern_john_stewart/portrait.jpeg",
+          "approved_filename": "Green_Lantern_John_Stewart_Portrait_gallery_17.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1eVtN7PK6fV4ZrKhtRvO44Szc8dRQrnRI/view",
+          "bytes": 126859,
+          "sha256": "caf80bc8ff0ef93b595a3f6a931bc4eb22957f46d1874d39890249808491c77e"
+        },
+        "landscape": {
+          "path": "assets/approved_87/green_lantern_john_stewart/landscape.jpeg",
+          "approved_filename": "green_lantern_john_stewart_landscape_selected_IMG_0703.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1lvmeM9PkUAXe_JWblXenmf9x66NQB8Oz/view",
+          "bytes": 715165,
+          "sha256": "03f626929cd6802b36f1ad91f72e2ca2cbf1fdbfe1a99e3a0cf967678bd69c0a"
+        }
+      }
+    },
+    {
+      "character": "Green Lantern (Guy Gardner)",
+      "slug": "green_lantern_guy_gardner",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/green_lantern_guy_gardner/portrait.png",
+          "approved_filename": "guy_gardner_portrait_candidate.png",
+          "drive_url": "https://drive.google.com/file/d/10mlLkBYLwNINpKFaw_jLRW9e5dr1dw-2/view",
+          "bytes": 2786751,
+          "sha256": "869a8e44d51c49061ea5c01ce0431ae277a269f251549e1eaba3ec1f795a42c9"
+        },
+        "landscape": {
+          "path": "assets/approved_87/green_lantern_guy_gardner/landscape.png",
+          "approved_filename": "guy_gardner_HQ_landscape_candidate.png",
+          "drive_url": "https://drive.google.com/file/d/1PjT0zzt6oleB9CLK3Or6KvAVP-Es2Lx_/view",
+          "bytes": 3044124,
+          "sha256": "c12dce884c158681c01699a4874c8c88c3667bfd6eafc44c2a20adece1d5d2d0"
+        }
+      }
+    },
+    {
+      "character": "M’Baku",
+      "slug": "m_baku",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/m_baku/portrait.png",
+          "approved_filename": "D3C93389-A773-4921-83ED-4F4B86D19C17.png",
+          "drive_url": "https://drive.google.com/file/d/1Jw_zlQ2d026T-NlJSjAXhwd1i8Fs1i4L/view",
+          "bytes": 435822,
+          "sha256": "2652efb863e351aecac1826a569ef338161557fcd395742ade8816fbda5d2e2c"
+        },
+        "landscape": {
+          "path": "assets/approved_87/m_baku/landscape.png",
+          "approved_filename": "mbaku_HQ_landscape_candidate_2026-11-11.png",
+          "drive_url": "https://drive.google.com/file/d/1mDCt-Znip3ObTKZZdQqRc7PSW5cWZUWM/view",
+          "bytes": 3134866,
+          "sha256": "6a217c44a3b3152c8576b35a14835c1e3c25db8fa56cc08be6bf3ef860069de4"
+        }
+      }
+    },
+    {
+      "character": "Batman",
+      "slug": "batman",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/batman/portrait.jpeg",
+          "approved_filename": "Batman_APP_ORIGINAL_Portrait_21_batman_throne.jpeg",
+          "drive_url": "https://drive.google.com/file/d/10hE0bxGjwpyx3EJ8g6DgIJszY0ygaUau/view",
+          "bytes": 253423,
+          "sha256": "3699bfe1df4b92458cd0668870416afc4250c8b0ef5c36a9bb97585667d213ae"
+        },
+        "landscape": {
+          "path": "assets/approved_87/batman/landscape.jpeg",
+          "approved_filename": "batman_landscape_selected_IMG_0728.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1RlFRw5XxLm-WeC9VBdPK0zNZ_ANnnVx3/view",
+          "bytes": 24255,
+          "sha256": "c85fb37549bdea82aa344b7bc7f29cea144fb376c49cb657db78de76788b9f96"
+        }
+      }
+    },
+    {
+      "character": "Spider-Man (Tobey Maguire)",
+      "slug": "spider_man_tobey_maguire",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/spider_man_tobey_maguire/portrait.png",
+          "approved_filename": "Spider_Man_APP_ORIGINAL_Portrait_23_spider_man.png",
+          "drive_url": "https://drive.google.com/file/d/1MbCfI9eTXDYrDvI-8_Q9rALH6qUdmr0e/view",
+          "bytes": 409771,
+          "sha256": "2397fb562dbd8e8a19cd2a1922c9e6789bcf593bb8ec856ae1ada5b31cfda3cb"
+        },
+        "landscape": {
+          "path": "assets/approved_87/spider_man_tobey_maguire/landscape.jpeg",
+          "approved_filename": "spider_man_landscape_selected_IMG_0730.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1d6iBRhrkgxPfjON57O2HMrFfTJ0N7WNN/view",
+          "bytes": 67921,
+          "sha256": "4cf32bb397b773fa92d170129d2f3a3c83dc37d6496404b92ea7c97b40e6318e"
+        }
+      }
+    },
+    {
+      "character": "Iron Fist (Danny Rand)",
+      "slug": "iron_fist_danny_rand",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/iron_fist_danny_rand/portrait.jpeg",
+          "approved_filename": "Iron_Fist_APP_ORIGINAL_Portrait_19_iron_fist.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1b58VIuGGzCfCmoQglUUuvqvdlUa2c6ln/view",
+          "bytes": 523208,
+          "sha256": "dc038c864d99c578c5c5ec2d2ead92a946ea946dc923aab3040c53fb71752ea0"
+        },
+        "landscape": {
+          "path": "assets/approved_87/iron_fist_danny_rand/landscape.jpeg",
+          "approved_filename": "iron_fist_landscape_selected_IMG_0739.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1U2_eOu4F_Q2-kNBxDNC4BS1HkQWj3utv/view",
+          "bytes": 74791,
+          "sha256": "ed00fdd9ae43bc826311419c130f6f4fbf5249d8a477cf5565bbe9ea46a69f51"
+        }
+      }
+    },
+    {
+      "character": "Colleen Wing",
+      "slug": "colleen_wing",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/colleen_wing/portrait.jpeg",
+          "approved_filename": "colleen_wing_portrait_selected_IMG_0735.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1z3tslJiW1h9XA4AEgy8oMGsNBR5hQesx/view",
+          "bytes": 143802,
+          "sha256": "638040ac963acc1881e7195f01508ea413556ff3e7e1d92f0c812a21939b11ec"
+        },
+        "landscape": {
+          "path": "assets/approved_87/colleen_wing/landscape.jpeg",
+          "approved_filename": "colleen_wing_landscape_selected_IMG_0734.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1RmGDfPuEAiScMtqlC7MgqyBOLZJ-O69P/view",
+          "bytes": 107353,
+          "sha256": "4a0088956fd9747d656dd18a01a89740a5538c6dc39c115da3b30a7225f4b2b2"
+        }
+      }
+    },
+    {
+      "character": "Azrael (Jean-Paul Valley)",
+      "slug": "azrael_jean_paul_valley",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/azrael_jean_paul_valley/portrait.webp",
+          "approved_filename": "azrael_portrait_original_subtle_zoom.webp",
+          "drive_url": "https://drive.google.com/file/d/1Su18kSXBg1y786aBqq4BFwYZSimAlr0D/view",
+          "bytes": 554744,
+          "sha256": "4e771c43348e63f6ce30eba2a9a6fed181f12d507537c35017e22296df2fb355"
+        },
+        "landscape": {
+          "path": "assets/approved_87/azrael_jean_paul_valley/landscape.jpeg",
+          "approved_filename": "azrael_landscape_selected_IMG_0743.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1ErYMqhchXkXY6Lr8m8gYtmy3TAc7DPEx/view",
+          "bytes": 863722,
+          "sha256": "d1fe4d7c3bfb82b2bcfa9161c6590be5f7c2b4b8b9fdce55ef3f2b83bc878e59"
+        }
+      }
+    },
+    {
+      "character": "Nightwing (Dick Grayson)",
+      "slug": "nightwing_dick_grayson",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/nightwing_dick_grayson/portrait.png",
+          "approved_filename": "Nightwing_APP_ORIGINAL_Portrait_17_nightwing.png",
+          "drive_url": "https://drive.google.com/file/d/1yffiNVLHVc77QS3w82ib_WD0yAhEYa02/view",
+          "bytes": 336776,
+          "sha256": "f919cbe37f024fa5f6ea8fd0dce6a62e2c66167b82bf6c54b892d3eb4286773a"
+        },
+        "landscape": {
+          "path": "assets/approved_87/nightwing_dick_grayson/landscape.jpeg",
+          "approved_filename": "nightwing_landscape_selected_IMG_0748.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1AELtoBnCTLefwFglQJ2fd36n08yYr7ns/view",
+          "bytes": 38704,
+          "sha256": "b82cf35aefff581175cbb1e44d08901379b41b9e6ba71a775eac76298e33f158"
+        }
+      }
+    },
+    {
+      "character": "Green Arrow",
+      "slug": "green_arrow",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/green_arrow/portrait.jpeg",
+          "approved_filename": "Green_Arrow_APP_ORIGINAL_Portrait_01_green_arrow.jpeg",
+          "drive_url": "https://drive.google.com/file/d/14ri-W_fwnwdBHZ-QhFIQooTzA_Z8dpfl/view",
+          "bytes": 271883,
+          "sha256": "e17fb8be186748e750929e49ee527f05590d20238d9ab7fbc9f171b1cde34f00"
+        },
+        "landscape": {
+          "path": "assets/approved_87/green_arrow/landscape.jpeg",
+          "approved_filename": "Green_Arrow_APP_ORIGINAL_Landscape_01_green_arrow.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1BBs2-NhLZNAjAQFjksbFGaXqPJr4c6Q6/view",
+          "bytes": 271883,
+          "sha256": "e17fb8be186748e750929e49ee527f05590d20238d9ab7fbc9f171b1cde34f00"
+        }
+      }
+    },
+    {
+      "character": "Lei Wulong",
+      "slug": "lei_wulong",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/lei_wulong/portrait.png",
+          "approved_filename": "Lei_Wulong_APP_ORIGINAL_Portrait_11_lei_wulong.png",
+          "drive_url": "https://drive.google.com/file/d/1ZrEA8uwvJrRGTyTSzw-anGvCNJiawx7M/view",
+          "bytes": 2395626,
+          "sha256": "9cbcbb18ad3f73f23de7299acf8315f1cf04d680c1f38031f6fa318b76b9d643"
+        },
+        "landscape": {
+          "path": "assets/approved_87/lei_wulong/landscape.png",
+          "approved_filename": "Lei_Wulong_APP_ORIGINAL_Landscape_11_lei_wulong.png",
+          "drive_url": "https://drive.google.com/file/d/1xhJVUqAHSoWfH0tdr8JwBLXya7bTycm9/view",
+          "bytes": 2395626,
+          "sha256": "9cbcbb18ad3f73f23de7299acf8315f1cf04d680c1f38031f6fa318b76b9d643"
+        }
+      }
+    },
+    {
+      "character": "Forest Law",
+      "slug": "forest_law",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/forest_law/portrait.jpeg",
+          "approved_filename": "Forest_Law_APP_ORIGINAL_Portrait_07_forest_law_v35.jpeg",
+          "drive_url": "https://drive.google.com/file/d/12ajINy5ciOvIeF7O6yivFeLH8uqJLHUh/view",
+          "bytes": 45172,
+          "sha256": "22e2e736dd339b090bd67dd01b33757c05458431c19f81d3c814d759ada1610e"
+        },
+        "landscape": {
+          "path": "assets/approved_87/forest_law/landscape.jpeg",
+          "approved_filename": "Forest_Law_APP_ORIGINAL_Landscape_07_forest_law_v35.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1AgOKg7dT7thlbA_xsIqfVZj6tPgZvuu2/view",
+          "bytes": 45172,
+          "sha256": "22e2e736dd339b090bd67dd01b33757c05458431c19f81d3c814d759ada1610e"
+        }
+      }
+    },
+    {
+      "character": "Jin Kazama",
+      "slug": "jin_kazama",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/jin_kazama/portrait.png",
+          "approved_filename": "Jin_Kazama_APP_ORIGINAL_Portrait_22_jin_kazama.png",
+          "drive_url": "https://drive.google.com/file/d/1wPwr7iM7YYvZYJmk3cJLj2NpBsvcqzEa/view",
+          "bytes": 2351697,
+          "sha256": "ea7a6c61ccb875e9348bd2b1494b07b02a21fdcb5837acd9babb92d14ccc5218"
+        },
+        "landscape": {
+          "path": "assets/approved_87/jin_kazama/landscape.png",
+          "approved_filename": "Jin_Kazama_APP_ORIGINAL_Landscape_22_jin_kazama.png",
+          "drive_url": "https://drive.google.com/file/d/1yFNn4JNdmlrG3mv5LtdPugTwssIywMhI/view",
+          "bytes": 2351697,
+          "sha256": "ea7a6c61ccb875e9348bd2b1494b07b02a21fdcb5837acd9babb92d14ccc5218"
+        }
+      }
+    },
+    {
+      "character": "Hawkgirl (Shayera Hol)",
+      "slug": "hawkgirl_shayera_hol",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/hawkgirl_shayera_hol/portrait.jpeg",
+          "approved_filename": "Hawkgirl_APP_ORIGINAL_Portrait_12_hawkgirl_v36.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1x6eNmOjo4WdSGy8RsKBfE6u23AqTcdNM/view",
+          "bytes": 83280,
+          "sha256": "eee98a0f59a52148ddfb7e5d30a610b4914b47435756b2b01629875bcc7b2826"
+        },
+        "landscape": {
+          "path": "assets/approved_87/hawkgirl_shayera_hol/landscape.jpeg",
+          "approved_filename": "Hawkgirl_APP_ORIGINAL_Landscape_12_hawkgirl_v35.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1b5hdBsr1GNchXacZB8mztF9Y5obkpmNL/view",
+          "bytes": 138235,
+          "sha256": "d6d072ec3b06b0861a182525af49f4d12aff4fdac7561f2de97f33fb4a920eca"
+        }
+      }
+    },
+    {
+      "character": "Hawkeye",
+      "slug": "hawkeye",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/hawkeye/portrait.jpeg",
+          "approved_filename": "Hawkeye_APP_ORIGINAL_Portrait_01_hawkeye_v73.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1WA-tEJ52sdR2kFL4cn2Fu0np7U4Yd8fy/view",
+          "bytes": 357901,
+          "sha256": "eb6b9d5c2193dee345d61e6b3f3b244887f8d63747c7163144459e49f010a663"
+        },
+        "landscape": {
+          "path": "assets/approved_87/hawkeye/landscape.png",
+          "approved_filename": "Hawkeye_APP_ORIGINAL_Landscape_02_hawkeye.png",
+          "drive_url": "https://drive.google.com/file/d/1slrTHOQm3z-_GloLWZUT9Vs-T8iVcuNi/view",
+          "bytes": 415245,
+          "sha256": "2ccabb7af0a6bd8d77d369019eee2862966077800619b6bedf8ff760f1c28b42"
+        }
+      }
+    },
+    {
+      "character": "Ra’s al Ghul",
+      "slug": "ra_s_al_ghul",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/ra_s_al_ghul/portrait.jpeg",
+          "approved_filename": "Ras_al_Ghul_APP_ORIGINAL_Portrait_18_ras_al_ghul_FINAL_v43.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1JkkGBasotQ-QYssBqtLsGjv8SXW5Mjjq/view",
+          "bytes": 51677,
+          "sha256": "b65008d908934595398d6acad3c6fe2b1d78afb4305f82a29ed1d801d9b25428"
+        },
+        "landscape": {
+          "path": "assets/approved_87/ra_s_al_ghul/landscape.png",
+          "approved_filename": "Ras_al_Ghul_APP_ORIGINAL_Landscape_20_ras_al_ghul.png",
+          "drive_url": "https://drive.google.com/file/d/10MbbKDWHZ40OU7u2PsBMCO_zc86Tmscm/view",
+          "bytes": 407755,
+          "sha256": "88201b0af146377783f0becf628f594c138cf4913ab6bcf88757b760b8face55"
+        }
+      }
+    },
+    {
+      "character": "Piccolo",
+      "slug": "piccolo",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/piccolo/portrait.png",
+          "approved_filename": "piccolo_portrait_approved_storm_no_text.png",
+          "drive_url": "https://drive.google.com/file/d/1wAt1U5u64QzwHVrSgw3ALU0-6Atj9Exs/view",
+          "bytes": 2520903,
+          "sha256": "7523fae06c1f4ec4e2599bae8c66c7540011c2a8125517e281d4cb005a85bdaf"
+        },
+        "landscape": {
+          "path": "assets/approved_87/piccolo/landscape.jpeg",
+          "approved_filename": "piccolo_landscape_selected_IMG_0759.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1cX5OVJLgQXmWU2qzwoEIiAKl2dV-bqok/view",
+          "bytes": 146904,
+          "sha256": "c5261ab0884317a3315cc19ea2616a8b69d5d6feb6591fd5810faff7ba330a7a"
+        }
+      }
+    },
+    {
+      "character": "Luke Cage",
+      "slug": "luke_cage",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/luke_cage/portrait.webp",
+          "approved_filename": "Luke_Cage_APP_ORIGINAL_Portrait_04_luke_cage_v36.webp",
+          "drive_url": "https://drive.google.com/file/d/1Q8JIqAE9Zk2fWUfjJNb7fswVgFCipLoU/view",
+          "bytes": 281886,
+          "sha256": "ed2b6c64ce8a503c9a687faf192b6aefae6a1bb03e6bf91553b911c6e3d3e436"
+        },
+        "landscape": {
+          "path": "assets/approved_87/luke_cage/landscape.webp",
+          "approved_filename": "luke_cage_landscape_selected_IMG_0763.webp",
+          "drive_url": "https://drive.google.com/file/d/1kNQ-nXOiu-nv_wpyn5tCSHHeLETO6Ys2/view",
+          "bytes": 206298,
+          "sha256": "a889963125cadd9a0fa84514eeee0932bd7ebc2131e4f479dde96e7e9bb93f5d"
+        }
+      }
+    },
+    {
+      "character": "Jessica Jones",
+      "slug": "jessica_jones",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/jessica_jones/portrait.png",
+          "approved_filename": "781C7A9F-380B-4C6B-8671-40DAF027631B.png",
+          "drive_url": "https://drive.google.com/file/d/1Z8e5s5mTGxZ7T6DXrqzVYiUF_TAOLPFq/view",
+          "bytes": 710938,
+          "sha256": "2ab75049b4684bcc14d025552be511b956c38e66451ff57f2e7b4b84e052ae49"
+        },
+        "landscape": {
+          "path": "assets/approved_87/jessica_jones/landscape.jpeg",
+          "approved_filename": "jessica_jones_landscape_selected_IMG_0764.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1pCven0tpOPM57ENqyv2yzgp-6bAvEmRj/view",
+          "bytes": 85100,
+          "sha256": "4a37726e477f131726bea404395a969689350d6012d4728355a78cf36aa8b6a1"
+        }
+      }
+    },
+    {
+      "character": "Morgan Grimes",
+      "slug": "morgan_grimes",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/morgan_grimes/portrait.webp",
+          "approved_filename": "Morgan_Grimes_FINAL_Portrait_IMG_1029.webp",
+          "drive_url": "https://drive.google.com/file/d/1mtNOK7WKchxc7ZO24wgiMhVr-ULFJd-x/view",
+          "bytes": 24392,
+          "sha256": "f743d2f08f4dc88dbef506aba5cc11224d0ba141d25d8ed8b0355475cb2513e2"
+        },
+        "landscape": {
+          "path": "assets/approved_87/morgan_grimes/landscape.jpeg",
+          "approved_filename": "Morgan_Grimes_FINAL_Landscape_IMG_1030.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1Q-S5vUZtKO5140SP-X-60P4uC8dC7ce8/view",
+          "bytes": 42107,
+          "sha256": "d0dbca9c4290869f24dc9fc7abf7e32c16e7b8c2c09b02600bb634c4984f9f3e"
+        }
+      }
+    },
+    {
+      "character": "David Becker",
+      "slug": "david_becker",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/david_becker/portrait.jpeg",
+          "approved_filename": "David_Becker_APPROVED_Portrait_4B1425D2.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1TZKWDOdEpdwwnh3_M_5kF18N8eUUxh_n/view",
+          "bytes": 558598,
+          "sha256": "a2a478500f3d16bdf2bedd67b5c261624617c7856bc5eea718f2a22142b84388"
+        },
+        "landscape": {
+          "path": "assets/approved_87/david_becker/landscape.jpeg",
+          "approved_filename": "David_Becker_APPROVED_HQ_125BA9FD.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1yULdR31dlcT8AMiE8BE0LFNdJvEvfXup/view",
+          "bytes": 368387,
+          "sha256": "177c366015c10839e84e3af8c2b63c30fcb0724c8419a0c557218be6f53fad3f"
+        }
+      }
+    },
+    {
+      "character": "Aisha Robinson",
+      "slug": "aisha_robinson",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/aisha_robinson/portrait.jpeg",
+          "approved_filename": "Aisha_Robinson_FINAL_Portrait_IMG_1039.jpeg",
+          "drive_url": "https://drive.google.com/file/d/17tNRpejizLmVg8Ho7zu9_ijulAurDPOu/view",
+          "bytes": 68577,
+          "sha256": "6328a0340d4057e1c9278e8631467c8375b013ff50e1300c9d8bcbb7ede4c244"
+        },
+        "landscape": {
+          "path": "assets/approved_87/aisha_robinson/landscape.webp",
+          "approved_filename": "Aisha_Robinson_FINAL_Landscape_IMG_1037.webp",
+          "drive_url": "https://drive.google.com/file/d/1WS4cXmnd9GqbZrVAO4c6lcTKhLet_pG9/view",
+          "bytes": 17274,
+          "sha256": "96de93c1cf615a51a01f554721706841938ce959749e4dfb68477b48553f8c02"
+        }
+      }
+    },
+    {
+      "character": "Samantha LaRusso",
+      "slug": "samantha_larusso",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/samantha_larusso/portrait.jpeg",
+          "approved_filename": "Samantha_LaRusso_APPROVED_Portrait_IMG_1043.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1u_aZrK6mkYJ3wCh5YYlsDMJkDD7xJjS5/view",
+          "bytes": 24772,
+          "sha256": "d4cd67d247f409aabfbed667dcffe307995fd57aaf371916bd4ea3913b4a425e"
+        },
+        "landscape": {
+          "path": "assets/approved_87/samantha_larusso/landscape.jpeg",
+          "approved_filename": "Samantha_LaRusso_APPROVED_HQ_IMG_1046.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1DWXpQOaPtO3EmtHKCODVq8LU5bPjk9Jo/view",
+          "bytes": 36979,
+          "sha256": "4408ce6718af9133566f59eba5d129dad97e062526929dcb42be2cae4e318de4"
+        }
+      }
+    },
+    {
+      "character": "Robert Langdon",
+      "slug": "robert_langdon",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/robert_langdon/portrait.jpeg",
+          "approved_filename": "Robert_Langdon_FINAL_Portrait_1E0B6774-9127-4659-A74D-F5EC1C91DA4C.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1ClzXw0raT-HsO4rK7ASNm-lCaNYuzGaC/view",
+          "bytes": 529429,
+          "sha256": "d0bbf20bfc473c5dd9c8c07471fc70df4af9885a16d91634bb59390bfc273427"
+        },
+        "landscape": {
+          "path": "assets/approved_87/robert_langdon/landscape.jpeg",
+          "approved_filename": "Robert_Langdon_FINAL_Landscape_F670A0C0-411A-4DCA-BF3C-7D4984F841E8.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1XY2RykmOCI9Hujr5j6RZzl2DuVpcmDf1/view",
+          "bytes": 554815,
+          "sha256": "cd50d24464b63fd32f77d7e3b1d4c836812f97b65048b26c70308f10b7d5f2a1"
+        }
+      }
+    },
+    {
+      "character": "The Question (Vic Sage)",
+      "slug": "the_question_vic_sage",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/the_question_vic_sage/portrait.png",
+          "approved_filename": "The_Question_APPROVED_Portrait_E61301D0.png",
+          "drive_url": "https://drive.google.com/file/d/1Re41mYUuRv_xefbfSxv_kGvn1Dw49avs/view",
+          "bytes": 611272,
+          "sha256": "4cb212019d39b080485917e977472d68985a966f38a2c4e173e9726908e931ae"
+        },
+        "landscape": {
+          "path": "assets/approved_87/the_question_vic_sage/landscape.png",
+          "approved_filename": "The_Question_APPROVED_HQ_B65A42EA.png",
+          "drive_url": "https://drive.google.com/file/d/1_cGCxGBYUpX4zag4m-ggr5UsWwWo-x3p/view",
+          "bytes": 305199,
+          "sha256": "068056b9629b4bdd288b47c5027f5da5059188a1e9cfd7edc9b8f2aefe570c2c"
+        }
+      }
+    },
+    {
+      "character": "Videl",
+      "slug": "videl",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/videl/portrait.jpeg",
+          "approved_filename": "Videl_APPROVED_Portrait_IMG_0869.jpeg",
+          "drive_url": "https://drive.google.com/file/d/13_qEvgAGUoFzwYj2-pKtTkC1-NyDjrYi/view",
+          "bytes": 106789,
+          "sha256": "8a36e09daabc79b217e0358129ef51efc48dc4f63b7e730d395c1c5544b1f9ae"
+        },
+        "landscape": {
+          "path": "assets/approved_87/videl/landscape.jpeg",
+          "approved_filename": "Videl_APPROVED_HQ_IMG_0870.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1IRgFlsg0g_sRR30nSIslaPTIIaxTfOI1/view",
+          "bytes": 59656,
+          "sha256": "b9694f8df4e56078ac02bde73ccafea23987097e46b2ecf72f9d28f970a8a4a0"
+        }
+      }
+    },
+    {
+      "character": "Krillin",
+      "slug": "krillin",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/krillin/portrait.jpeg",
+          "approved_filename": "krillin_portrait_selected_IMG_0875.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1gEip79UVVayq1O8WOu3fMtrp4k7Upqff/view",
+          "bytes": 60008,
+          "sha256": "767244fbf9a8b1912e0233ef38f2fad9c4dcfa702f85188eff413d12f1b0af59"
+        },
+        "landscape": {
+          "path": "assets/approved_87/krillin/landscape.jpeg",
+          "approved_filename": "krillin_landscape_selected_IMG_0878.jpeg",
+          "drive_url": "https://drive.google.com/file/d/17Lg0YTE7EcCm3sNA5rndjPNwma9vI3ny/view",
+          "bytes": 130041,
+          "sha256": "46749cfea25bb02be9b27ab295a9a1571751a989d0df2604043fee88611bb47f"
+        }
+      }
+    },
+    {
+      "character": "Chun-Li",
+      "slug": "chun_li",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/chun_li/portrait.jpeg",
+          "approved_filename": "chun_li_portrait_selected_25C3613A.jpeg",
+          "drive_url": "https://drive.google.com/file/d/15JpQJpEdN68yQkOP_rGl8C6uJd29qJuP/view",
+          "bytes": 414315,
+          "sha256": "6a27f62d7fc736052693fc2a995d7b0ab7fb7509a7044bd9d621ec014e309d5e"
+        },
+        "landscape": {
+          "path": "assets/approved_87/chun_li/landscape.jpeg",
+          "approved_filename": "chun_li_landscape_selected_20625D0D.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1Wvmv-T_B_85M7n5JNEVDCZbwvx4g5ICB/view",
+          "bytes": 313109,
+          "sha256": "c34722d0e4dcd1636d3ec2bebb91a778d4693ee55accae90ceb0411c3a8b5ce1"
+        }
+      }
+    },
+    {
+      "character": "Jason Bourne (Matt Damon)",
+      "slug": "jason_bourne_matt_damon",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/jason_bourne_matt_damon/portrait.jpeg",
+          "approved_filename": "Jason_Bourne_APPROVED_Portrait_IMG_1053.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1QOc23RZ2HeYL5y4eMTxVjJuFzmXn9KtW/view",
+          "bytes": 23744,
+          "sha256": "75e366950307f29282aa11efaa5733ab671a112e8ab36a8e91109f1ed50e8d2b"
+        },
+        "landscape": {
+          "path": "assets/approved_87/jason_bourne_matt_damon/landscape.jpeg",
+          "approved_filename": "Jason_Bourne_APPROVED_HQ_IMG_1056.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1XD-GsUfv240LbzYuNKy9nBle0Lp2v-D5/view",
+          "bytes": 33720,
+          "sha256": "1db93085e16167310e855d425bc128870088d56f7f13ffd8e80f085b86851ba2"
+        }
+      }
+    },
+    {
+      "character": "Nina Williams",
+      "slug": "nina_williams",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/nina_williams/portrait.jpeg",
+          "approved_filename": "nina_williams_portrait_selected_F5D1DFB1.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1A5LCQzSpYNMMgChhtyZ2Ub9RLAqfd8fe/view",
+          "bytes": 440601,
+          "sha256": "20683ea879e3e74b0651eca4bd0714384511478dd8124c8060723ea4ed9df118"
+        },
+        "landscape": {
+          "path": "assets/approved_87/nina_williams/landscape.jpeg",
+          "approved_filename": "nina_williams_landscape_selected_23EB9B52.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1AozbWWZitphtqTGRDDmjT5ia1qOn0A3X/view",
+          "bytes": 280829,
+          "sha256": "a412462bf1245de87c45e1867d94c84cbd6353c760a4cc5789683a8fcb09c7ff"
+        }
+      }
+    },
+    {
+      "character": "Jake Tyler",
+      "slug": "jake_tyler",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/jake_tyler/portrait.png",
+          "approved_filename": "Jake_Tyler_APPROVED_Portrait_A00F6772.png",
+          "drive_url": "https://drive.google.com/file/d/16UU2vib40mpek3JquSd_Y1H92Qxdu9TP/view",
+          "bytes": 563686,
+          "sha256": "db9c45acaf9893b319ea037714afbb0f601255693dfbe6ee6368e4011ee376b1"
+        },
+        "landscape": {
+          "path": "assets/approved_87/jake_tyler/landscape.jpeg",
+          "approved_filename": "Jake_Tyler_APPROVED_HQ_IMG_1062.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1DJ4tMSrKuUBtp4i2Fzmr_0nxOdvU4yGO/view",
+          "bytes": 33051,
+          "sha256": "f6271b4e24851f1a0f2b2624989255b476c14fb18ff8928ca9314c0d266ceb9b"
+        }
+      }
+    },
+    {
+      "character": "Po",
+      "slug": "po",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/po/portrait.jpeg",
+          "approved_filename": "Po_FINAL_Portrait_IMG_0927(1).jpeg",
+          "drive_url": "https://drive.google.com/file/d/1ajL_MYCJ6pfZHv-1p35cJmffNU2251g0/view",
+          "bytes": 31628,
+          "sha256": "d307246dabd72a7ddf2de9982306e597f673c557898b0db853643288241119e8"
+        },
+        "landscape": {
+          "path": "assets/approved_87/po/landscape.jpeg",
+          "approved_filename": "Po_FINAL_Landscape_IMG_0928(2).jpeg",
+          "drive_url": "https://drive.google.com/file/d/1_RgY7EswMBAqRMUrVs3HFKNtIX4rgzE9/view",
+          "bytes": 36435,
+          "sha256": "206d6eaefed82fd659ea4d9fb1c1a51aa453829b1d55c3203e56000b93bec2f0"
+        }
+      }
+    },
+    {
+      "character": "Black Widow (Natasha Romanoff)",
+      "slug": "black_widow_natasha_romanoff",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/black_widow_natasha_romanoff/portrait.jpeg",
+          "approved_filename": "Black_Widow_APP_ORIGINAL_Portrait_05_black_widow_v36.jpeg",
+          "drive_url": "https://drive.google.com/file/d/12m_SD513yAK5gflmz2oehC7Ugcj8WAws/view",
+          "bytes": 345270,
+          "sha256": "ac91ff5e1daee1a2edc1abb24aecfed01d55eee9377aca52a762b840f5da32e8"
+        },
+        "landscape": {
+          "path": "assets/approved_87/black_widow_natasha_romanoff/landscape.jpeg",
+          "approved_filename": "black_widow_landscape_selected_IMG_0770.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1FyeZdlKnxUrhZ7wp3DisHHhchroQ9Zjq/view",
+          "bytes": 38700,
+          "sha256": "a3991a711744db1b0419c50d924741355f63f68c94572d29df7d461fa8d1ec34"
+        }
+      }
+    },
+    {
+      "character": "Carina Miller",
+      "slug": "carina_miller",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/carina_miller/portrait.jpeg",
+          "approved_filename": "Carina_Miller_Approved_Portrait_IMG_1079.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1riQyfM80xQtT1tTvQVjdAdbriZBCElyU/view",
+          "bytes": 27454,
+          "sha256": "1039ab51b592c02b4b5337d777b9b3fad0280ee7555946c1f80f80688086d7a7"
+        },
+        "landscape": {
+          "path": "assets/approved_87/carina_miller/landscape.jpeg",
+          "approved_filename": "Carina_Miller_Approved_Landscape_IMG_1082.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1qZ5TRU9cPDSN1uMSPpJNiyaT6eoXztaZ/view",
+          "bytes": 102378,
+          "sha256": "60cf4f076fc35dfe4a1eb6519a572572bd7b5736e679625429b0f85af6cf6208"
+        }
+      }
+    },
+    {
+      "character": "Miguel Diaz",
+      "slug": "miguel_diaz",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/miguel_diaz/portrait.jpeg",
+          "approved_filename": "Miguel_Diaz_FINAL_Portrait_IMG_1196.jpeg",
+          "drive_url": "https://drive.google.com/file/d/13bwUGi6ZU2fJQJSPOt5tCCGft3xx4rLX/view",
+          "bytes": 33033,
+          "sha256": "1ff4871c1ceb9d69531a6e121c658ff3ee2c7a303a6edc0d76a23f397b581bb1"
+        },
+        "landscape": {
+          "path": "assets/approved_87/miguel_diaz/landscape.jpeg",
+          "approved_filename": "Miguel_Diaz_FINAL_Landscape_6E4B4838.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1baeGWOSfj_z4okWh1mBk1eYL2aysD9Sb/view",
+          "bytes": 50391,
+          "sha256": "163853c78693e6b6e38d6708748cee9656a7cfe84853522f52faa2bde842084a"
+        }
+      }
+    },
+    {
+      "character": "Apollo Creed",
+      "slug": "apollo_creed",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/apollo_creed/portrait.jpeg",
+          "approved_filename": "Apollo_Creed_FINAL_Portrait_IMG_1101.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1eBHaH6JmRdaAKJmpdEE7RHEzpGzv5R1e/view",
+          "bytes": 15213,
+          "sha256": "057f2e67d338bc65ba1e0eb773e46c66be425ee0fefbb7f332ea86d98aaf2541"
+        },
+        "landscape": {
+          "path": "assets/approved_87/apollo_creed/landscape.jpeg",
+          "approved_filename": "Apollo_Creed_FINAL_Landscape_IMG_1111.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1WkVnxemkdI5Cz_DTR4IsM6dlc03EExD9/view",
+          "bytes": 26890,
+          "sha256": "a216360178b305c258b4a974e5401ee3be3d8deec31338f18dde03805506a1fc"
+        }
+      }
+    },
+    {
+      "character": "Rocky Balboa",
+      "slug": "rocky_balboa",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/rocky_balboa/portrait.jpeg",
+          "approved_filename": "Rocky_Balboa_FINAL_Portrait_IMG_1210.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1ueco4YbYPdBcjuNb3VLAuSnWRfO-LMnF/view",
+          "bytes": 58562,
+          "sha256": "7a3846f819654df3a4cbdc2c6d136be175955f982786b6a88f02b5d0d07d6d81"
+        },
+        "landscape": {
+          "path": "assets/approved_87/rocky_balboa/landscape.jpeg",
+          "approved_filename": "Rocky_Balboa_FINAL_Landscape_IMG_1207.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1O6kImRFIr6b9LKhcCuzvnJbHYMXWH01Q/view",
+          "bytes": 132917,
+          "sha256": "d7279f46712ce98bcd324c58f044da74c94c97a21549e8ebe908e47058afa361"
+        }
+      }
+    },
+    {
+      "character": "Jean Roqua",
+      "slug": "jean_roqua",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/jean_roqua/portrait.jpeg",
+          "approved_filename": "Jean_Roqua_FINAL_Portrait_IMG_1070(1).jpeg",
+          "drive_url": "https://drive.google.com/file/d/18AEmCu75Jvy1kxKEP7mVCy994NW3vOk4/view",
+          "bytes": 24779,
+          "sha256": "739f48773f4e14af79fb7f3378bc422c31637e3de6a888f3e5e00c4a472d0842"
+        },
+        "landscape": {
+          "path": "assets/approved_87/jean_roqua/landscape.jpeg",
+          "approved_filename": "Jean_Roqua_FINAL_Landscape_IMG_1067(1).jpeg",
+          "drive_url": "https://drive.google.com/file/d/1hZJkCVhrs5R5WNzO55ycyGD_I3htXjo5/view",
+          "bytes": 122325,
+          "sha256": "133d9435e87e9c97aa9ac8eb0ffa0b020bb7b44c2c693a7496a2346f89c1c70d"
+        }
+      }
+    },
+    {
+      "character": "Johnny Lawrence",
+      "slug": "johnny_lawrence",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/johnny_lawrence/portrait.jpeg",
+          "approved_filename": "Johnny_Lawrence_FINAL_Portrait_IMG_1182.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1aMIT0JhatD7O369rjNM-wbt-QH8CjHQg/view",
+          "bytes": 34309,
+          "sha256": "4ad8d645ea4d1a49519c7770de776b97aa88db2abf05d421154fcef2399fbbcf"
+        },
+        "landscape": {
+          "path": "assets/approved_87/johnny_lawrence/landscape.jpeg",
+          "approved_filename": "Johnny_Lawrence_FINAL_Landscape_IMG_1180.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1FwJx9ee6DKdUe4UXhsm7glynV_FxF0sy/view",
+          "bytes": 199447,
+          "sha256": "37613b479ed9f704e952779c7d20c964e20668a298226a44246091ed82453f55"
+        }
+      }
+    },
+    {
+      "character": "Alex Cross",
+      "slug": "alex_cross",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/alex_cross/portrait.jpeg",
+          "approved_filename": "Alex_Cross_FINAL_Portrait_IMG_1116.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1EnrUhI1v4FdhizSMekgxY-v26P-Pm3zI/view",
+          "bytes": 33715,
+          "sha256": "5608fbfd10a80ab4cc0441d995ce4dced67955dbbcb6d48725c66306aa704a54"
+        },
+        "landscape": {
+          "path": "assets/approved_87/alex_cross/landscape.jpeg",
+          "approved_filename": "Alex_Cross_FINAL_Landscape_IMG_1127.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1rQM4ZUgwtddQSAq7aehNlMuklsNUOenI/view",
+          "bytes": 25377,
+          "sha256": "ec38ef68a98bc19ea6846a81c811584a93bb90794a757bdf5b248b4418f4f534"
+        }
+      }
+    },
+    {
+      "character": "Hwoarang",
+      "slug": "hwoarang",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/hwoarang/portrait.jpeg",
+          "approved_filename": "hwoarang_portrait_selected_A27F35E4.jpeg",
+          "drive_url": "https://drive.google.com/file/d/165pHodIXUnwpk7jOVspfxMvlNeguz-al/view",
+          "bytes": 417657,
+          "sha256": "8c0f98373e2a747bf9461d8eaf0c1480d8a3ce17b8091c3eedb1b428b3fe79eb"
+        },
+        "landscape": {
+          "path": "assets/approved_87/hwoarang/landscape.jpeg",
+          "approved_filename": "hwoarang_landscape_selected_68E2DE45.jpeg",
+          "drive_url": "https://drive.google.com/file/d/16zWrFy-z65nLkNnARcJFQnNngaeDT_Hq/view",
+          "bytes": 375481,
+          "sha256": "a48cf845e4dee71af3369ba299afd13ffdf0f08af5e27136c7de13ea68898893"
+        }
+      }
+    },
+    {
+      "character": "Zara Malik",
+      "slug": "zara_malik",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/zara_malik/portrait.jpeg",
+          "approved_filename": "Zara_FINAL_Portrait_IMG_1151.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1KAo-Gwg13CEkwv8963jX2xhNi5Zox90t/view",
+          "bytes": 44789,
+          "sha256": "430f279e42509f083ac8184c565f55ef1125ab15ddc7cfaba1947210acf35e98"
+        },
+        "landscape": {
+          "path": "assets/approved_87/zara_malik/landscape.jpeg",
+          "approved_filename": "Zara_FINAL_Landscape_IMG_1157.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1hNO7jg2YBbSObs-OKIFyZY_Qwn1dQ_Es/view",
+          "bytes": 36013,
+          "sha256": "5abee9a86d59e05a3ab4293efd46f5a326f208e8e3b1f57b8fd2bc843b2a7ba5"
+        }
+      }
+    },
+    {
+      "character": "Cole Barker",
+      "slug": "cole_barker",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/cole_barker/portrait.jpeg",
+          "approved_filename": "Cole_Barker_Selected_Portrait_IMG_1087.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1lyVogbIdT-PyQd4eKMbiMgfiQ0H9G54W/view",
+          "bytes": 33224,
+          "sha256": "bf5f15cd0926985ef4bd782831e0a88cbf08ac3aaab41e73c1d4156219deaa2f"
+        },
+        "landscape": {
+          "path": "assets/approved_87/cole_barker/landscape.jpeg",
+          "approved_filename": "Cole_Barker_Selected_Landscape_IMG_1085.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1S4JhK6XcxRnRsBO_QJqX1P7GvVMvGXKa/view",
+          "bytes": 18265,
+          "sha256": "ff23b1ac736a454b89e2bdfe2fe9d131111021c4b32e4cacf07e4931fc8fbe57"
+        }
+      }
+    },
+    {
+      "character": "Mr. Miyagi",
+      "slug": "mr_miyagi",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/mr_miyagi/portrait.jpeg",
+          "approved_filename": "Mr_Miyagi_FINAL_Portrait_IMG_1134.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1kas_tw6FUilynWWTT2qXxMrBp7uuxIR7/view",
+          "bytes": 40200,
+          "sha256": "bd99f99d3fca3c1416af0fdb7ef062c3da203def1ec266f174a66a75ae55dda0"
+        },
+        "landscape": {
+          "path": "assets/approved_87/mr_miyagi/landscape.png",
+          "approved_filename": "Mr_Miyagi_FINAL_Landscape_Daniel_Faded.png",
+          "drive_url": "https://drive.google.com/file/d/1mGEaPlITf9NMRYnDeEWlqoCqhv7PN5ea/view",
+          "bytes": 2049412,
+          "sha256": "3c5c11c336c32aa36af593c2555809489c543cf1761f539796ab1890f6fb0563"
+        }
+      }
+    },
+    {
+      "character": "Frank Martin (The Transporter)",
+      "slug": "frank_martin_the_transporter",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/frank_martin_the_transporter/portrait.jpeg",
+          "approved_filename": "Frank_Martin_FINAL_Portrait_IMG_1189.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1kn6xRdqfOpCntMs3uR56QCZjwRFeFVek/view",
+          "bytes": 26716,
+          "sha256": "58e2dbab357eb4f7cc47a56e2b8cf18fc9b4bac96b8ff6783040fe6bff1b213a"
+        },
+        "landscape": {
+          "path": "assets/approved_87/frank_martin_the_transporter/landscape.jpeg",
+          "approved_filename": "Frank_Martin_FINAL_Landscape_IMG_1186.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1D7cuiRY432ID6OBGkImqXjB2uuJHI8_w/view",
+          "bytes": 35811,
+          "sha256": "8a33f98246e0e0d3f6f5ac3330464b1eb8e5242080bf9f52e73bfc0d595599bf"
+        }
+      }
+    },
+    {
+      "character": "Paul Phoenix",
+      "slug": "paul_phoenix",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/paul_phoenix/portrait.jpeg",
+          "approved_filename": "paul_phoenix_portrait_selected_80874C98.jpeg",
+          "drive_url": "https://drive.google.com/file/d/18pVqtSyKoF-QgheuOfV6D9k4ljjVHyp6/view",
+          "bytes": 394353,
+          "sha256": "15c20c7704fb879c81a5b4fdd53b1adf528baa5bf2468cc6fc7aa64150c36ebc"
+        },
+        "landscape": {
+          "path": "assets/approved_87/paul_phoenix/landscape.jpeg",
+          "approved_filename": "paul_phoenix_landscape_selected_D3A376BD.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1cSD9l_Rc3As8ftfRrzuFQBSOceSamI5a/view",
+          "bytes": 474424,
+          "sha256": "276f7dbc8257e3cd69e82bb4f15a63b81e8b9fc946b77658948d075227bf150a"
+        }
+      }
+    },
+    {
+      "character": "Lady Shiva",
+      "slug": "lady_shiva",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/lady_shiva/portrait.webp",
+          "approved_filename": "Lady_Shiva_APP_Portrait_11_lady_shiva_FINAL_v45.webp",
+          "drive_url": "https://drive.google.com/file/d/18u8Fg90Z8TTxZUxP5Jl1RucZLV5jUA8M/view",
+          "bytes": 380096,
+          "sha256": "0c8c47c22d57bd86f69bef37c4423af9a6727096d9abde433b6f91d9ce374cfa"
+        },
+        "landscape": {
+          "path": "assets/approved_87/lady_shiva/landscape.jpeg",
+          "approved_filename": "lady_shiva_landscape_selected_IMG_0772.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1w2hXOo-QjLdPY5ZmBb6074y9ohui6WZo/view",
+          "bytes": 927396,
+          "sha256": "a26196ceb3f1b78529baa5be02c6978d325f6321b707682364eefd5eb7407e62"
+        }
+      }
+    },
+    {
+      "character": "Tommy Oliver (White Ranger)",
+      "slug": "tommy_oliver_white_ranger",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/tommy_oliver_white_ranger/portrait.png",
+          "approved_filename": "Tommy_Oliver_White_Ranger_FINAL_Portrait_Tigerzord_Faded.png",
+          "drive_url": "https://drive.google.com/file/d/1bnA875BRpSCXGxLZN9dYm07QILZmjlBP/view",
+          "bytes": 2356509,
+          "sha256": "740e28d58e5432e03e498dfd47f960676cf957ea6af29c004fba93c32964c9b8"
+        },
+        "landscape": {
+          "path": "assets/approved_87/tommy_oliver_white_ranger/landscape.jpeg",
+          "approved_filename": "Tommy_Oliver_White_Ranger_APPROVED_Landscape_IMG_1098.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1VCx-yVss1tPfxcxiOwLWbyQbSr3LHG5k/view",
+          "bytes": 45177,
+          "sha256": "f6b1465b17cea8ae8aefd6f6f5fa422194fb2e74626a8d1cb9dcd34755003733"
+        }
+      }
+    },
+    {
+      "character": "Domovoi Butler",
+      "slug": "domovoi_butler",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/domovoi_butler/portrait.jpeg",
+          "approved_filename": "Domovoi_Butler_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1mgNxXOePkP_Y4xiAmh5mW_qxa8wZbcEd/view",
+          "bytes": 404666,
+          "sha256": "336296bdc888cc6f6ad1bb7641d2852c7c79d13126c415ce3f01eb803a13dabd"
+        },
+        "landscape": {
+          "path": "assets/approved_87/domovoi_butler/landscape.jpeg",
+          "approved_filename": "Domovoi_Butler_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1fy-mtTbyR4uUqIAqJ-AGvNqg4RBIz4E1/view",
+          "bytes": 319642,
+          "sha256": "89d99c4881583ee4f941e72b47755a1a3e1c7f3830b1c2eda7c1b1e829cebc9d"
+        }
+      }
+    },
+    {
+      "character": "Black Canary",
+      "slug": "black_canary",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/black_canary/portrait.jpeg",
+          "approved_filename": "black_canary_portrait_current_IMG_0789.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1m3V6ZNRE5OOcgg_6EuKZjZNdz-dp9ydq/view",
+          "bytes": 48439,
+          "sha256": "33685db6ea9995ffd2cd979e58d443532a097b077ac903ceab9b27799a197360"
+        },
+        "landscape": {
+          "path": "assets/approved_87/black_canary/landscape.jpeg",
+          "approved_filename": "black_canary_landscape_selected_IMG_0779.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1rgmZ7BIGeMgITu_FF26R2FIrqCyWuNDz/view",
+          "bytes": 77928,
+          "sha256": "1c175f15c3b73bf1fb80d65d90d1104ea3c9e31745e7d7ce9d94f4afaceaec18"
+        }
+      }
+    },
+    {
+      "character": "Red Hood (Jason Todd)",
+      "slug": "red_hood_jason_todd",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/red_hood_jason_todd/portrait.png",
+          "approved_filename": "Red_Hood_APP_ORIGINAL_Portrait_14_red_hood.png",
+          "drive_url": "https://drive.google.com/file/d/1vn4Lamb_9fBn62QwhBiMSP0j2YNup0v9/view",
+          "bytes": 371431,
+          "sha256": "a2eee6d5f3f9d237e19d68d4212f9f74bcd04e0b340c3ff46709eef15b76b860"
+        },
+        "landscape": {
+          "path": "assets/approved_87/red_hood_jason_todd/landscape.jpeg",
+          "approved_filename": "red_hood_landscape_selected_IMG_0799.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1OqQ2g92rijc1TgEdQKo4Nx3oWBwPH7eT/view",
+          "bytes": 501959,
+          "sha256": "31d4e409c510bb59568b3b4737827c711ba88fad171ec8684dd883df441e704a"
+        }
+      }
+    },
+    {
+      "character": "Vegeta",
+      "slug": "vegeta",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/vegeta/portrait.jpeg",
+          "approved_filename": "vegeta_portrait_selected_IMG_0806.jpeg",
+          "drive_url": "https://drive.google.com/file/d/12SGrip5QPNq4ZrETHrs_fqP6tQ0YziFq/view",
+          "bytes": 71009,
+          "sha256": "c8c164ee87c84e1056660d4d130dcc7924bc92b7aae40c8c80351844a19b491e"
+        },
+        "landscape": {
+          "path": "assets/approved_87/vegeta/landscape.jpeg",
+          "approved_filename": "vegeta_landscape_selected_IMG_0805.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1mPuDDH0rKZoYza58mvkHCcWZsjMvwjCt/view",
+          "bytes": 94440,
+          "sha256": "032b5675c0f4237e1d01196021fdab7e7e72046bd5f1fdd5ea99063b2ce70052"
+        }
+      }
+    },
+    {
+      "character": "Tai Lung",
+      "slug": "tai_lung",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/tai_lung/portrait.jpeg",
+          "approved_filename": "tai_lung_portrait_selected_IMG_0935.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1scTPhDLWM24RPu_U0EEUZd4y8bNmo3mP/view",
+          "bytes": 44612,
+          "sha256": "3746e43345989d70611effb01557b3b60e96b4378aee8058b93c7a4461bdd5d7"
+        },
+        "landscape": {
+          "path": "assets/approved_87/tai_lung/landscape.jpeg",
+          "approved_filename": "tai_lung_landscape_selected_IMG_0934.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1GJuhxKvOuk-6rgjYg47EAi6NH4WufQ1S/view",
+          "bytes": 114580,
+          "sha256": "5ccb3b52f67c6ca922b05b7484fccb23b8673304fcf7d503cd18ff72a6ed0968"
+        }
+      }
+    },
+    {
+      "character": "Gun Jack",
+      "slug": "gun_jack",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/gun_jack/portrait.jpeg",
+          "approved_filename": "gun_jack_portrait_selected_5B1EB82D.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1yt9l2RxdC05uhz-FAOu6tfvgfwYtI8l4/view",
+          "bytes": 348828,
+          "sha256": "6053a4fbea1607b6421c905f9aa5f48eda0ba1930f4aefe7e401d72c2d352996"
+        },
+        "landscape": {
+          "path": "assets/approved_87/gun_jack/landscape.jpeg",
+          "approved_filename": "gun_jack_landscape_selected_00125EAC.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1XWLm1I4l0LuNH-bFnuPIZztOxLA0lPtp/view",
+          "bytes": 267951,
+          "sha256": "0ae80819a8d82efb12593aa476dafe3c6a3c4b8cb9aa610f3b9343ecb660019c"
+        }
+      }
+    },
+    {
+      "character": "Bryce Larkin",
+      "slug": "bryce_larkin",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/bryce_larkin/portrait.png",
+          "approved_filename": "Bryce_Larkin_APPROVED_Portrait_C6EA0D9F.png",
+          "drive_url": "https://drive.google.com/file/d/1TGsQrlHvvmqXlOYF8hRmrYiIEH0cKAAy/view",
+          "bytes": 248036,
+          "sha256": "0e6e6ee89ab5a10fdb27138960dbf92b2f17f07339d3f29315e81b32c11a5f07"
+        },
+        "landscape": {
+          "path": "assets/approved_87/bryce_larkin/landscape.png",
+          "approved_filename": "Bryce_Larkin_APPROVED_HQ_5000DBF1.png",
+          "drive_url": "https://drive.google.com/file/d/15WBPOBIG5xMayEhuAsfSzMhEwOGxWiQe/view",
+          "bytes": 341070,
+          "sha256": "e3aec0e2dd7b08c1922ca8fdc23924e20dbbc9da1b91ff3ba7fdc4e3f8793900"
+        }
+      }
+    },
+    {
+      "character": "Bane",
+      "slug": "bane",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/bane/portrait.webp",
+          "approved_filename": "bane_portrait_selected_IMG_0811.webp",
+          "drive_url": "https://drive.google.com/file/d/1IaHbGUs1IASO_NuttTKdcwjdTiLGRV0b/view",
+          "bytes": 41396,
+          "sha256": "47fa3a7d153c93a1b86cc69be4860925ad5beba4b173c2d35ae14b9f4d7d2c90"
+        },
+        "landscape": {
+          "path": "assets/approved_87/bane/landscape.jpeg",
+          "approved_filename": "bane_landscape_selected_IMG_0814.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1oJ2SOlqtvpIulYFRbmTwkH_dUXSOp5w5/view",
+          "bytes": 62565,
+          "sha256": "ca81df19c081c8139d021b3b87c762a097e8138372a6f53296bee21961de802d"
+        }
+      }
+    },
+    {
+      "character": "Winter Soldier (Bucky Barnes)",
+      "slug": "winter_soldier_bucky_barnes",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/winter_soldier_bucky_barnes/portrait.jpeg",
+          "approved_filename": "winter_soldier_portrait_selected_IMG_0827.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1SFISidEWHPVtKZfkSMWa8csFdzXHp6l1/view",
+          "bytes": 52637,
+          "sha256": "b3ac1f9d94528142159dcfa6b9a0c24222d14a9d3ca5315ce28025437316ec21"
+        },
+        "landscape": {
+          "path": "assets/approved_87/winter_soldier_bucky_barnes/landscape.jpeg",
+          "approved_filename": "winter_soldier_landscape_selected_IMG_0830.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1CvzrJLj7koxfluVHCnlcIVutlNmLacHe/view",
+          "bytes": 113402,
+          "sha256": "9824180d276fcd70fa751c668eb4c4e4472cfcaac2446a808f84b675ec4c3b0e"
+        }
+      }
+    },
+    {
+      "character": "John Casey",
+      "slug": "john_casey",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/john_casey/portrait.jpeg",
+          "approved_filename": "John_Casey_FINAL_Portrait_IMG_1163.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1hD4RUHoA0N0md6OW8VaLt4u6IhflfqpB/view",
+          "bytes": 26899,
+          "sha256": "2eacda32f987eceaf67648972141891e236bd677e49c4d3111519f901c7d4f4b"
+        },
+        "landscape": {
+          "path": "assets/approved_87/john_casey/landscape.jpeg",
+          "approved_filename": "John_Casey_FINAL_Landscape_IMG_1160.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1x5N3ZNjiqEkYQem9ktf--e8_Yg68Gghv/view",
+          "bytes": 29058,
+          "sha256": "edc2be6f46226fcc976151ca7c0dbf91dffdddca096a195690cfe384f0e44b6f"
+        }
+      }
+    },
+    {
+      "character": "Sarah Walker",
+      "slug": "sarah_walker",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/sarah_walker/portrait.jpeg",
+          "approved_filename": "Sarah_Walker_FINAL_Portrait_Purple_Dress_Dinner.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1LZ6M0dJrBf_itrvkOYSWrUOVmZsOPQG7/view",
+          "bytes": 64703,
+          "sha256": "e920490790e7a74f2da834f58d1bb9c90e003f6a47bb92cc5eae33a5813e9e6a"
+        },
+        "landscape": {
+          "path": "assets/approved_87/sarah_walker/landscape.png",
+          "approved_filename": "Sarah_Walker_FINAL_Landscape_Fighting_Pit_High_Kick.png",
+          "drive_url": "https://drive.google.com/file/d/10U7_INCpDy_zExYltwd1M9MYSpHsfhAW/view",
+          "bytes": 482557,
+          "sha256": "d804d69bbf90a54d13237a042ce8624c52d37cfe11d41892ab53b64494ca1e72"
+        }
+      }
+    },
+    {
+      "character": "Iron Man (Tony Stark)",
+      "slug": "iron_man_tony_stark",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/iron_man_tony_stark/portrait.webp",
+          "approved_filename": "Iron_Man_APP_ORIGINAL_Portrait_24_iron_man_v36.webp",
+          "drive_url": "https://drive.google.com/file/d/1qh0e4fqOja9D-0B1FKlbZcBYPa5jejJg/view",
+          "bytes": 674798,
+          "sha256": "ff72be42cd07840f386770407dad0d2547b2bfb2b367c8ab228e13810f02c7e4"
+        },
+        "landscape": {
+          "path": "assets/approved_87/iron_man_tony_stark/landscape.jpeg",
+          "approved_filename": "iron_man_landscape_selected_IMG_0832.jpeg",
+          "drive_url": "https://drive.google.com/file/d/18Er3FEiIQkGIgNpZBHJQwzYGcrt7VIqY/view",
+          "bytes": 36824,
+          "sha256": "f0fd439e351c8fee16d5eb82b93ec4f765651aa421fa0317dd888f5638bce63e"
+        }
+      }
+    },
+    {
+      "character": "Master Oogway",
+      "slug": "master_oogway",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/master_oogway/portrait.jpeg",
+          "approved_filename": "master_oogway_portrait_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1adV7fLuWZO-XfzC9pc9Xg3vvTRjpkuDa/view",
+          "bytes": 481831,
+          "sha256": "657e4b3ad0861d29f13f5d61cbd4085dbc839de1f43d8d2f98451d6907101679"
+        },
+        "landscape": {
+          "path": "assets/approved_87/master_oogway/landscape.jpeg",
+          "approved_filename": "master_oogway_landscape_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1D2tV54KcniQR5wpqP1iPEhfJ3cVRXb-S/view",
+          "bytes": 539036,
+          "sha256": "078ba82d1fdfb0c9443b78304064a65059fec494d116ef47026676d88b8f7df7"
+        }
+      }
+    },
+    {
+      "character": "Superman",
+      "slug": "superman",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/superman/portrait.jpeg",
+          "approved_filename": "Superman_APP_ORIGINAL_Portrait_25_superman_v36.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1BvxLp0tXJHwkVtgqZPCuOi0ecs1hFpSn/view",
+          "bytes": 206418,
+          "sha256": "c7fb6d412ad7e94046ba2f5d028cde444c5c93d18a676b422aefe7d08576799f"
+        },
+        "landscape": {
+          "path": "assets/approved_87/superman/landscape.jpeg",
+          "approved_filename": "superman_landscape_selected_IMG_0844.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1rGGhZAHsowTikzNG_yb1VD1bzd4N8ljo/view",
+          "bytes": 64803,
+          "sha256": "a10881727dd88f57784161afa6fec0acd50a1075a796d32a5fceefc4d3809c30"
+        }
+      }
+    },
+    {
+      "character": "King II (Tekken)",
+      "slug": "king_ii_tekken",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/king_ii_tekken/portrait.jpeg",
+          "approved_filename": "king_ii_portrait_selected_E864A504.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1MfS8ju00vDtOszdQ91hSfLqJsxfWCQRv/view",
+          "bytes": 476692,
+          "sha256": "3e979e7f2a71d3c85692834299fb6bfccdaa840f027b8d4e411ddc586517e892"
+        },
+        "landscape": {
+          "path": "assets/approved_87/king_ii_tekken/landscape.jpeg",
+          "approved_filename": "king_ii_landscape_selected_B018D433.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1gXOa6TmIXR5H0ob6T0Xmxn3lvDx21ZdV/view",
+          "bytes": 550314,
+          "sha256": "e8e3f660bec81a4199f7418949bf8c9b7e2e8c241b50923865e8baf1ed1e7424"
+        }
+      }
+    },
+    {
+      "character": "Holly Short",
+      "slug": "holly_short",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/holly_short/portrait.jpeg",
+          "approved_filename": "Holly_Short_Image_3_original.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1c3w2APfYF1c9AaN8sCjFLvNNLoX2CBoq/view",
+          "bytes": 602693,
+          "sha256": "62116431099fcdecf37a019c21fa0bb1fd58b143f14bb66e1f258b5f99b33f76"
+        },
+        "landscape": {
+          "path": "assets/approved_87/holly_short/landscape.jpeg",
+          "approved_filename": "Holly_Short_Image_1_original.jpeg",
+          "drive_url": "https://drive.google.com/file/d/199zKukL8LVoAcdlM9hnAnc-7saR-dsWP/view",
+          "bytes": 464846,
+          "sha256": "b3f0db3a396288b188ac08861752996fc75b1bc85c9530b04e558c7377e97463"
+        }
+      }
+    },
+    {
+      "character": "The Flash",
+      "slug": "the_flash",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/the_flash/portrait.jpeg",
+          "approved_filename": "The_Flash_APP_ORIGINAL_Portrait_24_flash.jpeg",
+          "drive_url": "https://drive.google.com/file/d/12e0-tQeNAw14NqxyK2KPLhN4_zJDRh2x/view",
+          "bytes": 530161,
+          "sha256": "460d2ecce43be283069184114973e95e9b25339b87a2d2f172309e8dde02cea6"
+        },
+        "landscape": {
+          "path": "assets/approved_87/the_flash/landscape.jpeg",
+          "approved_filename": "flash_landscape_selected_IMG_0865.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1AKoi46T2postxxHjjyFhgtInsfa4VtJ2/view",
+          "bytes": 359048,
+          "sha256": "05cce45a876fdcbd95349b769072dbb29af67c2a67b15737571837cb21758542"
+        }
+      }
+    },
+    {
+      "character": "Thor",
+      "slug": "thor",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/thor/portrait.png",
+          "approved_filename": "Thor_APPROVED_Portrait_7712FDD4.png",
+          "drive_url": "https://drive.google.com/file/d/1fxOHhEGoy9g5DtrXb-N3-tTflJ_ipPdE/view",
+          "bytes": 433501,
+          "sha256": "f9b50bc0dc7c954ca1b19a15ebf064a2cf7f98e908097b1edb529e42a071e3d7"
+        },
+        "landscape": {
+          "path": "assets/approved_87/thor/landscape.jpeg",
+          "approved_filename": "Thor_APPROVED_HQ_18EC6CA1.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1oBCWYVocZraeDEFbv9gYgNW6cVD8VhRd/view",
+          "bytes": 291075,
+          "sha256": "e2a9d23bb81b854dc96d46fcf77508248a8b856d6a22bc8531d72fc9735166e4"
+        }
+      }
+    },
+    {
+      "character": "Huntress (Helena Bertinelli)",
+      "slug": "huntress_helena_bertinelli",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/huntress_helena_bertinelli/portrait.jpeg",
+          "approved_filename": "Huntress_candidate_3_IMG_0971.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1RNxliyPlRGUpY4YlpwvXZDP79xtBRz0y/view",
+          "bytes": 67182,
+          "sha256": "3c960c4e588e1f3ee8807b22faf02f96d5152d0ee5f6623ab8231b1a260a5adf"
+        },
+        "landscape": {
+          "path": "assets/approved_87/huntress_helena_bertinelli/landscape.jpeg",
+          "approved_filename": "Huntress_candidate_1_IMG_0973.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1eTWQaQtmYBvJnXVTqhKY7G5r5goax7S-/view",
+          "bytes": 42399,
+          "sha256": "28499abf4ba401badd1916085f5f551e06b110388b8fb518f0fd67b6ea211daa"
+        }
+      }
+    },
+    {
+      "character": "Talia al Ghul",
+      "slug": "talia_al_ghul",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/talia_al_ghul/portrait.png",
+          "approved_filename": "Talia_al_Ghul_APPROVED_Portrait_F6CE2D13.png",
+          "drive_url": "https://drive.google.com/file/d/1QOryhAqYbf4pni8ltyyRhehmLxf8Ka-w/view",
+          "bytes": 947204,
+          "sha256": "b2026a74f504cd6911a16f78ccc0a269caf312f704a60fc55e51db6a95991443"
+        },
+        "landscape": {
+          "path": "assets/approved_87/talia_al_ghul/landscape.jpeg",
+          "approved_filename": "Talia_al_Ghul_APPROVED_HQ_E46AC62A.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1DuvP9LwajAp_aazQK6lby7N5wmLBnnOU/view",
+          "bytes": 399610,
+          "sha256": "7b2b353e5ce6cb9b9043181e006ba472dd12fa6e831dbb6cb677c5e683cf00c1"
+        }
+      }
+    },
+    {
+      "character": "Catwoman (Selina Kyle)",
+      "slug": "catwoman_selina_kyle",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/catwoman_selina_kyle/portrait.jpeg",
+          "approved_filename": "Catwoman_IMG_0961_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1K0x8834dkuf_NqrKUKG68CaHUg4SbZPT/view",
+          "bytes": 48631,
+          "sha256": "d71a4ebedf70b202477e809d99fdbead5636dbb071b85ef5b72dfaff4bedcfa9"
+        },
+        "landscape": {
+          "path": "assets/approved_87/catwoman_selina_kyle/landscape.jpeg",
+          "approved_filename": "Catwoman_IMG_0968_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1c3AfDgrmfUkStb7EGiXuiOtgu_ByCOkZ/view",
+          "bytes": 137620,
+          "sha256": "aec137464e0d9df329c998e1623ecd5bc73ee5805f55bbed8ee8ed19da0912cb"
+        }
+      }
+    },
+    {
+      "character": "Broly (Dragon Ball Z)",
+      "slug": "broly_dragon_ball_z",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/broly_dragon_ball_z/portrait.jpeg",
+          "approved_filename": "Broly_selected_IMG_0946.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1XcDtHcF2v-UTjhcQXnGTPYVMMR9eb-2r/view",
+          "bytes": 55067,
+          "sha256": "116d4f1bbe2d69ec6c8d082f914b152de89920a1febdeabf6c1bb3982d53fdaa"
+        },
+        "landscape": {
+          "path": "assets/approved_87/broly_dragon_ball_z/landscape.jpeg",
+          "approved_filename": "Broly_selected_IMG_0944.jpeg",
+          "drive_url": "https://drive.google.com/file/d/14-JeVk9LeRH41WkuOuZCkmcQGEvYkFJB/view",
+          "bytes": 643912,
+          "sha256": "0f350c387f09be04b3aec41644c970d8a0d946678a506e0d77df565e964242c8"
+        }
+      }
+    },
+    {
+      "character": "Hercule / Mr. Satan (DBZ)",
+      "slug": "hercule_mr_satan_dbz",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/hercule_mr_satan_dbz/portrait.jpeg",
+          "approved_filename": "hercule_portrait_selected_IMG_0881.jpeg",
+          "drive_url": "https://drive.google.com/file/d/15Nk8e6yiuiyiREVGGrYnYprIR-e50KXl/view",
+          "bytes": 76677,
+          "sha256": "844b28f0d06a3ad347a1a00729d10743c8c2cbbac807bb51371d8096ee2de6a1"
+        },
+        "landscape": {
+          "path": "assets/approved_87/hercule_mr_satan_dbz/landscape.jpeg",
+          "approved_filename": "hercule_landscape_selected_IMG_0882.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1Rn7BY8tzHu2tWWzs2oFDi-q5wfMM3p9E/view",
+          "bytes": 152317,
+          "sha256": "2f999d70d5239fdc79ff219a9ec8a7188afb2e25ce4a5356036486f49b5b708e"
+        }
+      }
+    },
+    {
+      "character": "Juliet Butler",
+      "slug": "juliet_butler",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/juliet_butler/portrait.jpeg",
+          "approved_filename": "Juliet_Butler_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1OGEXeSzPX7LIOw7WogaKhpmboZjDQlAF/view",
+          "bytes": 380893,
+          "sha256": "c3265037a3815cd26f8c0278b73246f6704d2ac37b4afa234de6b59dc4c668dd"
+        },
+        "landscape": {
+          "path": "assets/approved_87/juliet_butler/landscape.jpeg",
+          "approved_filename": "Juliet_Butler_selected.jpeg",
+          "drive_url": "https://drive.google.com/file/d/17F8klWuUbvEqACAHtGKprkoy14OwvEJw/view",
+          "bytes": 464931,
+          "sha256": "18dff3a4c2d7b9ff06fb263abcb7856cee98249726baaeb93db64ad215333f33"
+        }
+      }
+    },
+    {
+      "character": "Greg Hale (Digital Fortress)",
+      "slug": "greg_hale_digital_fortress",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/greg_hale_digital_fortress/portrait.jpeg",
+          "approved_filename": "Greg_Hale_FINAL_Portrait_E96BBE3F-4829-4CB8-8909-B6405AC1D801.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1gnH2eT1oOY3WCNMrPqN8VbgaY5f4LTX-/view",
+          "bytes": 512984,
+          "sha256": "e71ad87b728e2cd1a3f47317ac00678d0474ba1951170170f72c41be8ee0ee4e"
+        },
+        "landscape": {
+          "path": "assets/approved_87/greg_hale_digital_fortress/landscape.jpeg",
+          "approved_filename": "Greg_Hale_FINAL_Landscape_2C829839-8838-47D8-83CF-9C23662A22B5.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1e_G2TrNPw7LpV_KxsYf0kBvrnH8DQ9J7/view",
+          "bytes": 357852,
+          "sha256": "b4acf57fcbe083ebd6addb617aee3c193d7460fa84fd829d4ffb3c7adb5b6404"
+        }
+      }
+    },
+    {
+      "character": "Vittoria Vetra (Angels & Demons)",
+      "slug": "vittoria_vetra_angels_demons",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/vittoria_vetra_angels_demons/portrait.jpeg",
+          "approved_filename": "Vittoria_Vetra_FINAL_Portrait_4FF705DA-587F-4BB6-8C28-85BB7C2A9B43.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1RalqDcYyxA1Yln2SVVaJRWp9YZTTjdQU/view",
+          "bytes": 548611,
+          "sha256": "c903f8c55ca44e7f04a8ffcfa52ea7259fba9c4ec443ee756cb9c84f45d51007"
+        },
+        "landscape": {
+          "path": "assets/approved_87/vittoria_vetra_angels_demons/landscape.jpeg",
+          "approved_filename": "Vittoria_Vetra_FINAL_Landscape_4D2D122B-DFC8-453A-87B9-34CC771FCEE6.jpeg",
+          "drive_url": "https://drive.google.com/file/d/15AaNt0NbTralBLJEtzc1pUBV74YA6nYH/view",
+          "bytes": 393009,
+          "sha256": "3c886270ed5a5f99bdf4c646314631b8f157be947c42c504ce43aa852daa5c00"
+        }
+      }
+    },
+    {
+      "character": "Sophie Neveu (The Da Vinci Code)",
+      "slug": "sophie_neveu_the_da_vinci_code",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/sophie_neveu_the_da_vinci_code/portrait.jpeg",
+          "approved_filename": "Sophie_Neveu_FINAL_Portrait_110AD45B-69A0-43E6-88D6-DB4D1575CD46.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1wj-zC0AT3PCxM92Na4ZOY1YctpP7qYB_/view",
+          "bytes": 460088,
+          "sha256": "0440e8228f0909bf600cc31f014b74aec75d91a4737ad51d0b0c2dca01afd452"
+        },
+        "landscape": {
+          "path": "assets/approved_87/sophie_neveu_the_da_vinci_code/landscape.jpeg",
+          "approved_filename": "Sophie_Neveu_FINAL_Landscape_C70B658F-241A-4F51-850D-37D5159B0E5A.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1YAMvMypGSsiyGXWrIdaQdKtn3ZdRq38v/view",
+          "bytes": 455012,
+          "sha256": "be6ef47f2a58d97d27e1c77c12e6214bdedbff9bd56a2ff890901c05f0d8457e"
+        }
+      }
+    },
+    {
+      "character": "Devon Woodcomb",
+      "slug": "devon_woodcomb",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/devon_woodcomb/portrait.jpeg",
+          "approved_filename": "Devon_Woodcomb_FINAL_Portrait_IMG_1174.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1bSAPIOeBTJW08K2JD7bTZ0IdNJArmrq_/view",
+          "bytes": 40132,
+          "sha256": "34bba4f30d419f6666b87e3eb0c011d36369e3b1bb47f05b90ea3c893de59729"
+        },
+        "landscape": {
+          "path": "assets/approved_87/devon_woodcomb/landscape.webp",
+          "approved_filename": "Devon_Woodcomb_FINAL_Landscape_IMG_1169.webp",
+          "drive_url": "https://drive.google.com/file/d/1vRelLs_zaWj6Mq_JA2GEcD4jEmfCn-2M/view",
+          "bytes": 25222,
+          "sha256": "bb2163d6e072a0afbd4a997bceda4c9d05845b5dc5ee1b5b3cc5d5e707f76337"
+        }
+      }
+    },
+    {
+      "character": "Daniel Shaw",
+      "slug": "daniel_shaw",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/daniel_shaw/portrait.jpeg",
+          "approved_filename": "Daniel_Shaw_FINAL_Portrait_IMG_1226.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1p-b4I2AHgE7FzLJ1jelq7xlt-u4_wyHr/view",
+          "bytes": 23987,
+          "sha256": "baeba4ac77f9da29e51eb4ef2b17771ac8a80cbdc333b83d4f45452dc16a5225"
+        },
+        "landscape": {
+          "path": "assets/approved_87/daniel_shaw/landscape.jpeg",
+          "approved_filename": "Daniel_Shaw_FINAL_Landscape_IMG_1230.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1kw_ZtmUWW6fVCZFXf9ldGSShB1-Adipn/view",
+          "bytes": 26014,
+          "sha256": "a99db238526059d46ff38f36992d1e8c589105ad77b21ed045e05540ccc0c147"
+        }
+      }
+    },
+    {
+      "character": "Clubber Lang",
+      "slug": "clubber_lang",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/clubber_lang/portrait.jpeg",
+          "approved_filename": "Clubber_Lang_FINAL_Portrait_IMG_1113.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1eUaB9G0OyFc3VMiDcxXE2Hv3Uiyu37i2/view",
+          "bytes": 27326,
+          "sha256": "bb24cbfc22e89efa2d41a7c24c8d8b90488c24d2ac2cc522f1fdab1cd53c9b00"
+        },
+        "landscape": {
+          "path": "assets/approved_87/clubber_lang/landscape.jpeg",
+          "approved_filename": "Clubber_Lang_FINAL_Landscape_IMG_1115.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1O7f7Rjq5DQkmMPG0HQRhHgaTIHTkU0XW/view",
+          "bytes": 116719,
+          "sha256": "cfc9ce4555b6527f02287d712b886a6c2d7ba509f6786c0168ec81b86c8e1a34"
+        }
+      }
+    },
+    {
+      "character": "Daniel LaRusso",
+      "slug": "daniel_larusso",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/daniel_larusso/portrait.jpeg",
+          "approved_filename": "Daniel_LaRusso_FINAL_Portrait_IMG_1179.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1CSqBfm1cXlq9D9PIO1NjpLlfDnXlZOFB/view",
+          "bytes": 30828,
+          "sha256": "77a7714b728cca9087d908a1600395263de0ba367c50027f4a600600d91a1bf4"
+        },
+        "landscape": {
+          "path": "assets/approved_87/daniel_larusso/landscape.jpeg",
+          "approved_filename": "Daniel_LaRusso_FINAL_Landscape_IMG_1175.jpeg",
+          "drive_url": "https://drive.google.com/file/d/1IsYTBuKZ_eD48MO4PHPlEWmcM81cgUA8/view",
+          "bytes": 34994,
+          "sha256": "c80c693a958f741e6049dc49a75110460619dec996152bc1ff1942786f0f00fb"
+        }
+      }
+    },
+    {
+      "character": "Perfect Cell",
+      "slug": "perfect_cell",
+      "assets": {
+        "portrait": {
+          "path": "assets/approved_87/perfect_cell/portrait.jpeg",
+          "approved_filename": "IMG_1277.jpeg",
+          "drive_url": null,
+          "bytes": 681221,
+          "sha256": "24c814bbb722c4ab4ab22f40cdd81dfffa18fac940f39bed814e1533bde259ef"
+        },
+        "landscape": {
+          "path": "assets/approved_87/perfect_cell/landscape.jpeg",
+          "approved_filename": "IMG_1272.jpeg",
+          "drive_url": null,
+          "bytes": 40791,
+          "sha256": "13000d22d5dba1b6d673ce05d896e2f2e9a7a5ee062a0bee0c7e91f017c7c9e2"
+        }
+      }
+    }
+  ]
+}

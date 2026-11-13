@@ -1,0 +1,30 @@
+{
+  "version": "v150",
+  "base": "v149",
+  "currentFighters": 87,
+  "approvedArtworkFiles": 174,
+  "approvedArtworkPairs": 87,
+  "legacyFilesRetained": 16,
+  "legacyFilesRemoved": 145,
+  "legacyRemovedBackup": "LEVEL_UP_v150_Removed_Legacy_Images_Backup.zip",
+  "perfectCellLevel": 71,
+  "perfectCellPortrait": "IMG_1277.jpeg",
+  "perfectCellLandscape": "IMG_1272.jpeg",
+  "note": "Historic 30-fighter fallback code and save migrations retained for backward compatibility; user-facing archive labels identified. Current 87-fighter tracker is authoritative. Not deployed.",
+  "unrelatedFilesRemoved": [
+    "app-v65.js",
+    "app.js",
+    "styles-v65.css",
+    "styles.css",
+    "game-config.json",
+    "habit-config.json"
+  ],
+  "structureTests": {
+    "approvedImagesMatched": 174,
+    "rosterLevels": 87,
+    "registryUniqueIds": 87,
+    "brokenStaticAppImagePaths": 0,
+    "javascriptSyntax": "passed",
+    "browserNavigation": "blocked by execution sandbox, not verified"
+  }
+}

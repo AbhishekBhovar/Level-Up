@@ -1,0 +1,52 @@
+
+/* V152: Native 87-fighter Heroes tab; legacy 30-fighter DOM is retained for compatibility only. */
+#levelsView > :not(#lu152-heroes){display:none!important}
+#levelsView #lu152-heroes{display:block!important;max-width:620px;margin:0 auto;padding:5px 10px 95px;color:#f1f6ff}
+#lu152-heroes *{box-sizing:border-box}
+#lu152-heroes button,#lu152-heroes select,#lu152-heroes input{font:inherit}
+#lu152-heroes .lu152-head{padding:13px 0 17px}
+#lu152-heroes .lu152-kicker{font-size:10px;letter-spacing:.20em;color:#83d6f8}
+#lu152-heroes h1{font:italic 900 clamp(33px,10vw,47px)/1 Impact,'Arial Narrow',system-ui,sans-serif;letter-spacing:-.025em;margin:6px 0}
+#lu152-heroes .lu152-meta{font-size:12px;color:#9bb6d0}
+#lu152-heroes .lu152-pinned{background:#101c2d;border:1px solid #283e58;padding:13px;border-radius:10px;margin:0 0 13px}
+#lu152-heroes .lu152-pinned strong{display:block;font-size:14px;margin-bottom:4px}
+#lu152-heroes .lu152-pinned small{color:#a0b9cc;font-size:11px}
+#lu152-heroes .lu152-gateprogress{height:5px;background:#2a3c52;border-radius:7px;margin:11px 0 8px;overflow:hidden}
+#lu152-heroes .lu152-gateprogress i{height:100%;display:block;background:#55c8f2}
+#lu152-heroes .lu152-tools{display:flex;gap:7px;margin:14px 0}
+#lu152-heroes .lu152-tools input{min-width:0;width:100%;flex:1;border:1px solid #334c6b;background:#0c1829;border-radius:7px;padding:10px 9px;color:white;font-size:13px}
+#lu152-heroes .lu152-tools select{min-width:100px;max-width:45%;border:1px solid #334c6b;background:#0c1829;border-radius:7px;padding:9px 4px;color:white;font-size:11px}
+#lu152-heroes .lu152-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#lu152-heroes .lu152-tile{position:relative;background:#09172a;min-width:0;padding:0;border:1px solid #263b55;border-radius:7px;overflow:hidden;aspect-ratio:2/3.05;text-align:left;color:#fff;cursor:pointer}
+#lu152-heroes .lu152-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#081320}
+#lu152-heroes .lu152-tile.locked img{filter:brightness(.69) saturate(.68)}
+#lu152-heroes .lu152-tile:after{content:'';position:absolute;inset:52% 0 0;background:linear-gradient(0deg,#050d1df0,#050d1d66,transparent);pointer-events:none}
+#lu152-heroes .lu152-number{position:absolute;z-index:1;top:5px;left:5px;font-size:10px;color:white;background:#091629d9;padding:3px 6px;border-radius:3px}
+#lu152-heroes .lu152-tname{position:absolute;z-index:1;bottom:7px;left:7px;right:5px;font-weight:800;font-size:clamp(10px,2.8vw,13px);line-height:1.2;overflow-wrap:break-word}
+#lu152-heroes .lu152-tile.next{outline:2px solid #66d7fb;outline-offset:-2px}
+#lu152-heroes .lu152-tile.unlocked{border-color:#dfba66}
+#lu152-heroes .lu152-tile .lu152-state{position:absolute;z-index:1;top:5px;right:5px;font-size:11px}
+#lu152-heroes .lu152-breadcrumb{border:0;background:transparent;color:#8edaff;padding:10px 0;font-size:12px;cursor:pointer}
+#lu152-heroes .lu152-portrait{height:min(57vh,510px);min-height:270px;position:relative;background:#08111e;border:1px solid #243b55;overflow:hidden;border-radius:8px}
+#lu152-heroes .lu152-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+#lu152-heroes .lu152-portrait:after{content:'';position:absolute;inset:58% 0 0;background:linear-gradient(0deg,#050d1cf2,transparent);pointer-events:none}
+#lu152-heroes .lu152-image-label{position:absolute;z-index:1;bottom:15px;left:14px;right:12px}
+#lu152-heroes .lu152-image-label b{display:block;font:italic 900 clamp(30px,9vw,46px)/1 Impact,'Arial Narrow',system-ui,sans-serif;overflow-wrap:anywhere}
+#lu152-heroes .lu152-image-label small{display:block;color:#d5eafa;font-size:11px;margin-bottom:5px}
+#lu152-heroes .lu152-missing{display:grid;place-items:center;height:100%;color:#8ca6bf;font-size:13px}
+#lu152-heroes .lu152-nav{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;margin:11px 0}
+#lu152-heroes .lu152-nav button,#lu152-heroes .lu152-nav select{border:1px solid #2e455f;background:#112139;border-radius:7px;color:white;padding:10px 4px;min-width:0;cursor:pointer}
+#lu152-heroes .lu152-nav select{font-size:12px}
+#lu152-heroes .lu152-nav button:disabled{opacity:.3}
+#lu152-heroes .lu152-card{background:#101c2d;border:1px solid #273b54;border-radius:8px;padding:13px;margin:10px 0}
+#lu152-heroes .lu152-card h2{font-size:15px;margin:0 0 10px;color:white}
+#lu152-heroes .lu152-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #243448;font-size:12px}
+#lu152-heroes .lu152-row:last-child{border-bottom:0}
+#lu152-heroes .lu152-row span{color:#acc3d7}
+#lu152-heroes .lu152-row b{text-align:right;font-variant-numeric:tabular-nums}
+#lu152-heroes .lu152-danger{color:#eac28b!important}
+#lu152-heroes .lu152-actions{display:flex;gap:8px;margin:13px 0;flex-wrap:wrap}
+#lu152-heroes .lu152-action{flex:1;min-width:120px;border:1px solid #397194;border-radius:7px;background:#11324b;color:#e8f8ff;padding:12px 8px;font-weight:700;font-size:12px;cursor:pointer}
+#lu152-heroes .lu152-landscape{width:100%;height:auto;max-height:340px;object-fit:contain;background:#091422;border-radius:7px}
+#lu152-heroes .lu152-empty{padding:35px 10px;text-align:center;color:#9daec2}
+@media(max-width:370px){#lu152-heroes .lu152-grid{gap:6px}#lu152-heroes .lu152-tname{font-size:10px}#lu152-heroes .lu152-tile{aspect-ratio:2/3.25}}
