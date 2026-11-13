@@ -1,0 +1,7 @@
+LEVEL UP v150 — 87-fighter current roster, approved artwork pairs 87/87 (174 images).
+Perfect Cell: Level 71; portrait IMG_1277.jpeg, HQ landscape IMG_1272.jpeg.
+Current roster: LEVEL_UP_v150_Current_87_Fighter_Roster.txt (provided separately).
+Old assets not referenced by static source removed from distribution (separately backed up).
+Legacy 30-fighter archive and older save-migration keys intentionally remain for backward compatibility.
+The current 87-fighter module is authoritative; the historic archive is not an alternate ranking.
+Not live deployed; end-to-end iPhone testing outstanding.
